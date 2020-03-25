@@ -1,0 +1,11 @@
+#tabla tbody tr button {
+    
+    cursor: pointer;
+}
+
+
+.gj-picker-bootstrap table tr td.today div {
+    color: #f27015;
+    font-weight: 900;
+    font-size: 1.2rem;
+}
