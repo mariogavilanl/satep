@@ -50,7 +50,7 @@ class LoginController extends Controller
        
         switch ($idRol) {
             case 4:
-                 return "/medico-lista";
+                 return "/medico";
                 break;
 
             
