@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ObjetosMode;
+use Faker\Factory as Faker;
+
 class HomeController extends Controller
 {
     /**
@@ -23,14 +25,23 @@ class HomeController extends Controller
      */
     public function index()
     {
+        // $faker = Faker::create();
+        // dd($faker->name);
+        // $cargos = [
+        //     'Programador',
+        //     'Brogrammer',
+        //     'Analista',
+        //     'Cantante',
+        //     'Electricista',
+        // ];
+
+        // dd($cargos);   
         return view('home');
     }
 
     public function pico()
     {
         $persona = new Persona();
-        dd($persona->nombre);
-        
         return view('prueba/pico');
     }
 }
