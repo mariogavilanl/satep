@@ -220,7 +220,7 @@
             <td class="tg-0pky"><input type="text" name="result_org" value=""  width="20px"/> </td>
             <td class="tg-0pky"><input id="FECHA1" name="fecha_ini1" width="100px"  width="20px"  /></td>
             <td class="tg-0pky"><input id="FECHA2" name="fecha_ini2" width="100px"  width="20px" /></td>
-            <td class="tg-0pky"><input type="text" name="result_medidas" value=""  width="20px" /></td>
+            <td class="tg-0pky"><input type="text" name="result_medida" value=""  width="20px" /></td>
           </tr>
           <tr>
             <td class="tg-0pky"><input type="text" name="result_1" value=""  width="20px" size="80"/></td>
@@ -276,15 +276,15 @@
           <tr>
             <td class="tg-y698">Medidas de Control<br></td>
             <td class="tg-0pky" colspan="5">
-              <input type="checkbox" name="c_mc_ing" value="In" />Ingenieriles<br />
-              <input type="checkbox" name="c_mc_adm" value="Ad" />Administrativas<br />
-              <input type="checkbox" name="c_mc_epp" value="ep" />Elementos de proteccion personal<br /></td>
+              <input type="checkbox" name="c_mc_ing" value="Ingenieros" />Ingenieros<br />
+              <input type="checkbox" name="c_mc_adm" value="Administrativas" />Administrativas<br />
+              <input type="checkbox" name="c_mc_epp" value="elementos proteccion personal" />Elementos de proteccion personal<br /></td>
           </tr>
           <tr>
             <td class="tg-y698">¿Utilización elementos de protección personal?</td>
             <td class="tg-0pky" colspan="5">
               <input type="radio" name="r_preg2_proteccion" value="siempre" />Simpre<br />
-              <input type="radio" name="r_preg2_proteccion" value="aveces" />A veces<br />
+              <input type="radio" name="r_preg2_proteccion" value="a veces" />A veces<br />
               <input type="radio" name="r_preg2_proteccion" value="nunca" /> Nunca<br /></td>
           </tr>
           <tr>

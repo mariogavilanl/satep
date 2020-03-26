@@ -56,8 +56,8 @@
                 <div class="form-group col-4">
                     <label for="">ESTADO</label><br />
                   
-                    <input type="radio" name="preg1" value="1" /> Alterado<br />
-                      <input type="radio" name="preg1" value="2" /> Normal<br />
+                        <input type="radio" name="preg1" value="alterado" /> Alterado<br />
+                        <input type="radio" name="preg1" value="normal" /> Normal<br />
     
                 </div>     
                 
@@ -80,8 +80,8 @@
                 
                 <div class="form-group col-4">
                     <label for="">ESTADO CONTRAMUESTRA</label> <br />
-                    <input type="radio" name="preg1" value="1" /> Alterado<br />
-                      <input type="radio" name="preg1" value="2" /> Normal<br />
+                            <input type="radio" name="preg2" value="alterado" /> Alterado<br />
+                            <input type="radio" name="preg2" value="normal" /> Normal<br />
     
                 </div>            
                 
