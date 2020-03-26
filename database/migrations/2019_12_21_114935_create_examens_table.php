@@ -187,120 +187,8 @@ class CreateExamensTable extends Migration
             $table->text('OBSERVACION_ORINA')->nullable();
             $table->text('CONCLUSION')->nullable();
 
-            // ENCUETA 18 Arsenico
-            $table->text("ENC_R_HA")->nullable();
-            $table->text("ENC_R_DM")->nullable();
-            $table->text("ENC_R_ER")->nullable();
-            $table->text("ENC_R_H")->nullable();
-            $table->text("ENC_R_PREG1_AS")->nullable();
-            $table->text("ENC_RESULT_EMPRESA")->nullable();
-            $table->text("ENC_RESULT_PUESTOTRABAJO")->nullable();
-            $table->text("ENC_RESULT_ORG")->nullable();
-            $table->dateTime("ENC_FECHA_INI1")->nullable();
-            $table->dateTime("ENC_FECHA_INI2")->nullable();
-            $table->text("ENC_RESULT_MEDIDAS")->nullable();
-            $table->text("ENC_RESULT_1")->nullable();
-            $table->text("ENC_RESULT_2")->nullable();
-            $table->text("ENC_RESULT_3")->nullable();
-            $table->dateTime("ENC_FECHA_INI3")->nullable();
-            $table->dateTime("ENC_FECHA_INI4")->nullable();
-            $table->text("ENC_RESULT_4")->nullable();
-
-            
-            $table->text("ENC_RESULT_5")->nullable();
-            $table->text("ENC_RESULT_6")->nullable();
-            $table->dateTime("ENC_FECHA_INI5")->nullable();
-            $table->dateTime("ENC_FECHA_INI6")->nullable();
-            $table->text("ENC_RESULT_8")->nullable();
-
-            $table->text("ENC_RESULT_9")->nullable();
-            $table->text("ENC_RESULT_10")->nullable();
-            $table->text("ENC_RESULT_11")->nullable();
-            $table->dateTime("ENC_FECHA_INI7")->nullable();
-            $table->dateTime("ENC_FECHA_INI8")->nullable();
-            $table->text("ENC_RESULT_12")->nullable();
-
-            $table->text("ENC_RESULT_13")->nullable();
-            $table->text("ENC_RESULT_14")->nullable();
-            $table->text("ENC_MES")->nullable();
-
-            //medidas
-            $table->text("ENC_C_MC_ING")->nullable();
-            $table->text("ENC_C_MC_ADM")->nullable();
-            $table->text("ENC_C_MC_EPP")->nullable();
-
-            $table->text("ENC_R_PREG2_PROTECCION")->nullable();
-            $table->text("ENC_R_PREG3_MEDIO")->nullable();
-
-            $table->text("ENC_RESULT_15")->nullable();
-            $table->text("ENC_RESULT_16")->nullable();
-            $table->text("ENC_RESULT_17")->nullable();
-            $table->text("ENC_RESULT_18")->nullable();
-            $table->text("ENC_RESULT_19")->nullable();
-            $table->text("ENC_RESULT_20")->nullable();
-            $table->text("ENC_RESULT_21")->nullable();
-            $table->text("ENC_RESULT_22")->nullable();
-            $table->text("ENC_RESULT_23")->nullable();
-            $table->text("ENC_RESULT_24")->nullable();
-            $table->text("ENC_RESULT_25")->nullable();
-            $table->text("ENC_RESULT_26")->nullable();
-            $table->text("ENC_RESULT_27")->nullable();
-            $table->text("ENC_RESULT_28")->nullable();
-            $table->text("ENC_RESULT_29")->nullable();
-            $table->text("ENC_RESULT_30")->nullable();
-            $table->text("ENC_RESULT_31")->nullable();
-            $table->text("ENC_RESULT_32")->nullable();
-            $table->text("ENC_RESULT_33")->nullable();
-            $table->text("ENC_R_RESPIRADOR")->nullable();
-            $table->text("ENC_FECHA_INI9")->nullable();
-            $table->text("ENC_T_RESULMARCA")->nullable();
-            $table->text("ENC_R_CAPA")->nullable();
-            $table->text("ENC_FECHA_INI10")->nullable();
-            $table->text("ENC_RESULT_34")->nullable();
-            $table->text("ENC_RESULT_35")->nullable();
-            $table->text("ENC_RESULT_36")->nullable();
-            $table->text("ENC_RESULT_37")->nullable();
-            $table->text("ENC_RESULT_38")->nullable();
-            $table->text("ENC_RESULT_39")->nullable();
-            $table->text("ENC_RESULT_40")->nullable();
-            $table->text("ENC_RESULT_41")->nullable();
-            $table->text("ENC_RESULT_42")->nullable();
-            $table->text("ENC_RESULT_43")->nullable();
-            $table->text("ENC_RESULT_44")->nullable();
-            $table->text("ENC_RESULT_45")->nullable();
-            $table->text("ENC_RESULT_46")->nullable();
-            $table->text("ENC_RESULT_47")->nullable();
-            $table->text("ENC_RESULT_48")->nullable();
-            $table->text("ENC_RESULT_49")->nullable();
-
-
-            $table->text("ENC_RESULT_50")->nullable();
-            $table->text("ENC_RESULT_51")->nullable();
-            $table->text("ENC_RESULT_52")->nullable();
-            $table->text("ENC_RESULT_53")->nullable();
-            $table->text("ENC_RESULT_54")->nullable();
-            $table->text("ENC_RESULT_55")->nullable();
-            $table->text("ENC_RESULT_56")->nullable();
-            $table->text("ENC_RESULT_57")->nullable();
-            $table->text("ENC_RESULT_58")->nullable();
-            $table->text("ENC_RESULT_59")->nullable();
-            
-            $table->text("ENC_RESULT_60")->nullable();
-            $table->text("ENC_RESULT_61")->nullable();
-            $table->text("ENC_RESULT_62")->nullable();
-            $table->text("ENC_RESULT_63")->nullable();
-            $table->text("ENC_RESULT_64")->nullable();
-            $table->text("ENC_RESULT_65")->nullable();
-            $table->text("ENC_RESULT_66")->nullable();
-            $table->text("ENC_RESULT_67")->nullable();
-            $table->text("ENC_RESULT_68")->nullable();
-            $table->text("ENC_RESULT_69")->nullable();
-            $table->text("ENC_RESULT_70")->nullable();
-            $table->text("ENC_RESULT_71")->nullable();
-            $table->text("ENC_RESULT_72")->nullable();
-            $table->text("ENC_RESULT_73")->nullable();
-            $table->text("ENC_RESULT_74")->nullable();
-            $table->text("ENC_RESULT_75")->nullable();
+        
+           
 
             // ENCUETA 4 formol
 
@@ -463,6 +351,115 @@ class CreateExamensTable extends Migration
             $table->text("ENC_CI_R_OTROS")->nullable();
             $table->text("ENC_CI_PREG54")->nullable();
             $table->text("ENC_CI_PREG55")->nullable();
+
+            //ENCUESTA 18 arsenico
+
+
+                $table->text("ENC_AS_R_HA")->nullable();                               
+                $table->text("ENC_AS_R_DM")->nullable();  
+                $table->text("ENC_AS_R_ER" )->nullable(); 
+                $table->text("ENC_AS_H")->nullable();
+                $table->text("ENC_AS_PREG")->nullable();  
+                $table->text("ENC_AS_RESULT_EMPRESA")->nullable();  
+                $table->text("ENC_AS_RESULT_PUESTOTRABAJO")->nullable(); 
+                $table->text("ENC_AS_RESULT_ORG")->nullable();
+                $table->dateTime("ENC_AS_FECHA_INI1")->nullable();
+                $table->dateTime("ENC_AS_FECHA_INI2")->nullable();
+                $table->text("ENC_AS_RESULT_MEDIDA")->nullable();  
+                $table->text("ENC_AS_RESULT_1")->nullable(); 
+                $table->text("ENC_AS_RESULT_2")->nullable(); 
+                $table->text("ENC_AS_RESULT_3")->nullable(); 
+                $table->dateTime("ENC_AS_FECHA_INI3")->nullable();  
+                $table->dateTime("ENC_AS_FECHA_INI4")->nullable();  
+                $table->text("ENC_AS_RESULT_4")->nullable();  
+                $table->text("ENC_AS_RESULT_5")->nullable();  
+                $table->text("ENC_AS_RESULT_6")->nullable();  
+                $table->text("ENC_AS_RESULT_7")->nullable();  
+                $table->dateTime("ENC_AS_FECHA_INI5")->nullable();  
+                $table->dateTime("ENC_AS_FECHA_INI6")->nullable();  
+                $table->text("ENC_AS_RESULT_8")->nullable();  
+                $table->text("ENC_AS_RESULT_9")->nullable();  
+                $table->text("ENC_AS_RESULT_10")->nullable();  
+                $table->text("ENC_AS_RESULT_11")->nullable(); 
+                $table->dateTime("ENC_AS_FECHA_INI7")->nullable(); 
+                $table->dateTime("ENC_AS_FECHA_INI8")->nullable();
+                $table->text("ENC_AS_RESULT_12")->nullable(); 
+                $table->text("ENC_AS_RESULT_13")->nullable();
+                $table->text("ENC_AS_RESULT_14")->nullable();
+                $table->text("ENC_AS_MES")->nullable();
+                $table->text("ENC_AS_C_MC_ING")->nullable();  
+                $table->text("ENC_AS_C_MC_ADM")->nullable();  
+                $table->text("ENC_AS_C_MC_EPP")->nullable();  
+                $table->text("ENC_AS_R_PREG2_PROTECCION")->nullable();  
+                $table->text("ENC_AS_R_PREG3_MEDIO")->nullable();  
+                $table->text("ENC_AS_RESULT_15")->nullable();  
+                $table->text("ENC_AS_RESULT_16")->nullable();  
+                $table->text("ENC_AS_RESULT_17")->nullable();  
+                $table->text("ENC_AS_RESULT_18")->nullable();  
+                $table->text("ENC_AS_RESULT_19")->nullable();  
+                $table->text("ENC_AS_RESULT_20")->nullable();  
+                $table->text("ENC_AS_RESULT_21")->nullable();  
+                $table->text("ENC_AS_RESULT_22")->nullable();  
+                $table->text("ENC_AS_RESULT_23")->nullable();  
+                $table->text("ENC_AS_RESULT_24")->nullable();  
+                $table->text("ENC_AS_RESULT_25")->nullable();  
+                $table->text("ENC_AS_RESULT_26")->nullable();  
+                $table->text("ENC_AS_RESULT_27")->nullable();  
+                $table->text("ENC_AS_RESULT_28")->nullable();  
+                $table->text("ENC_AS_RESULT_29")->nullable();  
+                $table->text("ENC_AS_RESULT_30")->nullable();  
+                $table->text("ENC_AS_RESULT_31")->nullable();  
+                $table->text("ENC_AS_RESULT_32")->nullable();  
+                $table->text("ENC_AS_RESULT_33")->nullable();  
+                $table->text("ENC_AS_RESULT_R_RESPIRADOR")->nullable();  
+                $table->dateTime("ENC_AS_FECHA_INI9")->nullable();  
+                $table->text("ENC_AS_T_RESULTMARCA")->nullable();  
+                $table->text("ENC_AS_R_TALLA")->nullable();   
+                $table->text("ENC_AS_RESULT_R_CAPA")->nullable(); 
+                $table->dateTime("ENC_AS_RESULT_FECHA10")->nullable();  
+                $table->text("ENC_AS_RESULT_34")->nullable();  
+                $table->text("ENC_AS_RESULT_35")->nullable();  
+                $table->text("ENC_AS_RESULT_36")->nullable();  
+                $table->text("ENC_AS_RESULT_37")->nullable();  
+                $table->text("ENC_AS_RESULT_38")->nullable();  
+                $table->text("ENC_AS_RESULT_39")->nullable();  
+                $table->text("ENC_AS_RESULT_40")->nullable();  
+                $table->text("ENC_AS_RESULT_41")->nullable();  
+                $table->text("ENC_AS_RESULT_42")->nullable();  
+                $table->text("ENC_AS_RESULT_43")->nullable();  
+                $table->text("ENC_AS_RESULT_44")->nullable();  
+                $table->text("ENC_AS_RESULT_45")->nullable();  
+                $table->text("ENC_AS_RESULT_46")->nullable();  
+                $table->text("ENC_AS_RESULT_47")->nullable();  
+                $table->text("ENC_AS_RESULT_48")->nullable();  
+                $table->text("ENC_AS_RESULT_49")->nullable();  
+                $table->text("ENC_AS_RESULT_50")->nullable();  
+                $table->text("ENC_AS_RESULT_51")->nullable();  
+                $table->text("ENC_AS_RESULT_52")->nullable();  
+                $table->text("ENC_AS_RESULT_53")->nullable();  
+                $table->text("ENC_AS_RESULT_54")->nullable();  
+                $table->text("ENC_AS_RESULT_55")->nullable();  
+                $table->text("ENC_AS_RESULT_56")->nullable();  
+                $table->text("ENC_AS_RESULT_57")->nullable();  
+                $table->text("ENC_AS_RESULT_58")->nullable();  
+                $table->text("ENC_AS_RESULT_59")->nullable();  
+                $table->text("ENC_AS_RESULT_60")->nullable();  
+                $table->text("ENC_AS_RESULT_61")->nullable();  
+                $table->text("ENC_AS_RESULT_62")->nullable();  
+                $table->text("ENC_AS_RESULT_63")->nullable();  
+                $table->text("ENC_AS_RESULT_64")->nullable();  
+                $table->text("ENC_AS_RESULT_65")->nullable();  
+                $table->text("ENC_AS_RESULT_66")->nullable();  
+                $table->text("ENC_AS_RESULT_67")->nullable();  
+                $table->text("ENC_AS_RESULT_68")->nullable();  
+                $table->text("ENC_AS_RESULT_69")->nullable();  
+                $table->text("ENC_AS_RESULT_70")->nullable();  
+                $table->text("ENC_AS_RESULT_71")->nullable();  
+                $table->text("ENC_AS_RESULT_72")->nullable();  
+                $table->text("ENC_AS_RESULT_73")->nullable();  
+                $table->text("ENC_AS_RESULT_74")->nullable();  
+                $table->text("ENC_AS_RESULT_75")->nullable();  
+
 
 
         });
