@@ -614,7 +614,7 @@ public function getEncuesta(Request $r){
          $carga = new Cargas();      
          $paciente = new Paciente();   
          $idPaciente = 0; 
- 
+         $idUsuario = $id = Auth::id();
          $carga = DB::table('cargas')
          ->where('id', session()->get('idCargas'))
          ->get()[0];
@@ -634,7 +634,7 @@ public function getEncuesta(Request $r){
                      $paciente->save();
          
                      $idPaciente = $paciente->select('id')->where('nroSap', session()->get('nroSap'))->get()[0]->id;                    
-                     $idUsuario = $id = Auth::id();
+                     
                      
                      $examen = new Examen();
                      
@@ -643,18 +643,14 @@ public function getEncuesta(Request $r){
                      $examen->agentes_id = $carga->agentes_id;
 
                    
-                     $examen->arsenico_FECHA_MUESTRA = $now;
-                     $examen->arsenico_UG_G = $r["UG_G"];
-                     $examen->arsenico_ESTADO = $r["ESTADO"];
-                     $examen->arsenico_FECHA_CONTRAMUESTRA = $now2;
-                     $examen->arsenico_UG_G_CONTRAMUESTRA = $r["UG_G_CONTRAMUESTRA"];
-                     $examen->arsenico_ESTADO_CONTRAMUESTRA = $r["ESTADO_CONTRAMUESTRA"];
+                     $examen->as_FECHA_MUESTRA = $now;
+                     $examen->as_UG_G = $r["as_UG_G"];
+                     $examen->as_ESTADO = $r["as_estado"];
+                     $examen->as_FECHA_CONTRAMUESTRA = $now2;
+                     $examen->as_UG_G_CONTRAMUESTRA = $r["as_UG_G_CONTRAMUESTRA"];
+                     $examen->as_ESTADO1 = $r["estado1"];
                      
                      
-         
-         
-                    
-                
          
                      $examen->save();
          
@@ -674,14 +670,15 @@ public function getEncuesta(Request $r){
                      $examen->users_id = $idUsuario;
                      $examen->pacientes_id = $idPaciente;
                      $examen->agentes_id = $carga->agentes_id;
+                     $examen->cargas_id = $carga->id;
 
                    
-                     $examen->arsenico_FECHA_MUESTRA = $now;
-                     $examen->arsenico_UG_G = $r["UG_G"];
-                     $examen->arsenico_ESTADO = $r["ESTADO"];
-                     $examen->arsenico_FECHA_CONTRAMUESTRA = $now2;
-                     $examen->arsenico_UG_G_CONTRAMUESTRA = $r["UG_G_CONTRAMUESTRA"];
-                     $examen->arsenico_ESTADO_CONTRAMUESTRA = $r["ESTADO_CONTRAMUESTRA"];
+                     $examen->AS_FECHA_MUESTRA = $now;
+                     $examen->AS_UG_G = $r["as_UG_G"];
+                     $examen->AS_ESTADO = $r["as_estado"];
+                     $examen->AS_FECHA_CONTRAMUESTRA = $now2;
+                     $examen->AS_UG_G_CONTRAMUESTRA = $r["as_UG_G_CONTRAMUESTRA"];
+                     $examen->as_estado1 = $r["as_estado1"];
  
                     
                                  
@@ -2077,121 +2074,126 @@ public function getExamenso2(Request $r){
                 $examen->agentes_id = 20;
                 $examen->cargas_id = $carga->id;
 
-                
-                $examen->ENC_R_HA = $r["r_ha"];
-                $examen->ENC_R_DM = $r["r_dm"];
-                $examen->ENC_R_ER = $r["r_er"];
-                $examen->ENC_R_H = $r["r_h"];
-                $examen->ENC_R_PREG1_AS = $r["r_preg1_as"];
-                $examen->ENC_RESULT_empresa = $r["result_empresa"];
-                $examen->ENC_RESULT_puestotrabajo = $r["result_puestotrabajo"];
-                $examen->ENC_RESULT_org = $r["result_org"];
-                $examen->ENC_FECHA_INI1 = $now = new DateTime(explode('-', $r["fecha_ini1"])[2]."-".explode('-', $r["fecha_ini1"])[1]."-".explode('-', $r["fecha_ini1"])[0], new DateTimeZone('America/Santiago'));
-                $examen->ENC_FECHA_INI2 = $now = new DateTime(explode('-', $r["fecha_ini2"])[2]."-".explode('-', $r["fecha_ini2"])[1]."-".explode('-', $r["fecha_ini2"])[0], new DateTimeZone('America/Santiago'));
-                $examen->ENC_RESULT_MEDIDAS = $r["result_medidas"];
-                $examen->ENC_RESULT_1 = $r["result_1"];
-                $examen->ENC_RESULT_2 = $r["result_2"];
-                $examen->ENC_RESULT_3 = $r["result_3"];
-                $examen->ENC_FECHA_INI3 = $now = new DateTime(explode('-', $r["fecha_ini3"])[2]."-".explode('-', $r["fecha_ini3"])[1]."-".explode('-', $r["fecha_ini3"])[0], new DateTimeZone('America/Santiago'));
 
-                $examen->ENC_FECHA_INI4 = $now = new DateTime(explode('-', $r["fecha_ini4"])[2]."-".explode('-', $r["fecha_ini4"])[1]."-".explode('-', $r["fecha_ini4"])[0], new DateTimeZone('America/Santiago'));
-                $examen->ENC_RESULT_4 = $r["result_4"];
-    
-                
-                $examen->ENC_RESULT_5 = $r["result_5"];
-                $examen->ENC_RESULT_6 = $r["result_6"];
-                $examen->ENC_FECHA_INI5 = $now = new DateTime(explode('-', $r["fecha_ini5"])[2]."-".explode('-', $r["fecha_ini5"])[1]."-".explode('-', $r["fecha_ini5"])[0], new DateTimeZone('America/Santiago'));
-                $examen->ENC_FECHA_INI6 = $now = new DateTime(explode('-', $r["fecha_ini6"])[2]."-".explode('-', $r["fecha_ini6"])[1]."-".explode('-', $r["fecha_ini6"])[0], new DateTimeZone('America/Santiago'));
-                $examen->ENC_RESULT_8 = $r["result_8"];
-    
-                $examen->ENC_RESULT_9 = $r["result_9"];
-                $examen->ENC_RESULT_10 = $r["result_10"];
-                $examen->ENC_RESULT_11 = $r["result_11"];
-                $examen->ENC_FECHA_INI7 = $now = new DateTime(explode('-', $r["fecha_ini7"])[2]."-".explode('-', $r["fecha_ini7"])[1]."-".explode('-', $r["fecha_ini7"])[0], new DateTimeZone('America/Santiago'));
-                $examen->ENC_FECHA_INI8 = $now = new DateTime(explode('-', $r["fecha_ini8"])[2]."-".explode('-', $r["fecha_ini8"])[1]."-".explode('-', $r["fecha_ini8"])[0], new DateTimeZone('America/Santiago'));
-                $examen->ENC_RESULT_12 = $r["result_12"];
-    
-                $examen->ENC_RESULT_13 = $r["result_13"];
-                $examen->ENC_RESULT_14 = $r["result_14"];
-                $examen->ENC_MES = $r["mes"];
-                
-                $examen->ENC_C_MC_ING = $r["c_mc_ing"];
-                $examen->ENC_C_MC_ADM = $r["c_mc_adm"];
-                $examen->ENC_C_MC_EPP = $r["c_mc_epp"];
+                $examen->ENC_AS_R_HA  = $r["r_ha"];                                  
+                $examen->ENC_AS_R_DM  = $r["r_dm"];
+                $examen->ENC_AS_R_ER  = $r["r_er"];
+                $examen->ENC_AS_H  = $r["r_h"];
+                $examen->ENC_AS_PREG  = $r["r_preg1_as"];          
+                $examen->ENC_AS_RESULT_EMPRESA  = $r["result_empresa"];
+                $examen->ENC_AS_RESULT_PUESTOTRABAJO  = $r["result_puestotrabajo"];
+                $examen->ENC_AS_RESULT_ORG  = $r["result_org"];
+                $examen->ENC_AS_FECHA_INI1 = $now = new DateTime(explode('-', $r["fecha_ini1"])[2]."-".explode('-', $r["fecha_ini1"])[1]."-".explode('-', $r["fecha_ini1"])[0], new DateTimeZone('America/Santiago'));
+                $examen->ENC_AS_FECHA_INI2 = $now = new DateTime(explode('-', $r["fecha_ini2"])[2]."-".explode('-', $r["fecha_ini2"])[1]."-".explode('-', $r["fecha_ini2"])[0], new DateTimeZone('America/Santiago'));
+                $examen->ENC_AS_RESULT_MEDIDA  = $r["result_medida" ];           
+                $examen->ENC_AS_RESULT_1  = $r["result_1"];
+                $examen->ENC_AS_RESULT_2  = $r["result_2"];
+                $examen->ENC_AS_RESULT_3  = $r["result_3"];
+                $examen->ENC_AS_FECHA_INI3 = $now = new DateTime(explode('-', $r["fecha_ini3"])[2]."-".explode('-', $r["fecha_ini3"])[1]."-".explode('-', $r["fecha_ini3"])[0], new DateTimeZone('America/Santiago'));
 
-                //?????
-                $examen->ENC_R_PREG2_PROTECCION = $r["r_preg2_proteccion"];
-                $examen->ENC_R_PREG3_MEDIO = $r["r_preg3_medio"];
-    
-                $examen->ENC_RESULT_15 = $r["result_15"];
-                $examen->ENC_RESULT_16 = $r["result_16"];
-                $examen->ENC_RESULT_17 = $r["result_17"];
-                $examen->ENC_RESULT_18 = $r["result_18"];
-                $examen->ENC_RESULT_19 = $r["result_19"];
-                $examen->ENC_RESULT_20 = $r["result_20"];
-                $examen->ENC_RESULT_21 = $r["result_21"];
-                $examen->ENC_RESULT_22 = $r["result_22"];
-                $examen->ENC_RESULT_23 = $r["result_23"];
-                $examen->ENC_RESULT_24 = $r["result_24"];
-                $examen->ENC_RESULT_25 = $r["result_25"];
-                $examen->ENC_RESULT_26 = $r["result_26"];
-                $examen->ENC_RESULT_27 = $r["result_27"];
-                $examen->ENC_RESULT_28 = $r["result_28"];
-                $examen->ENC_RESULT_29 = $r["result_29"];
-                $examen->ENC_RESULT_30 = $r["result_30"];
-                $examen->ENC_RESULT_31 = $r["result_31"];
-                $examen->ENC_RESULT_32 = $r["result_32"];
-                $examen->ENC_RESULT_33 = $r["result_33"];
-                $examen->ENC_R_RESPIRADOR = $r["r_respirador"];
-                $examen->ENC_FECHA_INI9 = $now = new DateTime(explode('-', $r["fecha_ini9"])[2]."-".explode('-', $r["fecha_ini9"])[1]."-".explode('-', $r["fecha_ini9"])[0], new DateTimeZone('America/Santiago'));
-                $examen->ENC_T_RESULMARCA = $r["t_resulMarca"];
-                $examen->ENC_R_CAPA = $r["r_capa"];
-                $examen->ENC_FECHA_INI10 = $now = new DateTime(explode('-', $r["fecha_ini10"])[2]."-".explode('-', $r["fecha_ini10"])[1]."-".explode('-', $r["fecha_ini10"])[0], new DateTimeZone('America/Santiago'));
-                $examen->ENC_RESULT_34 = $r["result_34"];
-                $examen->ENC_RESULT_35 = $r["result_35"];
-                $examen->ENC_RESULT_36 = $r["result_36"];
-                $examen->ENC_RESULT_37 = $r["result_37"];
-                $examen->ENC_RESULT_38 = $r["result_38"];
-                $examen->ENC_RESULT_39 = $r["result_39"];
-                $examen->ENC_RESULT_40 = $r["result_40"];
-                $examen->ENC_RESULT_41 = $r["result_41"];
-                $examen->ENC_RESULT_42 = $r["result_42"];
-                $examen->ENC_RESULT_43 = $r["result_43"];
-                $examen->ENC_RESULT_44 = $r["result_44"];
-                $examen->ENC_RESULT_45 = $r["result_45"];
-                $examen->ENC_RESULT_46 = $r["result_46"];
-                $examen->ENC_RESULT_47 = $r["result_47"];
-                $examen->ENC_RESULT_48 = $r["result_48"];
-                $examen->ENC_RESULT_49 = $r["result_49"];
-    
-    
-                $examen->ENC_RESULT_50 = $r["result_50"];
-                $examen->ENC_RESULT_51 = $r["result_51"];
-                $examen->ENC_RESULT_52 = $r["result_52"];
-                $examen->ENC_RESULT_53 = $r["result_53"];
-                $examen->ENC_RESULT_54 = $r["result_54"];
-                $examen->ENC_RESULT_55 = $r["result_55"];
-                $examen->ENC_RESULT_56 = $r["result_56"];
-                $examen->ENC_RESULT_57 = $r["result_57"];
-                $examen->ENC_RESULT_58 = $r["result_58"];
-                $examen->ENC_RESULT_59 = $r["result_59"];
-                
-                $examen->ENC_RESULT_60 = $r["result_60"];
-                $examen->ENC_RESULT_61 = $r["result_61"];
-                $examen->ENC_RESULT_62 = $r["result_62"];
-                $examen->ENC_RESULT_63 = $r["result_63"];
-                $examen->ENC_RESULT_64 = $r["result_64"];
-                $examen->ENC_RESULT_65 = $r["result_65"];
-                $examen->ENC_RESULT_66 = $r["result_66"];
-                $examen->ENC_RESULT_67 = $r["result_67"];
-                $examen->ENC_RESULT_68 = $r["result_68"];
-                $examen->ENC_RESULT_69 = $r["result_69"];
-                $examen->ENC_RESULT_70 = $r["result_70"];
-                $examen->ENC_RESULT_71 = $r["result_71"];
-                $examen->ENC_RESULT_72 = $r["result_72"];
-                $examen->ENC_RESULT_73 = $r["result_73"];
-                $examen->ENC_RESULT_74 = $r["result_74"];
-                $examen->ENC_RESULT_75 = $r["result_75"];
+                $examen->ENC_AS_FECHA_INI4 = $now = new DateTime(explode('-', $r["fecha_ini4"])[2]."-".explode('-', $r["fecha_ini4"])[1]."-".explode('-', $r["fecha_ini4"])[0], new DateTimeZone('America/Santiago'));
+                $examen->ENC_AS_RESULT_4  = $r["result_4"];
+                $examen->ENC_AS_RESULT_5  = $r["result_5"];
+                $examen->ENC_AS_RESULT_6  = $r["result_6"];
+                $examen->ENC_AS_RESULT_7  = $r["result_7"];
+                $examen->ENC_AS_FECHA_INI5 = $now = new DateTime(explode('-', $r["fecha_ini5"])[2]."-".explode('-', $r["fecha_ini5"])[1]."-".explode('-', $r["fecha_ini5"])[0], new DateTimeZone('America/Santiago'));
+
+                $examen->ENC_AS_FECHA_INI6 = $now = new DateTime(explode('-', $r["fecha_ini6"])[2]."-".explode('-', $r["fecha_ini6"])[1]."-".explode('-', $r["fecha_ini6"])[0], new DateTimeZone('America/Santiago'));
+                $examen->ENC_AS_RESULT_8  = $r["result_8"];
+                $examen->ENC_AS_RESULT_9  = $r["result_9"];
+                $examen->ENC_AS_RESULT_10  = $r["result_10"];
+                $examen->ENC_AS_RESULT_11  = $r["result_11"];
+                $examen->ENC_AS_FECHA_INI7 = $now = new DateTime(explode('-', $r["fecha_ini7"])[2]."-".explode('-', $r["fecha_ini7"])[1]."-".explode('-', $r["fecha_ini7"])[0], new DateTimeZone('America/Santiago'));
+
+                $examen->ENC_AS_FECHA_INI8 = $now = new DateTime(explode('-', $r["fecha_ini8"])[2]."-".explode('-', $r["fecha_ini8"])[1]."-".explode('-', $r["fecha_ini8"])[0], new DateTimeZone('America/Santiago'));
+                $examen->ENC_AS_RESULT_12  = $r["result_12"];
+                $examen->ENC_AS_RESULT_13  = $r["result_13"];
+                $examen->ENC_AS_RESULT_14  = $r["result_14"];
+                $examen->ENC_AS_MES  = $r["mes"];
+                $examen->ENC_AS_C_MC_ING  = $r["c_mc_ing"];
+                $examen->ENC_AS_C_MC_ADM  = $r["c_mc_adm"];
+                $examen->ENC_AS_C_MC_EPP  = $r["c_mc_epp"];
+                $examen->ENC_AS_R_PREG2_PROTECCION  = $r["r_preg2_proteccion"];
+                $examen->ENC_AS_R_PREG3_MEDIO  = $r["r_preg3_medio"];
+                $examen->ENC_AS_RESULT_15  = $r["result_15"];
+                $examen->ENC_AS_RESULT_16  = $r["result_16"];
+                $examen->ENC_AS_RESULT_17  = $r["result_17"];
+                $examen->ENC_AS_RESULT_18  = $r["result_18"];
+                $examen->ENC_AS_RESULT_19  = $r["result_19"];
+                $examen->ENC_AS_RESULT_20  = $r["result_20"];
+                $examen->ENC_AS_RESULT_21  = $r["result_21"];
+                $examen->ENC_AS_RESULT_22  = $r["result_22"];
+                $examen->ENC_AS_RESULT_23  = $r["result_23"];
+                $examen->ENC_AS_RESULT_24  = $r["result_24"];
+                $examen->ENC_AS_RESULT_25  = $r["result_25"];
+                $examen->ENC_AS_RESULT_26  = $r["result_26"];
+                $examen->ENC_AS_RESULT_27  = $r["result_27"];
+                $examen->ENC_AS_RESULT_28  = $r["result_28"];
+                $examen->ENC_AS_RESULT_29  = $r["result_29"];
+                $examen->ENC_AS_RESULT_30  = $r["result_30"];
+                $examen->ENC_AS_RESULT_31  = $r["result_31"];
+                $examen->ENC_AS_RESULT_32  = $r["result_32"];
+                $examen->ENC_AS_RESULT_33  = $r["result_33"];
+                $examen->ENC_AS_RESULT_R_RESPIRADOR  = $r["r_respirador"];
+                $examen->ENC_AS_FECHA_INI9 = $now = new DateTime(explode('-', $r["fecha_ini9"])[2]."-".explode('-', $r["fecha_ini9"])[1]."-".explode('-', $r["fecha_ini9"])[0], new DateTimeZone('America/Santiago'));
+                $examen->ENC_AS_T_RESULTMARCA  = $r["t_resulMarca"];
+                $examen->ENC_AS_R_TALLA   = $r["r_talla"];
+                $examen->ENC_AS_RESULT_R_CAPA  = $r["r_capa"];
+                $examen->ENC_AS_RESULT_FECHA10 = $now = new DateTime(explode('-', $r["fecha_ini10"])[2]."-".explode('-', $r["fecha_ini10"])[1]."-".explode('-', $r["fecha_ini10"])[0], new DateTimeZone('America/Santiago'));
+                $examen->ENC_AS_RESULT_34  = $r["result_34"];
+                $examen->ENC_AS_RESULT_35  = $r["result_35"];
+                $examen->ENC_AS_RESULT_36  = $r["result_36"];
+                $examen->ENC_AS_RESULT_37  = $r["result_37"];
+                $examen->ENC_AS_RESULT_38  = $r["result_38"];
+                $examen->ENC_AS_RESULT_39  = $r["result_39"];
+                $examen->ENC_AS_RESULT_40  = $r["result_40"];
+                $examen->ENC_AS_RESULT_41  = $r["result_41"];
+                $examen->ENC_AS_RESULT_42  = $r["result_42"];
+                $examen->ENC_AS_RESULT_43  = $r["result_43"];
+                $examen->ENC_AS_RESULT_44  = $r["result_44"];
+                $examen->ENC_AS_RESULT_45  = $r["result_45"]; 
+                $examen->ENC_AS_RESULT_46  = $r["result_46"];
+                $examen->ENC_AS_RESULT_47  = $r["result_47"];
+                $examen->ENC_AS_RESULT_48  = $r["result_48"];
+                $examen->ENC_AS_RESULT_49  = $r["result_49"];
+                $examen->ENC_AS_RESULT_50  = $r["result_50"];
+                $examen->ENC_AS_RESULT_51  = $r["result_51"];
+                $examen->ENC_AS_RESULT_52  = $r["result_52"];
+                $examen->ENC_AS_RESULT_53  = $r["result_53"];
+                $examen->ENC_AS_RESULT_54  = $r["result_54"];
+                $examen->ENC_AS_RESULT_55  = $r["result_55"];
+                $examen->ENC_AS_RESULT_56  = $r["result_56"];
+                $examen->ENC_AS_RESULT_57  = $r["result_57"];
+                $examen->ENC_AS_RESULT_58  = $r["result_58"];
+                $examen->ENC_AS_RESULT_59  = $r["result_59"]; 
+                $examen->ENC_AS_RESULT_60  = $r["result_60"];
+                $examen->ENC_AS_RESULT_61  = $r["result_61"];
+                $examen->ENC_AS_RESULT_62  = $r["result_62"];
+                $examen->ENC_AS_RESULT_63  = $r["result_63"];
+                $examen->ENC_AS_RESULT_64  = $r["result_64"];
+                $examen->ENC_AS_RESULT_65  = $r["result_65"];
+                $examen->ENC_AS_RESULT_66  = $r["result_66"];
+                $examen->ENC_AS_RESULT_67  = $r["result_67"];
+                $examen->ENC_AS_RESULT_68  = $r["result_68"];
+                $examen->ENC_AS_RESULT_69  = $r["result_69"]; 
+                $examen->ENC_AS_RESULT_70  = $r["result_70"];
+                $examen->ENC_AS_RESULT_71  = $r["result_71"];
+                $examen->ENC_AS_RESULT_72  = $r["result_72"];
+                $examen->ENC_AS_RESULT_73  = $r["result_73"];
+                $examen->ENC_AS_RESULT_74  = $r["result_74"];
+                $examen->ENC_AS_RESULT_75  = $r["result_75"];
+
+
+                          
+
+
+
+
+
+
+
+
+
                
                //TODO:CAMBIAR A DINAMICO
                 $examen->realizadoEncuenta = 1;
@@ -2436,131 +2438,7 @@ public function getExamenso2(Request $r){
 
 
 
-              if ($r->session()->get('idAgente') == 18) {
-                //ARSENICO
-
-                //esto es fijo NO TOCAR
-                $examen = new Examen();
-        
-                $examen->users_id = $idUsuario;
-                $examen->pacientes_id = $idPaciente;
-                $examen->agentes_id = 23;
-
-               
-                $examen->ENC_AS_R_HA  = $r["r_ha"];                                  
-                $examen->ENC_AS_R_DM  = $r["r_dm"];
-                $examen->ENC_AS_R_ER  = $r["r_er"];
-                $examen->ENC_AS_H  = $r["r_h"];
-                $examen->ENC_AS_PREG  = $r["r_preg1_as"];          
-                $examen->ENC_AS_RESULT_EMPRESA  = $r["result_empresa"];
-                $examen->ENC_AS_RESULT_PUESTOTRABAJO  = $r["result_puestotrabajo"];
-                $examen->ENC_AS_RESULT_ORG  = $r["result_org"];
-                $examen->ENC_AS_FECHA_INI1  = $r["fecha_ini1"];
-                $examen->ENC_AS_FECHA_INI2_  = $r["fecha_ini2"];
-                $examen->ENC_AS_RESULT_MEDIDA  = $r["result_medida" ];           
-                $examen->ENC_AS_RESULT_1  = $r["result_1"];
-                $examen->ENC_AS_RESULT_2  = $r["result_2"];
-                $examen->ENC_AS_RESULT_3  = $r["result_3"];
-                $examen->ENC_AS_FECHA_INI3  = $r["fecha_ini3"];
-                $examen->ENC_AS_FECHA_INI4  = $r["fecha_ini4"];
-                $examen->ENC_AS_RESULT_4  = $r["result_4"];
-                $examen->ENC_AS_RESULT_5  = $r["result_5"];
-                $examen->ENC_AS_RESULT_6  = $r["result_6"];
-                $examen->ENC_AS_RESULT_7  = $r["result_7"];
-                $examen->ENC_AS_FECHA_INI5  = $r["fecha_ini5"];
-                $examen->ENC_AS_FECHA_INI6  = $r["fecha_ini6"];
-                $examen->ENC_AS_RESULT_8  = $r["result_8"];
-                $examen->ENC_AS_RESULT_9  = $r["result_9"];
-                $examen->ENC_AS_RESULT_10  = $r["result_10"];
-                $examen->ENC_AS_RESULT_11  = $r["result_11"];
-                $examen->ENC_AS_FECHA_INI7  = $r["fecha_ini7"];
-                $examen->ENC_AS_FECHA_INI8  = $r["fecha_ini8"];
-                $examen->ENC_AS_RESULT_12  = $r["result_12"];
-                $examen->ENC_AS_RESULT_13  = $r["result_13"];
-                $examen->ENC_AS_RESULT_14  = $r["result_14"];
-                $examen->ENC_AS_MES  = $r["mes"];
-                $examen->ENC_AS_C_MC_ING  = $r["c_mc_ing"];
-                $examen->ENC_AS_C_MC_ADM  = $r["c_mc_adm"];
-                $examen->ENC_AS_C_MC_EPP  = $r["c_mc_epp"];
-                $examen->ENC_AS_R_PREG2_PROTECCION  = $r["r_preg2_proteccion"];
-                $examen->ENC_AS_R_PREG3_MEDIO  = $r["r_preg3_medio"];
-                $examen->ENC_AS_RESULT_15  = $r["result_15"];
-                $examen->ENC_AS_RESULT_16  = $r["result_16"];
-                $examen->ENC_AS_RESULT_17  = $r["result_17"];
-                $examen->ENC_AS_RESULT_18  = $r["result_18"];
-                $examen->ENC_AS_RESULT_19  = $r["result_19"];
-                $examen->ENC_AS_RESULT_20  = $r["result_20"];
-                $examen->ENC_AS_RESULT_21  = $r["result_21"];
-                $examen->ENC_AS_RESULT_22  = $r["result_22"];
-                $examen->ENC_AS_RESULT_23  = $r["result_23"];
-                $examen->ENC_AS_RESULT_24  = $r["result_24"];
-                $examen->ENC_AS_RESULT_25  = $r["result_25"];
-                $examen->ENC_AS_RESULT_26  = $r["result_26"];
-                $examen->ENC_AS_RESULT_27  = $r["result_27"];
-                $examen->ENC_AS_RESULT_28  = $r["result_28"];
-                $examen->ENC_AS_RESULT_29  = $r["result_29"];
-                $examen->ENC_AS_RESULT_30  = $r["result_30"];
-                $examen->ENC_AS_RESULT_31  = $r["result_31"];
-                $examen->ENC_AS_RESULT_32  = $r["result_32"];
-                $examen->ENC_AS_RESULT_33  = $r["result_33"];
-                $examen->ENC_AS_RESULT_R_RESPIRADOR  = $r["r_respirador"];
-                $examen->ENC_AS_FECHA_INI9  = $r["fecha_ini9"];
-                $examen->ENC_AS_T_RESULTMARCA  = $r["t_resulMarca"];
-                $examen->ENC_AS_R_TALLA   = $r["r_talla"];
-                $examen->ENC_AS_RESULT_R_CAPA  = $r["r_capa"];
-                $examen->ENC_AS_RESULT_FECHA10  = $r["FECHA10"];
-                $examen->ENC_AS_RESULT_34  = $r["result_34"];
-                $examen->ENC_AS_RESULT_35  = $r["result_35"];
-                $examen->ENC_AS_RESULT_36  = $r["result_36"];
-                $examen->ENC_AS_RESULT_37  = $r["result_37"];
-                $examen->ENC_AS_RESULT_38  = $r["result_38"];
-                $examen->ENC_AS_RESULT_39  = $r["result_39"];
-                $examen->ENC_AS_RESULT_40  = $r["result_40"];
-                $examen->ENC_AS_RESULT_41  = $r["result_41"];
-                $examen->ENC_AS_RESULT_42  = $r["result_42"];
-                $examen->ENC_AS_RESULT_43  = $r["result_43"];
-                $examen->ENC_AS_RESULT_44  = $r["result_44"];
-                $examen->ENC_AS_RESULT_45  = $r["result_45"]; 
-                $examen->ENC_AS_RESULT_46  = $r["result_46"];
-                $examen->ENC_AS_RESULT_47  = $r["result_47"];
-                $examen->ENC_AS_RESULT_48  = $r["result_48"];
-                $examen->ENC_AS_RESULT_49  = $r["result_49"];
-                $examen->ENC_AS_RESULT_50  = $r["result_50"];
-                $examen->ENC_AS_RESULT_51  = $r["result_51"];
-                $examen->ENC_AS_RESULT_52  = $r["result_52"];
-                $examen->ENC_AS_RESULT_53  = $r["result_53"];
-                $examen->ENC_AS_RESULT_54  = $r["result_54"];
-                $examen->ENC_AS_RESULT_55  = $r["result_55"];
-                $examen->ENC_AS_RESULT_56  = $r["result_56"];
-                $examen->ENC_AS_RESULT_57  = $r["result_57"];
-                $examen->ENC_AS_RESULT_58  = $r["result_58"];
-                $examen->ENC_AS_RESULT_59  = $r["result_59"]; 
-                $examen->ENC_AS_RESULT_60  = $r["result_60"];
-                $examen->ENC_AS_RESULT_61  = $r["result_61"];
-                $examen->ENC_AS_RESULT_62  = $r["result_62"];
-                $examen->ENC_AS_RESULT_63  = $r["result_63"];
-                $examen->ENC_AS_RESULT_64  = $r["result_64"];
-                $examen->ENC_AS_RESULT_65  = $r["result_65"];
-                $examen->ENC_AS_RESULT_66  = $r["result_66"];
-                $examen->ENC_AS_RESULT_67  = $r["result_67"];
-                $examen->ENC_AS_RESULT_68  = $r["result_68"];
-                $examen->ENC_AS_RESULT_69  = $r["result_69"]; 
-                $examen->ENC_AS_RESULT_70  = $r["result_70"];
-                $examen->ENC_AS_RESULT_71  = $r["result_71"];
-                $examen->ENC_AS_RESULT_72  = $r["result_72"];
-                $examen->ENC_AS_RESULT_73  = $r["result_73"];
-                $examen->ENC_AS_RESULT_74  = $r["result_74"];
-                $examen->ENC_AS_RESULT_75  = $r["result_75"];
-
-
-
-
-                $examen->realizadoEncuenta = 1;
-                
-                $examen->save();
-
-
-              }
+           
              
   }
   
