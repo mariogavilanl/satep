@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Faker\Generate as Faker;
+use Faker\Factory as Faker;
+use Carbon\Carbon;
 
 class CargaSeeder extends Seeder
 {
@@ -13,7 +14,7 @@ class CargaSeeder extends Seeder
     public function run()
     {
         //
-        $faker = Faker::generate();
+        $faker = Faker::create();
         $boleano = [true, false];
         $sexo = ["F", "M"];
         $cargos = [
@@ -34,7 +35,7 @@ class CargaSeeder extends Seeder
             'Carcosa'
         ];
 
-        for ($i=0; $i <= 10 ; $i++) { 
+        for ($i=0; $i <= 50 ; $i++) { 
             
             DB::table('cargas')->insert([
                 'nroSap' => rand(1,5000),
@@ -49,14 +50,12 @@ class CargaSeeder extends Seeder
                 'semestre' => rand(1,4),
                 'co' => false,
                 'fechaNacimiento' => $faker->dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null),
-                'fechaCarga' => '' ,
+                'fechaCarga' => Carbon::now(),
                 'sexo' => $sexo[rand(0,1)],
                 'idEncuesta' => 0,
-                'idEncuesta' => 0,
-                'idEncuesta' => 0,
-                'idEncuesta' => 0
-               
-                
+                'encuesta' => 0,
+                'idAntecedentes' => 0,
+                'antecedentes' => 0
 	        ]);
 
 
