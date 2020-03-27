@@ -25,17 +25,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // $faker = Faker::create();
-        // dd($faker->name);
-        // $cargos = [
-        //     'Programador',
-        //     'Brogrammer',
-        //     'Analista',
-        //     'Cantante',
-        //     'Electricista',
-        // ];
-
-        // dd($cargos);   
         return view('home');
     }
 
