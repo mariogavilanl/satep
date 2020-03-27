@@ -93,52 +93,52 @@
               <button class="btn btn-primary"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Examen</button>                    
             @endif
             @if ($d->realizadoco == 0)
-              <button class="btn btn-success" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
+              <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
             @endif
           @endif
 
           @if ($d->semestre == 3 && Carbon\Carbon::parse($d->fechaCarga)->year == $fechaactual->year && $fechaactual->month <= 4)
               @if ($d->realizado == 0)
-              <button class="btn btn-success"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Examen</button>                    
+              <button class="btn btn-primary"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Examen</button>                    
             @endif
             @if ($d->realizadoco == 0)
-              <button class="btn btn-success" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
+              <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
             @endif  
           @endif
 
           @if ($d->semestre == 4 && Carbon\Carbon::parse($d->fechaCarga)->year == $fechaactual->year && $fechaactual->month > 4 && $fechaactual->month <= 8)
               @if ($d->realizado == 0)
-              <button class="btn btn-success"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Exam</button>                    
+              <button class="btn btn-primary"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Exam</button>                    
             @endif
             @if ($d->realizadoco == 0)
-              <button class="btn btn-success" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
+              <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
             @endif
           @endif
 
           @if ($d->semestre == 5 && Carbon\Carbon::parse($d->fechaCarga)->year == $fechaactual->year && Carbon\Carbon::parse($d->fechaCarga)->month > 8 && $fechaactual->month <= 12)
             @if ($d->realizado == 0)
-              <button class="btn btn-success"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Exam</button>                    
+              <button class="btn btn-primary"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Exam</button>                    
             @endif
             @if ($d->realizadoco == 0)
-              <button class="btn btn-success" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
+              <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
             @endif
           @endif          
 
           @if ($d->semestre == 6)
               @if ($d->realizado == 0)
-              <button class="btn btn-success"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Exam</button>                    
+              <button class="btn btn-primary"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Exam</button>                    
             @endif
             @if ($d->realizadoco == 0)
-              <button class="btn btn-success" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
+              <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
             @endif
           @endif
 
           @if ($d->semestre == 6)
               @if ($d->realizado == 0)
-              <button class="btn btn-success"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Exam</button>                    
+              <button class="bbtn btn-primary"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Exam</button>                    
             @endif
             @if ($d->realizadoco == 0)
-              <button class="btn btn-success" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
+              <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
             @endif
           @endif
 
