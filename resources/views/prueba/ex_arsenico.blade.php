@@ -48,7 +48,7 @@
     
                 <div class="form-group col-4">
                     <label for="">UG/G</label>
-                    <input type="text" name="UG_G"  class="form-control">
+                    <input type="text" name="as_UG_G"  class="form-control">
     
                 </div>
     
@@ -56,8 +56,8 @@
                 <div class="form-group col-4">
                     <label for="">ESTADO</label><br />
                   
-                        <input type="radio" name="preg1" value="alterado" /> Alterado<br />
-                        <input type="radio" name="preg1" value="normal" /> Normal<br />
+                        <input type="radio" name="estado" value="Alterado" /> Alterado<br />
+                        <input type="radio" name="estado" value="Normal" /> Normal<br />
     
                 </div>     
                 
@@ -73,15 +73,15 @@
                 
                 <div class="form-group col-4">
                     <label for="">UG/G CONTRAMUESTRA</label>
-                    <input type="text" name="UG_G_CONTRAMUESTRA" class="form-control">
+                    <input type="text" name="as_UG_G_CONTRAMUESTRA" class="form-control">
     
                 </div>            
                 
                 
                 <div class="form-group col-4">
                     <label for="">ESTADO CONTRAMUESTRA</label> <br />
-                            <input type="radio" name="preg2" value="alterado" /> Alterado<br />
-                            <input type="radio" name="preg2" value="normal" /> Normal<br />
+                            <input type="radio" name="as_estado1" value="Alterado" /> Alterado<br />
+                            <input type="radio" name="as_estado1" value="Normal" /> Normal<br />
     
                 </div>            
                 
