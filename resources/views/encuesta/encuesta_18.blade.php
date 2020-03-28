@@ -396,8 +396,16 @@
           </tr>
           <tr>
             <td class="tg-y698">Detalle las tareas realizadas en su ultimo Turno</td>
-            <td class="tg-yj5y" colspan="3">Área</td>
-            <td class="tg-y698" colspan="2">EPP Utilizados y/o comentarios</td>
+            <td class="tg-yj5y" colspan="0">
+            <input type="text" name="as_preg_extra1" value="" width="20px"/></td>
+            <td class="tg-yj5y" colspan="1">Área
+            <input type="text" name="as_preg_extra2" value="" width="20px"/></td>
+            <td class="tg-y698" >EPP Utilizados y/o comentarios</td>
+            <td class="tg-yj5y" colspan="2">
+            <input type="text" name="as_preg_extra3" value="" width="20px"/></td>
+          </td>
+        </td>
+        </td>
           </tr>
           <tr>
             <td class="tg-0pky"></td>
@@ -425,24 +433,32 @@
           <tr>
             <td class="tg-yj5y">CONDUCTAS E INSTALACIONES</td>
             <td class="tg-yj5y">SELECCION</td>
+          
             <td class="tg-yj5y" colspan="2">LUGAR</td>
             <td class="tg-yj5y" colspan="2">OBSERVACIONES</td>
           </tr>
           <tr>
             <td class="tg-y698">¿INGIERE ALIMENTOS EN TERRENO?</td>
-            <td class="tg-0pky"></td>
+            <td class="tg-0pky"> 
+              <input type="radio" name="r_1" value="si" /> Sí<br />
+              <input type="radio" name="r_1" value="no" /> No<br /></td>
+  
             <td class="tg-0pky" colspan="2"><input type="text" name="result_34" value="" width="20px"/></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_35" value="" width="20px"/></td>
           </tr>
           <tr>
             <td class="tg-y698">¿TOMA LIQUIDOS PARA HIDRATARSE EN TERRNO?</td>
-            <td class="tg-0pky"></td>
+            <td class="tg-0pky"> 
+              <input type="radio" name="r_2" value="si" /> Sí<br />
+              <input type="radio" name="r_2" value="no" /> No<br /></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_36" value="" width="20px"/></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_37" value="" width="20px"/></td>
           </tr>
           <tr>
             <td class="tg-y698">¿SE LAVA LAS MANOS Y CARA ANTES DE INGERIR ALIMENTOS O LIQUIDOS?</td>
-            <td class="tg-0pky"></td>
+            <td class="tg-0pky"> 
+              <input type="radio" name="r_3" value="si" /> Sí<br />
+              <input type="radio" name="r_3" value="no" /> No<br /></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_38" value="" width="20px"/></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_39" value="" width="20px"/></td>
           </tr>
@@ -451,103 +467,141 @@
           </tr>
           <tr>
             <td class="tg-y698">¿FUMA EN TERRENO?</td>
-            <td class="tg-0pky"></td>
+            <td class="tg-0pky"> 
+              <input type="radio" name="r_4" value="si" /> Sí<br />
+              <input type="radio" name="r_4" value="no" /> No<br /></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_40" value="" width="20px"/></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_41" value="" width="20px"/></td>
           </tr>
           <tr>
             <td class="tg-y698">¿BEBE CAFE?</td>
-            <td class="tg-0pky"></td>
+            <td class="tg-0pky"> 
+              <input type="radio" name="r_5" value="si" /> Sí<br />
+              <input type="radio" name="r_5" value="no" /> No<br /></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_42" value="" width="20px"/></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_43" value="" width="20px"/></td>
           </tr>
           <tr>
             <td class="tg-y698">¿DISPONE DE SALA DE CAMBIO?</td>
-            <td class="tg-0pky"></td>
+            <td class="tg-0pky"> 
+              <input type="radio" name="r_6" value="si" /> Sí<br />
+              <input type="radio" name="r_6" value="no" /> No<br /></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_44" value="" width="20px"/></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_45" value="" width="20px"/></td>
           </tr>
           <tr>
             <td class="tg-y698">¿SI LA RESPUESTA FUE SI, TIENE ÁREA LIMPIA Y SUCIA?</td>
-            <td class="tg-0pky"></td>
+            <td class="tg-0pky"> 
+              <input type="radio" name="r_7" value="si" /> Sí<br />
+              <input type="radio" name="r_7" value="no" /> No<br /></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_46" value="" width="20px"/></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_47" value="" width="20px"/></td>
           </tr>
           <tr>
             <td class="tg-y698">¿CUENTA CON DOBLE DE CASILLERO?</td>
-            <td class="tg-0pky"></td>
+            <td class="tg-0pky"> 
+              <input type="radio" name="r_8" value="si" /> Sí<br />
+              <input type="radio" name="r_8" value="no" /> No<br /></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_48" value="" width="20px"/></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_49" value="" width="20px"/></td>
           </tr>
           <tr>
             <td class="tg-y698">¿SI NO DISPONE DE CASA DE CAMBIO, DONDE SE CAMBIA?</td>
-            <td class="tg-0pky"></td>
+            <td class="tg-0pky"> 
+              <input type="radio" name="r_9" value="si" /> Sí<br />
+              <input type="radio" name="r_9" value="no" /> No<br /></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_50" value="" width="20px"/></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_51" value="" width="20px"/></td>
           </tr>
           <tr>
             <td class="tg-y698">¿UBICACIÓN DE SU CASILLERO?</td>
-            <td class="tg-0pky"></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_52" value="" width="20px"/>/td>
+            <td class="tg-0pky"> 
+              <input type="radio" name="r_10" value="si" /> Sí<br />
+              <input type="radio" name="r_10" value="no" /> No<br /></td>
+            <td class="tg-0pky" colspan="2"><input type="text" name="result_52" value="" width="20px"/> </td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_53" value="" width="20px"/></td>
           </tr>
           <tr>
             <td class="tg-y698">¿DISPONE DE ROPA LIMPIA DE TRABAJO (TODOS LOS DIAS)?</td>
-            <td class="tg-0pky"></td>
+            <td class="tg-0pky"> 
+              <input type="radio" name="r_11" value="si" /> Sí<br />
+              <input type="radio" name="r_11" value="no" /> No<br /></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_54" value="" width="20px"/></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_55" value="" width="20px"/></td>
           </tr>
           <tr>
             <td class="tg-y698">¿SE CAMBIA DE ROPA DE TRABAJO TODOS LOS DIAS?</td>
-            <td class="tg-0pky"></td>
+            <td class="tg-0pky"> 
+              <input type="radio" name="r_12" value="si" /> Sí<br />
+              <input type="radio" name="r_12" value="no" /> No<br /></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_56" value="" width="20px"/></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_57" value="" width="20px"/></td>
           </tr>
           <tr>
             <td class="tg-y698">¿SE DUCHA TODOS LOS DIAS EN FAENA AL TERMINO JORNADA?</td>
-            <td class="tg-0pky"></td>
+            <td class="tg-0pky"> 
+              <input type="radio" name="r_13" value="si" /> Sí<br />
+              <input type="radio" name="r_13" value="no" /> No<br /></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_58" value="" width="20px"/></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_59" value="" width="20px"/></td>
           </tr>
           <tr>
             <td class="tg-y698">¿POSTERIOR A LA DUCHA USA CREMAS DE CARA Y/O MANOS?</td>
-            <td class="tg-0pky"></td>
+            <td class="tg-0pky"> 
+              <input type="radio" name="r_14" value="si" /> Sí<br />
+              <input type="radio" name="r_14" value="no" /> No<br /></td>
+       
             <td class="tg-0pky" colspan="2"><input type="text" name="result_60" value="" width="20px"/></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_61" value="" width="20px"/></td>
           </tr>
           <tr>
             <td class="tg-y698">¿ANTES DE IR ALMORZAR, SE CAMBIA DE ROPA?</td>
-            <td class="tg-0pky"></td>
+            <td class="tg-0pky"> 
+              <input type="radio" name="r_15" value="si" /> Sí<br />
+              <input type="radio" name="r_15" value="no" /> No<br /></td>
+           
             <td class="tg-0pky" colspan="2"><input type="text" name="result_62" value="" width="20px"/></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_63" value="" width="20px"/></td>
           </tr>
           <tr>
             <td class="tg-y698">¿ANTES DE IR ALMORZAR, SE REALIZA ASEO DE MANOS Y CARA?</td>
-            <td class="tg-0pky"></td>
+            <td class="tg-0pky"> 
+              <input type="radio" name="r_16" value="si" /> Sí<br />
+              <input type="radio" name="r_16" value="no" /> No<br /></td>
+            
             <td class="tg-0pky" colspan="2"><input type="text" name="result_64" value="" width="20px"/></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_65" value="" width="20px"/></td>
           </tr>
           <tr>
             <td class="tg-y698">¿SI SE ENCUENTRA MUY SUCIO, SE BAÑA?</td>
-            <td class="tg-0pky">            <input type="text" name="result_66" value="" width="20px"/></td>
+            <td class="tg-0pky"> 
+              <input type="radio" name="r_17" value="si" /> Sí<br />
+              <input type="radio" name="r_17" value="no" /> No<br /></td>           
+            
             <td class="tg-0pky" colspan="2"><input type="text" name="result_67" value="" width="20px"/></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_68" value="" width="20px"/></td>
           </tr>
           <tr>
             <td class="tg-y698">¿SU PROTECTOR RESPIRATORIO, ES ASEADO DIARIAMENTE?</td>
-            <td class="tg-0pky"></td>
+            <td class="tg-0pky"> 
+              <input type="radio" name="r_18" value="si" /> Sí<br />
+              <input type="radio" name="r_18" value="no" /> No<br /></td> 
             <td class="tg-0pky" colspan="2"><input type="text" name="result_69" value="" width="20px"/></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_70" value="" width="20px"/></td>
           </tr>
           <tr>
             <td class="tg-y698">¿DONDE ALMACENA SU PROTECTOR RESPIRATORIO DURANTE EL DESCANSO?</td>
-            <td class="tg-0pky"></td>
+            <td class="tg-0pky"> 
+              <input type="radio" name="r_19" value="si" /> Sí<br />
+              <input type="radio" name="r_19" value="no" /> No<br /></td> 
             <td class="tg-0pky" colspan="2"><input type="text" name="result_71" value="" width="20px"/></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_72" value="" width="20px"/></td>
           </tr>
           <tr>
             <td class="tg-y698">¿DONDE ALMACENA SU PROTECTOR RESPIRATORIO DURANTE LA COLACIÓN?</td>
-            <td class="tg-0pky"></td>
+            <td class="tg-0pky"> 
+              <input type="radio" name="r_20" value="si" /> Sí<br />
+              <input type="radio" name="r_20" value="no" /> No<br /></td> 
             <td class="tg-0pky" colspan="2"><input type="text" name="result_73" value="" width="20px"/></td>
             <td class="tg-0pky" colspan="2"><input type="text" name="result_74" value="" width="20px"/></td>
           </tr>

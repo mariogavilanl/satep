@@ -87,6 +87,11 @@
             @include('prueba.ex_silice', ['title' => ''])
             @break 
 
+            @case(13)
+
+            @include('prueba.ex_ec', ['title' => ''])
+            @break 
+
             
         @default
 

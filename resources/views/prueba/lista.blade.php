@@ -73,7 +73,7 @@
         <td> {{ $d->primerApellido }}</td>
         <td> {{ $d->cargo }}</td>
         <td> {{ $d->gerencia}}</td>
-        {{-- <td> {{ $d->agentes_id}}</td> --}}
+         {{-- <td> {{ $d->agentes_id}}</td> --}}
         <td> {{ $d->glosaAgente}}</td>       
         <td>
 
@@ -85,6 +85,13 @@
             @if ($d->realizadoco == 0)
               <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
             @endif
+            @if ($d->agentes_id == 2 || $d->agentes_id == 3 || $d->agentes_id == 6 || $d->agentes_id == 7 || $d->agentes_id == 5 || $d->agentes_id == 4 || $d->agentes_id == 18 )
+             
+            <a href="/encuesta/?idencuesta={{$d->agentes_id}}&idcarga={{$d->id}}&idsap={{$d->nroSap}}">
+              <button class="btn btn-success">Encuesta</button>
+            </a>
+                                 
+          @endif
 
           @endif
 
@@ -95,6 +102,13 @@
             @if ($d->realizadoco == 0)
               <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
             @endif
+            @if ($d->agentes_id == 2 || $d->agentes_id == 3 || $d->agentes_id == 6 || $d->agentes_id == 7 || $d->agentes_id == 5 || $d->agentes_id == 4 || $d->agentes_id == 18 )
+             
+            <a href="/encuesta/?idencuesta={{$d->agentes_id}}&idcarga={{$d->id}}&idsap={{$d->nroSap}}">
+              <button class="btn btn-success">Encuesta</button>
+            </a>
+                                 
+          @endif
           @endif
 
           @if ($d->semestre == 3 && Carbon\Carbon::parse($d->fechaCarga)->year == $fechaactual->year && $fechaactual->month <= 4)
@@ -103,7 +117,15 @@
             @endif
             @if ($d->realizadoco == 0)
               <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
-            @endif  
+            @endif
+            
+            @if ($d->agentes_id == 2 || $d->agentes_id == 3 || $d->agentes_id == 6 || $d->agentes_id == 7 || $d->agentes_id == 5 || $d->agentes_id == 4 || $d->agentes_id == 18 )
+             
+            <a href="/encuesta/?idencuesta={{$d->agentes_id}}&idcarga={{$d->id}}&idsap={{$d->nroSap}}">
+              <button class="btn btn-success">Encuesta</button>
+            </a>
+                                 
+          @endif
           @endif
 
           @if ($d->semestre == 4 && Carbon\Carbon::parse($d->fechaCarga)->year == $fechaactual->year && $fechaactual->month > 4 && $fechaactual->month <= 8)
@@ -113,6 +135,14 @@
             @if ($d->realizadoco == 0)
               <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
             @endif
+
+            @if ($d->agentes_id == 2 || $d->agentes_id == 3 || $d->agentes_id == 6 || $d->agentes_id == 7 || $d->agentes_id == 5 || $d->agentes_id == 4 || $d->agentes_id == 18 )
+             
+            <a href="/encuesta/?idencuesta={{$d->agentes_id}}&idcarga={{$d->id}}&idsap={{$d->nroSap}}">
+              <button class="btn btn-success">Encuesta</button>
+            </a>
+                                 
+          @endif
           @endif
 
           @if ($d->semestre == 5 && Carbon\Carbon::parse($d->fechaCarga)->year == $fechaactual->year && Carbon\Carbon::parse($d->fechaCarga)->month > 8 && $fechaactual->month <= 12)
@@ -122,6 +152,13 @@
             @if ($d->realizadoco == 0)
               <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
             @endif
+            @if ($d->agentes_id == 2 || $d->agentes_id == 3 || $d->agentes_id == 6 || $d->agentes_id == 7 || $d->agentes_id == 5 || $d->agentes_id == 4 || $d->agentes_id == 18 )
+             
+            <a href="/encuesta/?idencuesta={{$d->agentes_id}}&idcarga={{$d->id}}&idsap={{$d->nroSap}}">
+              <button class="btn btn-success">Encuesta</button>
+            </a>
+                                 
+          @endif
           @endif          
 
           @if ($d->semestre == 6)
@@ -131,6 +168,13 @@
             @if ($d->realizadoco == 0)
               <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
             @endif
+            @if ($d->agentes_id == 2 || $d->agentes_id == 3 || $d->agentes_id == 6 || $d->agentes_id == 7 || $d->agentes_id == 5 || $d->agentes_id == 4 || $d->agentes_id == 18 )
+             
+            <a href="/encuesta/?idencuesta={{$d->agentes_id}}&idcarga={{$d->id}}&idsap={{$d->nroSap}}">
+              <button class="btn btn-success">Encuesta</button>
+            </a>
+                                 
+          @endif
           @endif
 
           @if ($d->semestre == 6)
@@ -140,15 +184,19 @@
             @if ($d->realizadoco == 0)
               <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
             @endif
-          @endif
-
-          @if ($d->agentes_id == 2 || $d->agentes_id == 3 || $d->agentes_id == 6 || $d->agentes_id == 7 || $d->agentes_id == 5 || $d->agentes_id == 4 || $d->agentes_id == 18 )
+            @if ($d->agentes_id == 2 || $d->agentes_id == 3 || $d->agentes_id == 6 || $d->agentes_id == 7 || $d->agentes_id == 5 || $d->agentes_id == 4 || $d->agentes_id == 18 )
              
             <a href="/encuesta/?idencuesta={{$d->agentes_id}}&idcarga={{$d->id}}&idsap={{$d->nroSap}}">
               <button class="btn btn-success">Encuesta</button>
             </a>
                                  
           @endif
+          
+          
+                               
+        @endif
+
+          
       
           
        </td>
