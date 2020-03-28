@@ -56,8 +56,8 @@
                 <div class="form-group col-4">
                     <label for="">ESTADO</label><br />
                   
-                        <input type="radio" name="estado" value="Alterado" /> Alterado<br />
-                        <input type="radio" name="estado" value="Normal" /> Normal<br />
+                        <input type="radio" name="as_estado" value="Alterado" /> Alterado<br />
+                        <input type="radio" name="as_estado" value="Normal" /> Normal<br />
     
                 </div>     
                 

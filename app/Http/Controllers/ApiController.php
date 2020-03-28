@@ -638,9 +638,11 @@ public function getEncuesta(Request $r){
                      
                      $examen = new Examen();
                      
+                
                      $examen->users_id = $idUsuario;
                      $examen->pacientes_id = $idPaciente;
                      $examen->agentes_id = $carga->agentes_id;
+                     $examen->cargas_id = $carga->id;
 
                    
                      $examen->as_FECHA_MUESTRA = $now;
@@ -648,7 +650,7 @@ public function getEncuesta(Request $r){
                      $examen->as_ESTADO = $r["as_estado"];
                      $examen->as_FECHA_CONTRAMUESTRA = $now2;
                      $examen->as_UG_G_CONTRAMUESTRA = $r["as_UG_G_CONTRAMUESTRA"];
-                     $examen->as_ESTADO1 = $r["estado1"];
+                     $examen->as_ESTADO1 = $r["as_estado1"];
                      
                      
          
@@ -670,7 +672,8 @@ public function getEncuesta(Request $r){
                      $examen->users_id = $idUsuario;
                      $examen->pacientes_id = $idPaciente;
                      $examen->agentes_id = $carga->agentes_id;
-                     $examen->cargas_id = $carga->id;
+                    $examen->cargas_id = $carga->id;
+                     
 
                    
                      $examen->AS_FECHA_MUESTRA = $now;
@@ -678,19 +681,19 @@ public function getEncuesta(Request $r){
                      $examen->AS_ESTADO = $r["as_estado"];
                      $examen->AS_FECHA_CONTRAMUESTRA = $now2;
                      $examen->AS_UG_G_CONTRAMUESTRA = $r["as_UG_G_CONTRAMUESTRA"];
-                     $examen->as_estado1 = $r["as_estado1"];
+                     $examen->AS_ESTADO1 = $r["as_estado1"];
  
                     
                                  
                                                                
                     
-                     $examen->save();
+                        $examen->save();
          
-                     $affected = DB::table('cargas')
-                       ->where('id', session()->get('idCargas'))
-                       ->update(['realizado' => 1]);
+                        $affected = DB::table('cargas')
+                        ->where('id', session()->get('idCargas'))
+                        ->update(['realizado' => 1]);
                      
-                       return redirect()->action('PruebasController@pico');
+                        return redirect()->action('PruebasController@pico');
                     
                  }
                 }
@@ -2140,6 +2143,8 @@ public function getExamenso2(Request $r){
                 $examen->ENC_AS_R_TALLA   = $r["r_talla"];
                 $examen->ENC_AS_RESULT_R_CAPA  = $r["r_capa"];
                 $examen->ENC_AS_RESULT_FECHA10 = $now = new DateTime(explode('-', $r["fecha_ini10"])[2]."-".explode('-', $r["fecha_ini10"])[1]."-".explode('-', $r["fecha_ini10"])[0], new DateTimeZone('America/Santiago'));
+                $examen->ENC_AS_RESULT_ORG = $r["result_org"];
+                
                 $examen->as_preg_extra1 = $r["as_preg_extra1"];
                 $examen->as_preg_extra2 = $r["as_preg_extra2"];
                 $examen->as_preg_extra3 = $r["as_preg_extra3"];

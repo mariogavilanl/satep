@@ -20,7 +20,7 @@
              }}</td>
             
               <td class="tdBold">ESTADO</td>
-              <td>{{ $data->estado }}</td>
+              <td>{{ $data->as_estado }}</td>
 
               <td class="tdBold">UG/G</td>
               <td>{{ $data->as_UG_G }}</td>

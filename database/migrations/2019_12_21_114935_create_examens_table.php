@@ -417,6 +417,7 @@ class CreateExamensTable extends Migration
                 $table->text("ENC_AS_R_TALLA")->nullable();   
                 $table->text("ENC_AS_RESULT_R_CAPA")->nullable(); 
                 $table->dateTime("ENC_AS_RESULT_FECHA10")->nullable();
+                $table->text("ENC_AS_RESULT_ORG")->nullable(); 
                 $table->text("as_preg_extra1")->nullable();
                 $table->text("as_preg_extra2")->nullable(); 
                 $table->text("as_preg_extra3")->nullable();  
