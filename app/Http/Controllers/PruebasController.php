@@ -18,6 +18,7 @@ class PruebasController extends Controller
 
     public function index()
     {
+
         return 'home';
     }
 
@@ -28,6 +29,7 @@ class PruebasController extends Controller
         $hora = time();
         $semestre = (date("m", $hora) >= 7 ? 2 : 1);
         $fechaactual = Carbon::now();
+        
         $mes = date("m", $hora);
         $carga = new Cargas();
         $idUsuario = $id = Auth::id();
@@ -48,6 +50,8 @@ class PruebasController extends Controller
             array_push($pico, $key->agentes_id);
         }
                
+       
+
         $lista = $carga
         ->whereIn('agentes_id', $pico)
         ->join('agentes', 'cargas.agentes_id', '=', 'agentes.id')

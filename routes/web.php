@@ -80,5 +80,10 @@ Route::get('api/getEncuestaResult', 'ApiController@getEncuestaResult')->name('ge
 Route::get('encuesta', 'EncuestaController@index')->name('encuesta');
 
 
+// dashboard
+Route::get("dashboard", "InformesController@Index")->name("dashboard");
+Route::get("dashboard/getDataCarga", "InformesController@dataCarga")->name("dataCarga");
+
+
 
 
