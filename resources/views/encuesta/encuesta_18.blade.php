@@ -309,7 +309,7 @@
             <td class="tg-0pky">
               <input type="text" name="result_16" value="" width="20px"/></td>
             <td class="tg-0pky" colspan="2">
-              <input type="text17" name="result_17" value="" width="20px"/></td>
+              <input type="text" name="result_17" value="" width="20px"/></td>
           </tr>
           <tr>
             <td class="tg-y698">BUZO PILOTO</td>
@@ -383,7 +383,10 @@
             <td class="tg-0pky">Fecha</td>
             <td class="tg-0pky"><input id="FECHA10" name="fecha_ini10" width="220px"  width="20px"  /></td>
             <td class="tg-0pky" colspan="2">Organismo Capacitador</td>
-            <td class="tg-0pky"></td>
+            
+            <td class="tg-0pky">
+              <input type="text" name="result_org" value="" width="20px"/></td>
+            </td>
           </tr>
           <tr>
             <td class="tg-0pky">Existe evidencia de asistencia</td>
