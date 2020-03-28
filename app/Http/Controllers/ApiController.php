@@ -2142,7 +2142,7 @@ public function getExamenso2(Request $r){
                 $examen->ENC_AS_RESULT_FECHA10 = $now = new DateTime(explode('-', $r["fecha_ini10"])[2]."-".explode('-', $r["fecha_ini10"])[1]."-".explode('-', $r["fecha_ini10"])[0], new DateTimeZone('America/Santiago'));
                 $examen->as_preg_extra1 = $r["as_preg_extra1"];
                 $examen->as_preg_extra2 = $r["as_preg_extra2"];
-                $examen->as_preg_extra3 = $r["as:preg_extra3"];
+                $examen->as_preg_extra3 = $r["as_preg_extra3"];
                 $examen->ENC_AS_R_1  = $r["r_1"];
                 $examen->ENC_AS_RESULT_34  = $r["result_34"];
                 $examen->ENC_AS_RESULT_35  = $r["result_35"];
