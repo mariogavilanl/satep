@@ -300,10 +300,10 @@
           <tr>
             <td class="tg-y698">PROTECTOR RESPIRATORIO</td>
             <td class="tg-0pky">
-              <input type="radio" name="r_preg3_medio" value="medio" />Medio Rostro<br />
-              <input type="radio" name="r_preg3_medio" value="rostro" />Rostro<br />
-              <input type="radio" name="r_preg3_medio" value="completo" /> Completo<br />
-              <input type="radio" name="r_preg3_medio" value="aire" /> Aire Asistido<br /></td>
+              <input type="radio" name="r_preg3_medio" value="Medio Rostro" />Medio Rostro<br />
+              <input type="radio" name="r_preg3_medio" value="Rostro" />Rostro<br />
+              <input type="radio" name="r_preg3_medio" value="Completo" /> Completo<br />
+              <input type="radio" name="r_preg3_medio" value="Aire Asistido" /> Aire Asistido<br /></td>
             <td class="tg-0pky">
               <input type="text" name="result_15" value="" width="20px"/></td>
             <td class="tg-0pky">
@@ -367,8 +367,13 @@
             </td>
           </tr>
           <tr>
-            <td class="tg-0pky" colspan="3">¿Utiliza el protector indicado en resultado de prueba?</td>
-            <td class="tg-0pky" colspan="3"></td>
+            <td class="tg-0pky" colspan="1">¿Utiliza el protector indicado en resultado de prueba?</td>
+            <td class="tg-0pky" colspan="1">
+              <input type="radio" name="r_pi" value="si" />Si 
+              <input type="radio" name="r_pi" value="no" />no
+
+
+            </td>
           </tr>
           <tr>
             <td class="tg-hkp2" colspan="6">CAPACITACIÓN <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512'%3e%3cpath fill='%23ffffff' d='M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4zm323-128.4l-27.8-28.1c-4.6-4.7-12.1-4.7-16.8-.1l-104.8 104-45.5-45.8c-4.6-4.7-12.1-4.7-16.8-.1l-28.1 27.9c-4.7 4.6-4.7 12.1-.1 16.8l81.7 82.3c4.6 4.7 12.1 4.7 16.8.1l141.3-140.2c4.6-4.7 4.7-12.2.1-16.8z'/%3e%3c/svg%3e" alt="Image" width="40" height="40"></td>
@@ -385,14 +390,16 @@
             <td class="tg-0pky" colspan="2">Organismo Capacitador</td>
             
             <td class="tg-0pky">
-              <input type="text" name="result_org" value="" width="20px"/></td>
+              <input type="text" name="result_org1" value="" width="20px"/></td>
             </td>
           </tr>
           <tr>
             <td class="tg-0pky">Existe evidencia de asistencia</td>
-            <td class="tg-0pky"></td>
+            <td class="tg-0pky">
+              <input type="radio" name="r_asis" value="si" /> Sí<br />
+              <input type="radio" name="r_asis" value="no" /> No<br /></td></td>
             <td class="tg-dvpl" colspan="3">Registro</td>
-            <td class="tg-0pky"></td>
+            <td class="tg-0pky"><input type="text" name="as_preg_extra4" value="" width="20px"/></td>
           </tr>
           <tr>
             <td class="tg-hkp2" colspan="6">ANTECEDENTES EXPOSICIÓN RECIENTE  <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3e%3cpath fill='%23ffffff' d='M464%2c128H272L208%2c64H48A48%2c48%2c0%2c0%2c0%2c0%2c112V400a48%2c48%2c0%2c0%2c0%2c48%2c48H464a48%2c48%2c0%2c0%2c0%2c48-48V176A48%2c48%2c0%2c0%2c0%2c464%2c128ZM359.5%2c296a16%2c16%2c0%2c0%2c1-16%2c16h-64v64a16%2c16%2c0%2c0%2c1-16%2c16h-16a16%2c16%2c0%2c0%2c1-16-16V312h-64a16%2c16%2c0%2c0%2c1-16-16V280a16%2c16%2c0%2c0%2c1%2c16-16h64V200a16%2c16%2c0%2c0%2c1%2c16-16h16a16%2c16%2c0%2c0%2c1%2c16%2c16v64h64a16%2c16%2c0%2c0%2c1%2c16%2c16Z'/%3e%3c/svg%3e" alt="Image" width="40" height="40"></td>
