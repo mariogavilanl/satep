@@ -26,14 +26,23 @@
             <td>{{ $encuesta->ENC_AS_H }}</td>   
 
            </tr>
+     
+        <!-- 
+            @ if ($encuesta->ENC_AS_PREG ) 
+                   <h5>HISTORIAL LABORAL</h5>
 
-          
-       <h5>HISTORIAL LABORAL</h5>
+                @ elseif ()
 
+                segunda parte de as
+
+                @ endif -->
+        <h5>HISTORIAL LABORAL</h5>
+       <h6>HA TENIDO PUESTOS DE TRABAJOS ANTERIORES CON EXPOSICIÓN A ARSÉNICO</h5>
+      
        <table class="table table-primary" style="font-size: 0.7rem;">
            <thead>
-            <th>HA TENIDO PUESTOS DE TRABAJOS ANTERIORES CON EXPOSICIÓN A ARSÉNICO</th>
-            <TH>EN CASO DE HABER RESPONDIDO "SI", COMPLETAR EL SIGUIENTE CUADRO DE EXPOSICIÓN OCUPACIONAL:</TH>
+            
+            
             <TH>EMPRESA</TH>
             <TH>PUESTO TRABAJO</TH>
             <TH>ORG ADMINISTRADOR</TH>
@@ -45,8 +54,8 @@
            <tbody> 
                
                <tr>
-                   <td>1</td>
-                <td>{{$encuesta->ENC_AS_R_HA}}</td>
+                  
+              {{-- <td>$encuesta->ENC_AS_R_HA}}</td>--}}
                 <td>{{$encuesta->ENC_AS_RESULT_EMPRESA}}</td>
                 <td>{{$encuesta->ENC_AS_RESULT_PUESTOTRABAJO}}</td>
                 <td>{{$encuesta->ENC_AS_RESULT_ORG}}</td>
@@ -56,120 +65,359 @@
                </tr>
                
                <tr>
-                <td>2</td>
-                <td>{{$encuesta->ENC_FO_PREG11}}</td>
-                <td>{{$encuesta->ENC_FO_PREG12}}</td>
-                <td>{{$encuesta->ENC_FO_PREG13}}</td>
-                <td>{{$encuesta->ENC_FO_PREG14}}</td>
-                <td>{{$encuesta->ENC_FO_PREG15}}</td>
+                
+                <td>{{$encuesta->ENC_AS_RESULT_1}}</td>
+                <td>{{$encuesta->ENC_AS_RESULT_2}}</td>
+                <td>{{$encuesta->ENC_AS_RESULT_3}}</td>
+                <td>{{$encuesta->ENC_AS_FECHA_INI3}}</td>
+                <td>{{$encuesta->ENC_AS_FECHA_INI4}}</td>
+                <td>{{$encuesta->ENC_AS_RESULT_4}}</td>
                </tr>    
                
                <tr>
-                <td>3</td>
-                <td>{{$encuesta->ENC_FO_PREG16}}</td>
-                <td>{{$encuesta->ENC_FO_PREG17}}</td>
-                <td>{{$encuesta->ENC_FO_PREG18}}</td>
-                <td>{{$encuesta->ENC_FO_PREG19}}</td>
-                <td>{{$encuesta->ENC_FO_PREG20}}</td>
+                
+                <td>{{$encuesta->ENC_AS_RESULT_5}}</td>
+                <td>{{$encuesta->ENC_AS_RESULT_6}}</td>
+                <td>{{$encuesta->ENC_AS_RESULT_7}}</td>
+                <td>{{$encuesta->ENC_AS_FECHA_INI5}}</td>
+                <td>{{$encuesta->ENC_AS_FECHA_INI6}}</td>
+                <td>{{$encuesta->ENC_AS_RESULT_8}}</td>
                </tr>    
 
               <tr>
-                <td>4</td>
-                <td>{{$encuesta->ENC_FO_PREG21}}</td>
-                <td>{{$encuesta->ENC_FO_PREG22}}</td>
-                <td>{{$encuesta->ENC_FO_PREG23}}</td>
-                <td>{{$encuesta->ENC_FO_PREG24}}</td>
-                <td>{{$encuesta->ENC_FO_PREG25}}</td>
-               </tr>  
+                <td>{{$encuesta->ENC_AS_RESULT_9}}</td>
+                <td>{{$encuesta->ENC_AS_RESULT_10}}</td>
+                <td>{{$encuesta->ENC_AS_RESULT_11}}</td>
+                <td>{{$encuesta->ENC_AS_FECHA_INI7}}</td>
+                <td>{{$encuesta->ENC_AS_FECHA_INI8}}</td>
+                <td>{{$encuesta->ENC_AS_RESULT_12}}</td>
+               </tr> 
+               
+            </tbody>
+        </table>
+        <table class="table table-primary" style="font-size: 0.7rem;">
+            <thead>
+
+            <h5>EXPOSICION ACTUAL</h5>
+
+            <thead>
+            
+            
+                <TH>CARGO QUE DESEMPEÑA</TH>
+                <TH>ANTIGUEDAD EN EL PUESTO años</TH>
+                <TH>MES</TH>
+                <TH>MEDIDAS DE CONTROL</TH>
+                <TH>UTILIZACION ELEMENTOS DE PROTECCION PERSONAL</TH>
+            <P></P>
+            <P></P>  
+            </thead>
                
                <tr>
-                <td>5</td>
-                <td>{{$encuesta->ENC_FO_PREG26}}</td>
-                <td>{{$encuesta->ENC_FO_PREG27}}</td>
-                <td>{{$encuesta->ENC_FO_PREG28}}</td>
-                <td>{{$encuesta->ENC_FO_PREG29}}</td>
-                <td>{{$encuesta->ENC_FO_PREG30}}</td>
+                <td>{{$encuesta->ENC_AS_RESULT_13}}</td>
+                <td>{{$encuesta->ENC_AS_RESULT_14}}</td>
+                <td>{{$encuesta->ENC_AS_MES}}</td>
+                <td>{{$encuesta->ENC_AS_C_MC_ING}} {{$encuesta->ENC_AS_C_MC_ADM}} <br> {{$encuesta->ENC_AS_C_MC_EPP}}</td>
+                <td>{{$encuesta->ENC_AS_R_PREG2_PROTECCION}}</td>
                </tr>                 
            </tbody>
        </table>
 
-       {{-- <h5>Seccion </h5> --}}
+       <h5>TIPO DE PROTECCIÓN QUE UTILIZA </h5>
        <table class="table table-primary" style="font-size: 0.7rem;">
         <thead>
 
-         <TH>ITEM</TH>
-         <th>DESPUESTA</th>
-         <TH>¿CUANDO?</TH>
-         <TH>OBSERVACION</TH>
+         <TH>EPP</TH>
+         <th>TIPO</th>
+         <TH>MARCA</TH>
+         <TH>MODELO</TH>
+         <TH>OBSERVACIONES</TH>
          
         </thead>
 
         <tbody>
             <tr>
                
-                <td>DENTAL</td>
-                <td>{{$encuesta->ENC_FO_R_D}}</td>
-                <td>{{$encuesta->ENC_FO_PREG31}}</td>
-                <td>{{$encuesta->ENC_FO_PREG32}}</td>
+                <td>PROTECTOR RESPIRATORIO</td>
+                <td>{{$encuesta->ENC_AS_R_PREG3_MEDIO}}</td>
+                <td>{{$encuesta->ENC_AS_RESULT_15}}</td>
+                <td>{{$encuesta->ENC_AS_RESULT_16}}</td>
+                <td>{{$encuesta->ENC_AS_RESULT_17}}</td>
                 
                 
             </tr>
 
-            <tr>
-              
-                <td>CUBRECABELLO</td>
-                <td>{{$encuesta->ENC_FO_R_C}}</td>
-                <td>{{$encuesta->ENC_FO_PREG33}}</td>
-                <td>{{$encuesta->ENC_FO_PREG34}}</td>            
             
-            </tr>
-
             <tr>
               
-                <td>MASCARILLA DESECHABLE</td>
-                <td>{{$encuesta->ENC_FO_R_MD}}</td>
-                <td>{{$encuesta->ENC_FO_PREG35}}</td>
-                <td>{{($encuesta->ENC_FO_PREG36 == null ? 'N/A' : $encuesta->ENC_FO_PREG36)}}</td>            
+                <td>BUZO PILOTO</td>
+                <td>{{$encuesta->ENC_AS_RESULT_18}}</td>
+                <td>{{$encuesta->ENC_AS_RESULT_19}}</td>
+                <td>{{$encuesta->ENC_AS_RESULT_20}} </td>
+                <td>{{$encuesta->ENC_AS_RESULT_21}} </td>            
             
             </tr>       
 
             <tr>
               
-                <td>GUANTES DE LÁTEX</td>
-                <td>{{$encuesta->ENC_FO_R_GL}}</td>
-                <td>{{$encuesta->ENC_FO_PREG37}}</td>
-                <td>{{($encuesta->ENC_FO_C_CP == null ? "" : $encuesta->ENC_FO_C_CP ." y")}} {{$encuesta->ENC_FO_C_SP}}</td>
+                <td>ESCLAVINA</td>
+                <td>{{$encuesta->ENC_AS_RESULT_22}}</td>
+                <td>{{$encuesta->ENC_AS_RESULT_23}}</td>
+                <td>{{$encuesta->ENC_AS_RESULT_24}} </td>
+                <td>{{$encuesta->ENC_AS_RESULT_25}} </td> 
                 
             </tr>     
 
             <tr>
               
-                <td>GUANTES DE NITRILO</td>
-                <td>{{$encuesta->ENC_FO_R_GN}}</td>
-                <td>{{$encuesta->ENC_FO_PREG38}}</td>
-                <td>{{$encuesta->ENC_FO_PREG39}}</td>
+                <td>GUANTES</td>
+                <td>{{$encuesta->ENC_AS_RESULT_26}}</td>
+                <td>{{$encuesta->ENC_AS_RESULT_27}}</td>
+                <td>{{$encuesta->ENC_AS_RESULT_28}} </td>
+                <td>{{$encuesta->ENC_AS_RESULT_29}} </td> 
                 
             </tr>       
             
             <tr>
               
-                <td>GUANTES DE NEOPRENO</td>
-                <td>{{$encuesta->ENC_FO_R_GNE}}</td>
-                <td>{{$encuesta->ENC_FO_PREG40}}</td>
-                <td>{{$encuesta->ENC_FO_PREG41}}</td>
+                <td>OTRO</td>
+                <td>{{$encuesta->ENC_AS_RESULT_30}}</td>
+                <td>{{$encuesta->ENC_AS_RESULT_31}}</td>
+                <td>{{$encuesta->ENC_AS_RESULT_32}} </td>
+                <td>{{$encuesta->ENC_AS_RESULT_33}} </td> 
                 
             </tr>      
             
-            
-            <tr>
-              
-                <td>GUANTES MULTIUSO</td>
-                <td>{{$encuesta->ENC_FO_R_GMU}}</td>
-                <td>{{$encuesta->ENC_FO_PREG42}}</td>
-                <td>{{$encuesta->ENC_FO_PREG43}}</td>
+            <table class="table table-primary" style="font-size: 0.7rem;">
+                <thead>
+    
+                <h5>PROTECCIÓN RESPIRATORIA</h5>
+    
+                <thead>
                 
-            </tr>                
-            
+                
+                    <TH>SE REALIZO PRUEBA DE AJUSTE DE RESPIRADOR</TH>
+                    <TH>FECHA</TH>
+                    <TH>RESULTADO MARCA</TH>
+                    <TH>TALLA</TH>
+                    <TH>UTILIZA EL PROTECTOR INDICADO EN RESULTADO DE PRUEBA</TH>
+                
+                    <tr>
+              
+                        <td>{{$encuesta->ENC_AS_RESULT_R_RESPIRADOR}}</td>
+                        <td>{{$encuesta->ENC_AS_FECHA_INI9}}</td>
+                        <td>{{$encuesta->ENC_AS_T_RESULTMARCA}} </td>
+                        <td>{{$encuesta->ENC_AS_R_TALLA}} </td> 
+                        <td>{{$encuesta->ENC_AS_R_PI}} </td> 
+                    </tr>     
+
+
+
+
+                </thead>
+                   
+                <table class="table table-primary" style="font-size: 0.7rem;">
+                    <thead>
+        
+                    <h5>CAPACITACIÓN</h5>
+        
+                    <thead>
+                    
+                    
+                        <TH>RECIBIO CAPACITACIÓN ESPECIFÍCA PARA EL CONTROL DE EXPOSICIÓN A ARSENICO Y PROTECCIÓN</TH>
+                        <TH>FECHA</TH>
+                        <TH>ORGANISMO CAPACITADOR</TH>
+                        <TH>EXISTE EVIDENCIA DE ASISTENCIA</TH>
+                        <TH>REGISTRO</TH>
+                        
+                        
+                    
+                        <tr>
+                  
+                            <td>{{$encuesta->ENC_AS_RESULT_R_CAPA}}</td>
+                            <td>{{$encuesta->ENC_AS_RESULT_FECHA10}}</td>
+                            <td>{{$encuesta->ENC_AS_RESULT_ORG}} </td>
+                            <td>{{$encuesta->ENC_AS_R_ASIS}} </td> 
+                            <td>{{$encuesta->as_preg_extra4}} </td> 
+                        </tr>     
+    
+                        <table class="table table-primary" style="font-size: 0.7rem;">
+                            <thead>
+                
+                            <h5>ANTECEDENTES EXPOSICIÓN RECIENTES</h5>
+                
+                            <thead>
+                            
+                            
+                                <TH>DETALLE LAS TAREAS REALIZADAS EN SU ÚLTIMO TURNO</TH>
+                                <TH>ÁREA</TH>
+                                <TH>EPP UTILIZADO Y/O COMENTARIOS</TH>
+                                                   
+                                                            
+                                <tr>
+                          
+                                    <td>{{$encuesta->as_preg_extra1}}</td>
+                                    <td>{{$encuesta->as_preg_extra2}}</td>
+                                    <td>{{$encuesta->as_preg_extra3}} </td>
+                                    
+                                </tr>     
+
+                                <table class="table table-primary" style="font-size: 0.7rem;">
+                                    <thead>
+                        
+                                    <h5>CONDUCTAS Y MEDIDAS HIGIÉNICAS</h5>
+                        
+                                    <thead>
+                                    
+                                    
+                                        <TH>CONDUCTA E INSTALACIONES</TH>
+                                        <TH>SELECCIÓN</TH>
+                                        <TH>LUGAR</TH>
+                                        <TH>OBSERVACION</TH>
+                                                           
+                                                                    
+                                        <tr>
+                                            <td>INGIERE ALIMENTOS EN TERRENO</td>
+                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            
+                                        </tr> 
+                                        <tr>
+                                            <td>TOMA LIQUIDOS PARA HIDRATARSE EN TERRENO</td>
+                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            
+                                        </tr>   
+                                        <tr>
+                                            <td>SE LAVA LAS MANOS Y CARAS DE INGERIR ALIMENTOS O LIQUIDOS</td>
+                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            
+                                        </tr>   
+                                        <tr>
+                                            <td>FUMA EN TERRENO</td>
+                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            
+                                        </tr>   
+                                        <tr>
+                                            <td>BEBE CAFE</td>
+                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            
+                                        </tr>   
+                                        <tr>
+                                            <td>DISPONE DE SALA DE CAMBIOS</td>
+                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            
+                                        </tr>   
+                                        <tr>
+                                            <td>SI DISPONE, TIENE AREA LIMPIA Y SUCIA</td>
+                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            
+                                        </tr>   
+                                        <tr>
+                                            <td>CUENTA CON DOBLE CASILLERO</td>
+                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            
+                                        </tr>   
+                                        <tr>
+                                            <td>SI NO DISPONE DE CASA DE CAMBIO, DONDE SE CAMBIA</td>
+                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            
+                                        </tr>   
+                                        <tr>
+                                            <td>UBICACIÓN DE SU CASILLERO</td>
+                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            
+                                        </tr>   
+                                        <tr>
+                                            <td>DISPONE DE ROPA LIMPIA DE TRABAJO (TODOS LOS DIAS)</td>
+                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            
+                                        </tr>   
+                                        <tr>
+                                            <td>SE CAMBIA DE ROPA DE TRABAJO TODOS LOS DIAS</td>
+                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            
+                                        </tr>   
+                                        <tr>
+                                            <td>SE DUCHA TODOS LOS DIAS EN FAENA AL TERMINO JORNADA</td>
+                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            
+                                        </tr>   
+                                        <tr>
+                                            <td>POSTERIOR A LA DUCHA USA CREMAS DE CARA Y/O MANOS</td>
+                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            
+                                        </tr>   
+                                        <tr>
+                                            <td>INGIERE ALIMENTOS EN TERRENO</td>
+                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            
+                                        </tr>   
+                                        <tr>
+                                            <td>INGIERE ALIMENTOS EN TERRENO</td>
+                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            
+                                        </tr>   
+                                        <tr>
+                                            <td>INGIERE ALIMENTOS EN TERRENO</td>
+                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            
+                                        </tr>   
+                                        <tr>
+                                            <td>INGIERE ALIMENTOS EN TERRENO</td>
+                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            
+                                        </tr>   
+                                        <tr>
+                                            <td>INGIERE ALIMENTOS EN TERRENO</td>
+                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            
+                                        </tr>   
+                                        <tr>
+                                            <td>INGIERE ALIMENTOS EN TERRENO</td>
+                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            
+                                        </tr>       
+    
+    
+                    </thead>
          
             
             

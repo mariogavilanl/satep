@@ -2086,6 +2086,7 @@ public function getExamenso2(Request $r){
                 $examen->ENC_AS_RESULT_EMPRESA  = $r["result_empresa"];
                 $examen->ENC_AS_RESULT_PUESTOTRABAJO  = $r["result_puestotrabajo"];
                 $examen->ENC_AS_RESULT_ORG  = $r["result_org"];
+                
                 $examen->ENC_AS_FECHA_INI1 = $now = new DateTime(explode('-', $r["fecha_ini1"])[2]."-".explode('-', $r["fecha_ini1"])[1]."-".explode('-', $r["fecha_ini1"])[0], new DateTimeZone('America/Santiago'));
                 $examen->ENC_AS_FECHA_INI2 = $now = new DateTime(explode('-', $r["fecha_ini2"])[2]."-".explode('-', $r["fecha_ini2"])[1]."-".explode('-', $r["fecha_ini2"])[0], new DateTimeZone('America/Santiago'));
                 $examen->ENC_AS_RESULT_MEDIDA  = $r["result_medida" ];           
@@ -2141,10 +2142,12 @@ public function getExamenso2(Request $r){
                 $examen->ENC_AS_FECHA_INI9 = $now = new DateTime(explode('-', $r["fecha_ini9"])[2]."-".explode('-', $r["fecha_ini9"])[1]."-".explode('-', $r["fecha_ini9"])[0], new DateTimeZone('America/Santiago'));
                 $examen->ENC_AS_T_RESULTMARCA  = $r["t_resulMarca"];
                 $examen->ENC_AS_R_TALLA   = $r["r_talla"];
+                $examen->ENC_AS_R_PI   = $r["r_pi"];
                 $examen->ENC_AS_RESULT_R_CAPA  = $r["r_capa"];
                 $examen->ENC_AS_RESULT_FECHA10 = $now = new DateTime(explode('-', $r["fecha_ini10"])[2]."-".explode('-', $r["fecha_ini10"])[1]."-".explode('-', $r["fecha_ini10"])[0], new DateTimeZone('America/Santiago'));
-                $examen->ENC_AS_RESULT_ORG = $r["result_org"];
-                
+                $examen->ENC_AS_RESULT_ORG1 = $r["result_org1"];
+                $examen->ENC_AS_R_ASIS = $r["r_asis"];
+                $examen->as_preg_extra4 = $r["as_preg_extra4"];
                 $examen->as_preg_extra1 = $r["as_preg_extra1"];
                 $examen->as_preg_extra2 = $r["as_preg_extra2"];
                 $examen->as_preg_extra3 = $r["as_preg_extra3"];

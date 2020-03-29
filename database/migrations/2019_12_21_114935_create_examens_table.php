@@ -414,10 +414,13 @@ class CreateExamensTable extends Migration
                 $table->text("ENC_AS_RESULT_R_RESPIRADOR")->nullable();  
                 $table->dateTime("ENC_AS_FECHA_INI9")->nullable();  
                 $table->text("ENC_AS_T_RESULTMARCA")->nullable();  
-                $table->text("ENC_AS_R_TALLA")->nullable();   
+                $table->text("ENC_AS_R_TALLA")->nullable();
+                $table->text("ENC_AS_R_PI")->nullable();    
                 $table->text("ENC_AS_RESULT_R_CAPA")->nullable(); 
                 $table->dateTime("ENC_AS_RESULT_FECHA10")->nullable();
-                $table->text("ENC_AS_RESULT_ORG")->nullable(); 
+                $table->text("ENC_AS_RESULT_ORG1")->nullable(); 
+                $table->text("ENC_AS_R_ASIS")->nullable();
+                $table->text("as_preg_extra4")->nullable();
                 $table->text("as_preg_extra1")->nullable();
                 $table->text("as_preg_extra2")->nullable(); 
                 $table->text("as_preg_extra3")->nullable();  
