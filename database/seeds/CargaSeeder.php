@@ -30,15 +30,15 @@ class CargaSeeder extends Seeder
         
         $gerencias = [
 
-            'Gerencia Norte',
-            'Gerencia NortWest',
-            'Gerencia IronMountain',
-            'Gerencia StormWind',
-            'Gerencia Gnomeregan',
-            'Gerencia Carcosa'
+            'Gerencia Fundición',
+            'Gerencia Proyecto',
+            'Gerencia SSO',
+            'Gerencia RMD',
+            'Gerencia Talleres',
+            'Gerencia MSS'
         ];
 
-        for ($i=0; $i <= 7 ; $i++) { 
+        for ($i=0; $i <= 5 ; $i++) { 
             
             DB::table('cargas')->insert([
                 'nroSap' => rand(1,5000),
@@ -60,9 +60,9 @@ class CargaSeeder extends Seeder
                 'idAntecedentes' => 0,
                 'antecedentes' => 0
 	        ]);
+    }
 
-
-        for ($i=0; $i <= 200 ; $i++) { 
+        for ($i=0; $i <= 4 ; $i++) { 
             
             DB::table('cargas')->insert([
                 'nroSap' => rand(1,5000),
@@ -85,6 +85,6 @@ class CargaSeeder extends Seeder
                 'antecedentes' => 0
 	        ]);
         }
-    }
+    
 }
 }

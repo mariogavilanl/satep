@@ -86,6 +86,8 @@ Route::get("dashboard", "InformesController@Index")->name("dashboard");
 Route::get("dashboard/getDataCarga", "InformesController@dataCarga")->name("dataCarga");
 Route::get("dashboard/dataProgramadoRealizados", "InformesController@dataProgramadoRealizados")->name("dataProgramadoRealizados");
 Route::get("dashboard/dataPorGerencia", "InformesController@dataPorGerencia")->name("dataPorGerencia");
+Route::get("dashboard/getArsenicoAlterados", "InformesController@getArsenicoAlterados")->name("getArsenicoAlterados");
+
 
 
 

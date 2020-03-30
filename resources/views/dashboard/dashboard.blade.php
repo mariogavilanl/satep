@@ -6,68 +6,68 @@
 <script type="text/javascript">
 $(document).ready(function(){
 
-var v_Agente = [];
-var k_Agentes = [];
+// var v_Agente = [];
+// var k_Agentes = [];
 
-var config = {
-			type: 'pie',
-			data: {
-				datasets: [{
-					data: [],
-					backgroundColor: [
-                        "red", 
-                        ""
-						// window.chartColors.red,
-						// window.chartColors.orange,
-						// window.chartColors.yellow,
-						// window.chartColors.green,
-						// window.chartColors.blue,
-					],
-					label: 'Distibución Agentes'
-				}],
-				labels: []
-			},
-			options: {
-				responsive: true
-			}
-		};
-        $.ajax({
-        url: "dashboard/getDataCarga",
-        type : "get",
-        async : false,
-        contentType : "application/json",
-        success : function(r){
+// var config = {
+// 			type: 'pie',
+// 			data: {
+// 				datasets: [{
+// 					data: [],
+// 					backgroundColor: [
+//                         "red", 
+//                         ""
+// 						// window.chartColors.red,
+// 						// window.chartColors.orange,
+// 						// window.chartColors.yellow,
+// 						// window.chartColors.green,
+// 						// window.chartColors.blue,
+// 					],
+// 					label: 'Distibución Agentes'
+// 				}],
+// 				labels: []
+// 			},
+// 			options: {
+// 				responsive: true
+// 			}
+// 		};
+//         $.ajax({
+//         url: "dashboard/getDataCarga",
+//         type : "get",
+//         async : false,
+//         contentType : "application/json",
+//         success : function(r){
             
-            for (const propiedad in r) {
-                config.data.datasets[0].data.push(r[propiedad]);
-                config.data.labels.push(propiedad) 
-            }
+//             for (const propiedad in r) {
+//                 config.data.datasets[0].data.push(r[propiedad]);
+//                 config.data.labels.push(propiedad) 
+//             }
 
-        },
-        complete : function(){
-            var ctx = document.getElementById('g_agentes').getContext('2d');
-			window.myPie = new Chart(ctx, config);
+//         },
+//         complete : function(){
+//             var ctx = document.getElementById('g_agentes').getContext('2d');
+// 			window.myPie = new Chart(ctx, config);
 
-            window.myPie.update();
-        }
-        });  
+//             window.myPie.update();
+//         }
+//         });  
 
 
-        // Programados vs realizados
-        $.ajax({
-        url: "dashboard/dataProgramadoRealizados",
-        type : "get",
-        async : false,
-        contentType : "application/json",
-        success : function(r){
+        // // Programados vs realizados
+        // $.ajax({
+        // url: "dashboard/dataProgramadoRealizados",
+        // type : "get",
+        // async : false,
+        // contentType : "application/json",
+        // success : function(r){
             
             
 
-        },
-        complete : function(){
+        // },
+        // complete : function(){
             
-        }
-        });  
+        // }
+        // });  
 
         f_rendimientoPorGerencia();
 
@@ -77,8 +77,9 @@ var config = {
 
 
   <script>
-    google.charts.load('current', {packages: ['corechart']});
+    google.charts.load('current', {packages: ['corechart', 'bar']});
     google.charts.setOnLoadCallback(f_programadosVsRealizados);
+    google.charts.setOnLoadCallback(f_arsenicoAlteradoVsNormales);
 
     //  GRAFICO - PROGRAMADOS VS REALIZADOS
     function f_programadosVsRealizados() {            
@@ -140,6 +141,58 @@ var config = {
         });  
     }
 
+
+    // GRAFICO Arsenico alterados vs normales por gerencia
+    function f_arsenicoAlteradoVsNormales(){
+        $.ajax({
+        url: "dashboard/getArsenicoAlterados",
+        type : "get",
+        async : false,
+        contentType : "application/json",
+        success : function(r){
+            var datos = [['Gerencias', 'Normales', 'Alterados']];
+            for (const propiedad in r) {
+               datos.push([propiedad, r[propiedad].total, r[propiedad].alterado])
+            }
+            
+              
+
+            var data = new google.visualization.arrayToDataTable(datos);
+
+        var options = {
+          width: 600,
+          height : 400,
+          chart: {
+            title: '',
+            subtitle: ''
+          },
+          bars: 'vertical', // Required for Material Bar Charts.
+          series: {
+            0: { axis: 'Normales' }, // Bind series 0 to an axis named 'distance'.
+            1: { axis: 'Alterados' } // Bind series 1 to an axis named 'brightness'.
+          },
+          axes: {
+            x: {
+              distance: {label: 'parsecs'}, // Bottom x-axis.
+              brightness: {side: 'top', label: 'apparent magnitude'} // Top x-axis.
+            }
+          }
+        };
+
+      var chart = new google.charts.Bar(document.getElementById('g_arsenicoAlteradoVsNormales'));
+      chart.draw(data, options);
+
+    },
+    complete : function(){}
+
+});
+     
+    
+ }
+    
+
+
+    
     function apruebaRendimientoGerencia(programados, realizados){
 
         var p_1 = 0.9;
@@ -159,7 +212,7 @@ var config = {
 <div class="container-fluid">
     <div class="row" style="min-height: 400px">
         <div class="col-sm-6">
-            <h6>Cumplimiento por Gerencia</h6>
+            <h3 class="text-center">Cumplimiento por Gerencia</h3>
 
             <table id="g_cumplimientoPorGerencia" style="display:none;" class="table table-striped">
                 <thead> 
@@ -181,7 +234,7 @@ var config = {
         </div>
 
         <div class="col-sm-6" style="text-align: center">
-            <h6>Prgramados vs Realizados</h6>
+            <h3 class="text-center">Prgramados vs Realizados</h3>
             <div id="g_programadosVsRealizados">
                 
             </div>
@@ -194,8 +247,11 @@ var config = {
 
     <div class="row">
         <div class="col-sm-6">
-           
-            <div id="">
+
+        </div>
+        <div class="col-sm-6">
+            <h3 class="text-center">Arsenico, Alterados vs Normales</h3>
+            <div id="g_arsenicoAlteradoVsNormales">
                 
             </div>
         </div>

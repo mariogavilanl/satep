@@ -29,8 +29,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    //protected $redirectTo = RouteServiceProvider::HOME;
-   // public $redirectTo = '/lista';
+    protected $redirectTo = RouteServiceProvider::HOME;
+    // public $redirectTo = '/lista';
     /**
      * Create a new controller instance.
      *
@@ -47,7 +47,7 @@ class LoginController extends Controller
         $id = Auth::id();
         $user = new User();
         $idRol = $user->where('id', $id)->get()[0]->id;
-       
+ 
         switch ($idRol) {
             case 4:
                  return "/medico";
