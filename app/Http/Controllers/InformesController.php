@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Carga;
+use App\Examen;
 use Illuminate\Support\Facades\DB;
 use \DateTime;
 use \DateTimeZone;
@@ -65,6 +66,33 @@ class InformesController extends Controller
 
         return $ge;
 
+    }
+
+    public function getArsenicoAlterados(){
+
+        //array[] 
+        //$semestres = getSemestres();
+        $funciones = new InformesController();
+        $semestres = $funciones->getSemestres();
+        
+        //TODO : filtro de año, agregar
+        $examens = Examen::
+        where("examens.agentes_id", "=", 18)    
+        ->join("cargas", "cargas.id", "=", "examens.cargas_id") 
+        ->whereIn("cargas.semestre", $semestres)
+        ->with(["carga", "paciente"])
+        ->get();
+        
+        $data = $examens->groupBy("carga.gerencia")->map(function($item){
+           
+            return [
+                "alterado" => $item->where("as_estado1", "=", "Alterado")->count(), 
+                "total" => $item->count(),
+                
+            ]; 
+        });
+        
+        return $data;
     }
 
     public function getSemestres(){
