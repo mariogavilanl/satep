@@ -48,7 +48,8 @@ Route::get('/medico', 'DoctorController@index')->name('index');
 Route::get('/medico-lista', 'DoctorController@getDrExamenes')->name('listaExamenes');
 Route::get('/medico-getData', 'DoctorController@getExamenesTerminados')->name('getExamenesTerminados');
 Route::get('/medico/resultados', 'DoctorController@verResultados')->name('verResultados');
-
+Route::get('/medico/apruebaExamen', 'DoctorController@apruebaExamen')->name('apruebaExamen');
+Route::get('/medico/rechazaExamen', 'DoctorController@rechazaExamen')->name('rechazaExamen');
 
 
 

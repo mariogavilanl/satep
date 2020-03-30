@@ -74,15 +74,14 @@ class InformesController extends Controller
         //$semestres = getSemestres();
         $funciones = new InformesController();
         $semestres = $funciones->getSemestres();
-        
-        //TODO : filtro de año, agregar
+
         $examens = Examen::
         where("examens.agentes_id", "=", 18)    
         ->join("cargas", "cargas.id", "=", "examens.cargas_id") 
         ->whereIn("cargas.semestre", $semestres)
         ->with(["carga", "paciente"])
         ->get();
-        
+
         $data = $examens->groupBy("carga.gerencia")->map(function($item){
            
             return [

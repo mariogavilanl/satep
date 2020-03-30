@@ -28,6 +28,8 @@ class DoctorController extends Controller
 
     public function verResultados(Request $r){
 
+        $r->session()->put('idExamen', $r["idExamen"]);
+
         $examen = Examen::with(["usuario", "paciente", "agente", "carga"])
         ->where("cargas_id", $r["idExamen"])
         ->whereNull("realizadoEncuenta")
@@ -47,4 +49,33 @@ class DoctorController extends Controller
         return view("doctor.resultados", $data);
 
     }
+
+    public function apruebaExamen(Request $r){
+        
+       
+
+        $affected = DB::table('examens')
+                      ->where('id', session()->get('idExamen'))
+                      ->update([
+                            'observacionDoctor' => $r["comentario"],
+                            "idDoctor" => Auth::id()
+                          ]);
+                      return "ok";
+
+        
+
+
+    }
+
+    public function rechazaExamen(Request $r){
+
+        $affected = DB::table('examens')
+        ->where('id', session()->get('idExamen'))
+        ->update([
+              'observacionDoctor' => $r["comentario"],
+              "idDoctor" => Auth::id()
+            ]);
+        return "ok";
+
+    }    
 }

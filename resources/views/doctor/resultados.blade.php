@@ -8,6 +8,53 @@
     }
 </style>
 
+<script>
+    function aprobarExamen(){
+        
+        $.ajax(
+        {
+            url : "/medico/apruebaExamen?comentario="+$("#doctorObservacion").val(),
+            dataType: 'json',           
+            type : "get",
+            success : function(r){
+                console.log("--"+r);
+               if (r == "ok") {
+                   alert("se ha aprobado el examen");
+                   window.location.replace("/medico");
+               }
+            },
+            complete : function(){
+                alert("se ha aprobado el examen");
+                window.location.replace("/medico");
+            } 
+        });
+    }
+
+
+
+    function rechazarExamen(){
+        
+        $.ajax(
+        {
+            url : "/medico/rechazarExamen?comentario="+$("#doctorObservacion").val(),
+            dataType: 'json',           
+            type : "get",
+            success : function(r){
+                console.log("--"+r);
+               if (r == "ok") {
+                   alert("se ha rechazado el examen");
+                   window.location.replace("/medico");
+               }
+            },
+            complete : function(){
+                alert("se ha rechazado el examen");
+                window.location.replace("/medico");
+            } 
+        });
+    }    
+
+</script>
+
 
 <table class="table table-active">
 <tr>
@@ -89,9 +136,10 @@
     <h5>Observacion Médico</h5>
     <div class="col-12">
 
-        <textarea class="form-control"></textarea>
-            <button class="btn btn-primary" onclick="alert('Guardar datos')">Guardar</button>
-            <button class="btn btn-danger"  onclick="alert('Rechazar datos')">Rechazar</button>
+    <textarea class="form-control" id="doctorObservacion"></textarea>
+    <button class="btn btn-primary" onclick="aprobarExamen()">Guardar</button>
+    <button class="btn btn-danger"  onclick="rechazarExamen()">Rechazar</button>
+
 
     </div>
 </div>
