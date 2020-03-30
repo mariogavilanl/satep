@@ -25,7 +25,7 @@
     </script> 
 
 <div class="col-12">
-    <H1 style="text-align:center"> <img src="https://media.licdn.com/dms/image/C560BAQErD20N0vWfcA/company-logo_400_400/0?e=1583971200&v=beta&t=bkfz_q_WT0YLfy3Z5m_Nj_YS_0oFVc5PwyMeoc4p2Ro" width="80px"  height="80PX" class="img-responsive" >EXAMEN ARSENICO </H1>
+    <H1 style="text-align:center"> <img src="https://d1hbpr09pwz0sk.cloudfront.net/logo_url/codelco-ed1ca9ae" width="80px"  height="80PX" class="img-responsive" >EXAMEN ARSENICO </H1>
   
 
     <hr>
