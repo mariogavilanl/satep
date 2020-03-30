@@ -1,6 +1,6 @@
 <script>
 $(document).ready(function(){
-    $('#fecha_examen').datepicker({
+    $('#fechaExamen').datepicker({
         uiLibrary: 'bootstrap4',
         weekStartDay: 1,
         locale: 'es-es',

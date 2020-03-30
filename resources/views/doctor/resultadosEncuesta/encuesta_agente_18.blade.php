@@ -235,7 +235,7 @@
                   
                             <td>{{$encuesta->ENC_AS_RESULT_R_CAPA}}</td>
                             <td>{{$encuesta->ENC_AS_RESULT_FECHA10}}</td>
-                            <td>{{$encuesta->ENC_AS_RESULT_ORG}} </td>
+                            <td>{{$encuesta->ENC_AS_RESULT_ORG1}} </td>
                             <td>{{$encuesta->ENC_AS_R_ASIS}} </td> 
                             <td>{{$encuesta->as_preg_extra4}} </td> 
                         </tr>     
@@ -284,135 +284,148 @@
                                         </tr> 
                                         <tr>
                                             <td>TOMA LIQUIDOS PARA HIDRATARSE EN TERRENO</td>
-                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            <td>{{$encuesta->ENC_AS_R_2}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_36}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_37}} </td>
                                             
                                         </tr>   
                                         <tr>
                                             <td>SE LAVA LAS MANOS Y CARAS DE INGERIR ALIMENTOS O LIQUIDOS</td>
-                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            <td>{{$encuesta->ENC_AS_R_3}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_38}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_39}} </td>
                                             
                                         </tr>   
                                         <tr>
                                             <td>FUMA EN TERRENO</td>
-                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            <td>{{$encuesta->ENC_AS_R_4}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_40}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_41}} </td>
                                             
                                         </tr>   
                                         <tr>
                                             <td>BEBE CAFE</td>
-                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            <td>{{$encuesta->ENC_AS_R_5}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_42}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_43}} </td>
                                             
                                         </tr>   
                                         <tr>
                                             <td>DISPONE DE SALA DE CAMBIOS</td>
-                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            <td>{{$encuesta->ENC_AS_R_6}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_44}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_45}} </td>
                                             
                                         </tr>   
                                         <tr>
                                             <td>SI DISPONE, TIENE AREA LIMPIA Y SUCIA</td>
-                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            <td>{{$encuesta->ENC_AS_R_7}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_46}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_47}} </td>
                                             
                                         </tr>   
                                         <tr>
                                             <td>CUENTA CON DOBLE CASILLERO</td>
-                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            <td>{{$encuesta->ENC_AS_R_8}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_48}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_49}} </td>
                                             
                                         </tr>   
                                         <tr>
                                             <td>SI NO DISPONE DE CASA DE CAMBIO, DONDE SE CAMBIA</td>
-                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            <td>{{$encuesta->ENC_AS_R_9}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_50}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_51}} </td>
                                             
                                         </tr>   
                                         <tr>
                                             <td>UBICACIÓN DE SU CASILLERO</td>
-                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            <td>{{$encuesta->ENC_AS_R_10}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_52}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_53}} </td>
                                             
                                         </tr>   
                                         <tr>
                                             <td>DISPONE DE ROPA LIMPIA DE TRABAJO (TODOS LOS DIAS)</td>
-                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            <td>{{$encuesta->ENC_AS_R_11}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_54}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_55}} </td>
                                             
                                         </tr>   
                                         <tr>
                                             <td>SE CAMBIA DE ROPA DE TRABAJO TODOS LOS DIAS</td>
-                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            <td>{{$encuesta->ENC_AS_R_12}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_56}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_57}} </td>
                                             
                                         </tr>   
                                         <tr>
                                             <td>SE DUCHA TODOS LOS DIAS EN FAENA AL TERMINO JORNADA</td>
-                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            <td>{{$encuesta->ENC_AS_R_13}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_58}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_59}} </td>
                                             
                                         </tr>   
                                         <tr>
                                             <td>POSTERIOR A LA DUCHA USA CREMAS DE CARA Y/O MANOS</td>
-                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            <td>{{$encuesta->ENC_AS_R_14}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_60}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_61}} </td>
                                             
                                         </tr>   
                                         <tr>
-                                            <td>INGIERE ALIMENTOS EN TERRENO</td>
-                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            <td>ANTES DE IR ALMORZAR, SE CAMBIA DE ROPA</td>
+                                            <td>{{$encuesta->ENC_AS_R_15}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_62}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_63}} </td>
                                             
                                         </tr>   
                                         <tr>
-                                            <td>INGIERE ALIMENTOS EN TERRENO</td>
-                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            <td>ANTES DE IR ALMORZAR, SE REALIZA ASEO DE MANOS Y CARA</td>
+                                            <td>{{$encuesta->ENC_AS_R_16}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_64}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_65}} </td>
+                                            
+                                        </tr> 
+                                        <tr>
+                                            <td>SI SE ENCUENTRA MUY SUCIO, SE BAÑA</td>
+                                            <td>{{$encuesta->ENC_AS_R_17}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_67}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_68}} </td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>SU PROTECTOR RESPIRATORIO, ES ASEADO DIARIAMENTE</td>
+                                            <td>{{$encuesta->ENC_AS_R_18}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_69}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_70}} </td>
+                                            
+                                        </tr>         
+                                        <tr>
+                                            <td>DONDE ALMACENA SU PROTECTOR RESPIRATORIO DURANTE EL DESCANSO</td>
+                                            <td>{{$encuesta->ENC_AS_R_19}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_71}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_72}} </td>
                                             
                                         </tr>   
                                         <tr>
-                                            <td>INGIERE ALIMENTOS EN TERRENO</td>
-                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                            <td>DONDE ALMACENA SU PROTECTOR RESPIRATORIO DURANTE LA COLACIÓN</td>
+                                            <td>{{$encuesta->ENC_AS_R_20}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_73}}</td>
+                                            <td>{{$encuesta->ENC_AS_RESULT_74}} </td>
                                             
-                                        </tr>   
+                                        </tr> 
+                                        <table class="table table-primary" style="font-size: 0.7rem;">
+                                            <thead>
+                                
+                                            <h5>CONCLUSIONES</h5>
+                                
+                                            <thead>  
+                                          
                                         <tr>
-                                            <td>INGIERE ALIMENTOS EN TERRENO</td>
-                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
+                                         
+                                            <td>{{$encuesta->ENC_AS_RESULT_75}}</td>
                                             
-                                        </tr>   
-                                        <tr>
-                                            <td>INGIERE ALIMENTOS EN TERRENO</td>
-                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
-                                            
-                                        </tr>   
-                                        <tr>
-                                            <td>INGIERE ALIMENTOS EN TERRENO</td>
-                                            <td>{{$encuesta->ENC_AS_R_1}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_34}}</td>
-                                            <td>{{$encuesta->ENC_AS_RESULT_35}} </td>
                                             
                                         </tr>       
     
