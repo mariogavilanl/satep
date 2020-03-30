@@ -2231,7 +2231,7 @@ public function getExamenso2(Request $r){
                 $examen->realizadoEncuenta = 1;
                 
                 $examen->save();
-    
+                return redirect()->action('PruebasController@pico');
 
               }
 
