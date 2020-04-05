@@ -86,8 +86,12 @@ class InformesController extends Controller
         $data = $examens->groupBy("carga.gerencia")->map(function($item){
            
             return [
-                "alterado" => $item->where("as_estado1", "=", "Alterado")->count(), 
+                
+                "alterado" => $item->where("as_estado", "=", "Alterado")->count(),
+               // "normal" => $item->where("as_estado", "=", "normal")->count(),
+               // "alterado" => $item->where("as_estado1", "=", "Alterado")->count(),
                 "total" => $item->count(),
+               
                 
             ]; 
         });

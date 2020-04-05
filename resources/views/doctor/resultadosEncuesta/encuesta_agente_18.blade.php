@@ -53,16 +53,7 @@
 
            <tbody> 
                
-               <tr>
-                  
-              {{-- <td>$encuesta->ENC_AS_R_HA}}</td>--}}
-                <td>{{$encuesta->ENC_AS_RESULT_EMPRESA}}</td>
-                <td>{{$encuesta->ENC_AS_RESULT_PUESTOTRABAJO}}</td>
-                <td>{{$encuesta->ENC_AS_RESULT_ORG}}</td>
-                <td>{{$encuesta->ENC_AS_FECHA_INI1}}</td>
-                <td>{{$encuesta->ENC_AS_FECHA_INI2}}</td>
-                <td>{{$encuesta->ENC_AS_RESULT_MEDIDA}}</td>
-               </tr>
+               
                
                <tr>
                 
