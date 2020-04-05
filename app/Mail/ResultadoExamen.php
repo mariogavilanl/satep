@@ -24,8 +24,11 @@ class ResultadoExamen extends Mailable
     public function __construct($idE)
     {
         //
-        $columnas = DB::table("agentescolumnas")->where("agente_id", 18)->get();
+
         $examen = DB::table("examens")->where("id", $idE)->first();
+
+        $columnas = DB::table("agentescolumnas")->where("agente_id", $examen->agentes_id)->get();
+
 
         foreach ($columnas as $dato) {
 
