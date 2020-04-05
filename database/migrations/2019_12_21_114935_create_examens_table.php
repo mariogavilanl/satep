@@ -40,7 +40,7 @@ class CreateExamensTable extends Migration
             // observacion
             $table->text('observacionExamen')->nullable();
 
-            //VIGILANTE PRIVADO
+            //VIGILANTE PRIVADO 17
             $table->text('oido_derecho_1')->nullable();
             $table->text('oido_derecho_2')->nullable();
             $table->text('oido_derecho_3')->nullable();
@@ -119,7 +119,7 @@ class CreateExamensTable extends Migration
            $table->dateTime('af_FECHA_REEVALUACION')->nullable();
            $table->text('af_CONCLUSION_REEVALUACION')->nullable();     
 
-           // AG
+           // AG 
            $table->dateTime('ag_FECHA_EVALUACION')->nullable();
            $table->text('ag_RX_TORAX_PA')->nullable();
            $table->text('ag_CREATINEMIA')->nullable();
@@ -191,8 +191,6 @@ class CreateExamensTable extends Migration
            
 
             // ENCUETA 4 formol
-
-
             $table->text("ENC_FO_R_PC")->nullable();
             $table->text("ENC_FO_R_LP")->nullable();
             $table->text("ENC_FO_R_TS")->nullable();

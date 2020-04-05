@@ -58,7 +58,7 @@ class AgentesSeeder extends Seeder
             'glosaAgente' => 'RADIACION IONIZANTE 2 Y 3',
             'tipo' => 'salud compatible'],
 
-            ['nombreAgente' => 'VIG PRIV',
+            ['nombreAgente' => 'AG',
             'glosaAgente' => 'ALTURA GREOGRAFICA',
             'tipo' => 'salud compatible'],
 
