@@ -41,7 +41,7 @@ class CargaSeeder extends Seeder
         $correos = ["mariogavilan.l@gmail.com", "decheverriavs@gmail.com"];
 
 
-        for ($i=0; $i <= 5 ; $i++) { 
+        for ($i=0; $i <= 10 ; $i++) { 
             
             DB::table('cargas')->insert([
                 'nroSap' => rand(1,5000),
@@ -66,7 +66,7 @@ class CargaSeeder extends Seeder
 	        ]);
     }
 
-        for ($i=0; $i <= 4 ; $i++) { 
+        for ($i=0; $i <= 30 ; $i++) { 
             
             DB::table('cargas')->insert([
                 'nroSap' => rand(1,5000),
@@ -75,6 +75,7 @@ class CargaSeeder extends Seeder
                 'segundoNombre' => $faker->firstNameMale,   
                 'primerApellido' => $faker->lastName,
                 'segundoApellido' => $faker->lastName,
+                'email' => $correos[rand(0,1)],
                 'cargo' => $cargos[rand(0,4)],
                 'gerencia' => $gerencias[rand(0, 5)],
                 'agentes_id' => rand(1, 19),

@@ -33,7 +33,7 @@ class CreateCargasTable extends Migration
             $table->char('sexo');
             $table->boolean("realizado")->default(false);
             $table->boolean("realizadoco")->default(false);
-
+            $table->boolean("informadopaciente")->default(false);
             $table->integer("idEncuesta");
             $table->boolean("encuesta");
             $table->integer("idAntecedentes");

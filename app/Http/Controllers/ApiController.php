@@ -2213,24 +2213,17 @@ public function getExamenso2(Request $r){
                 $examen->ENC_AS_RESULT_73  = $r["result_73"];
                 $examen->ENC_AS_RESULT_74  = $r["result_74"];
                 $examen->ENC_AS_RESULT_75  = $r["result_75"];
-               
-
-
-                          
-
-
-
-
-               
-
-
-
-
-               
                //TODO:CAMBIAR A DINAMICO
-                $examen->realizadoEncuenta = 1;
-                
+                $examen->realizadoEncuenta = 1;                
                 $examen->save();
+                //
+
+                DB::table("cargas")->where("id", "=", session()->get('idCarga'))
+                ->update(["encuesta" => 1]);
+                
+                
+
+
                 return redirect()->action('PruebasController@pico');
 
               }
@@ -2336,6 +2329,9 @@ public function getExamenso2(Request $r){
         
                 $examen->save();
 
+                DB::table("cargas")->where("id", "=", session()->get('idCarga'))
+                ->update(["encuesta" => 1]);
+
 
               }
 
@@ -2349,15 +2345,13 @@ public function getExamenso2(Request $r){
                 $examen->pacientes_id = $idPaciente;
                 $examen->agentes_id = 22;
 
-                //
-                 
-                  
-
-               
                 
                 $examen->realizadoEncuenta = 1;
                 $examen->realizadoAntecedente = 1;
                 $examen->save();
+
+                DB::table("cargas")->where("id", "=", session()->get('idCarga'))
+                ->update(["encuesta" => 1]);
 
 
               }
@@ -2370,15 +2364,6 @@ public function getExamenso2(Request $r){
                 $examen->users_id = $idUsuario;
                 $examen->pacientes_id = $idPaciente;
                 $examen->agentes_id = 22;
-
-                //
-                 
-                
-  
-
-
-
-               
 
                 $examen->ENC_CI_R_PC    = $r["r_pc"];                                  
                 $examen->ENC_CI_R_LP    = $r["r_lp"];
@@ -2458,13 +2443,12 @@ public function getExamenso2(Request $r){
                 $examen->ENC_CI_PREG54  = $r["preg54"];
                 $examen->ENC_CI_PREG55  = $r["preg55"];
 
-
-
-
                 $examen->realizadoEncuenta = 1;
                 
                 $examen->save();
 
+                DB::table("cargas")->where("id", "=", session()->get('idCarga'))
+                ->update(["encuesta" => 1]);
 
               }
 

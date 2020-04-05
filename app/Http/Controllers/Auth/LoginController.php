@@ -55,6 +55,10 @@ class LoginController extends Controller
                  return "/medico";
                 break;
 
+                case 5:
+                    return "/dashboard";
+                   break;                
+
             
             default:
                  return "/lista";

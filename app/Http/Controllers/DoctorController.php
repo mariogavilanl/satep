@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ResultadoExamen;
+
+
 use Carbon\Carbon;
 use App\Examen;
 
@@ -60,7 +65,25 @@ class DoctorController extends Controller
                             'observacionDoctor' => $r["comentario"],
                             "idDoctor" => Auth::id()
                           ]);
-                      return "ok";
+
+
+                          
+            $examen = DB::table("examens")->where("cargas_id", "=", session()->get('idExamen'))->first();   
+            $carga = DB::table("cargas")->where("id", "=", $examen->cargas_id)->first(); 
+
+            $cargaUpdate = DB::table('cargas')
+            ->where('id', $carga->id)
+            ->update([
+                  'informadopaciente' => 1
+                  
+                ]);   
+        
+
+
+        Mail::to($carga->email)->queue(new ResultadoExamen);
+
+        return "ok";
+
     }
 
     public function rechazaExamen(Request $r){
@@ -71,6 +94,22 @@ class DoctorController extends Controller
               'observacionDoctor' => $r["comentario"],
               "idDoctor" => Auth::id()
             ]);
+            
+
+
+            $examen = DB::table("examens")->where("id", "=", session()->get('idExamen'))->first();
+
+            $carga = DB::table("cargas")->where("id", "=", $examen->cargas_id)->first(); 
+
+            $cargaUpdate = DB::table('carga')
+            ->where('id', $carga->id)
+            ->update([
+                  'informadopaciente' => 1
+                  
+                ]);          
+                
+        Mail::to($carga->email)->queue(new ResultadoExamen);
+                
         return "ok";
 
     }    
