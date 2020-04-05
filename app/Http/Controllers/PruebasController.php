@@ -30,7 +30,7 @@ class PruebasController extends Controller
     {
 
 //
-        Mail::to("decheverriavs@gmail.com")->queue(new ResultadoExamen);
+        Mail::to("mariogavilan.l@gmail.com")->queue(new ResultadoExamen);
 //
 
 

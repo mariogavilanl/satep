@@ -15,13 +15,14 @@ class CreateCargasTable extends Migration
     {
         Schema::create('cargas', function (Blueprint $table) {
             $table->bigIncrements('id');
-
+            
             $table->integer('nroSap');
             $table->string('rut');
             $table->string('primerNombre');
             $table->string('segundoNombre');
             $table->string('primerApellido');
             $table->string('segundoApellido');
+            $table->string("email")->nullable();
             $table->string('cargo');
             $table->string('gerencia');
             $table->integer('agentes_id');

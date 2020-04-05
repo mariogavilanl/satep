@@ -38,6 +38,9 @@ class CargaSeeder extends Seeder
             'Gerencia MSS'
         ];
 
+        $correos = ["mariogavilan.l@gmail.com", "decheverriavs@gmail.com"];
+
+
         for ($i=0; $i <= 5 ; $i++) { 
             
             DB::table('cargas')->insert([
@@ -48,6 +51,7 @@ class CargaSeeder extends Seeder
                 'primerApellido' => $faker->lastName,
                 'segundoApellido' => $faker->lastName,
                 'cargo' => $cargos[rand(0,4)],
+                'email' => $correos[rand(0,1)],
                 'gerencia' => $gerencias[rand(0, 5)],
                 'agentes_id' => 18,
                 'semestre' => rand(1,4),
