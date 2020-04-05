@@ -234,7 +234,7 @@ $(document).ready(function(){
         </div>
 
         <div class="col-sm-6" style="text-align: center">
-            <h3 class="text-center">Prgramados vs Realizados</h3>
+            <h3 class="text-center">Programados vs Realizados</h3>
             <div id="g_programadosVsRealizados">
                 
             </div>

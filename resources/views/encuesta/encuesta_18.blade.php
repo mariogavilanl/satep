@@ -132,505 +132,786 @@
     
         });
     });
-    </script>  
 
-<div class="container-fluid">
-<form action="/api/getEncuestaResult" method="GET">
-
-    <style type="text/css">
-        .tg  {border-collapse:collapse;border-spacing:0;border-color:#aaa;}
-        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:9px 18px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#aaa;color:#333;background-color:#fff;}
-        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:9px 18px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#aaa;color:#fff;background-color:#f38630;}
-        .tg .tg-yj5y{background-color:#efefef;border-color:inherit;text-align:center;vertical-align:top}
-        .tg .tg-hkp2{font-weight:bold;background-color:#68cbd0;border-color:inherit;text-align:right;vertical-align:top}
-        .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-        .tg .tg-w9in{background-color:#343434;text-align:left;vertical-align:top}
-        .tg .tg-46xj{font-size:36px;font-family:"Arial Black", Gadget, sans-serif !important;;background-color:#343434;color:#34cdf9;text-align:center;vertical-align:top}
-        .tg .tg-y698{background-color:#efefef;border-color:inherit;text-align:left;vertical-align:top}
-        .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-        .tg .tg-fymr{font-weight:bold;border-color:inherit;text-align:left;vertical-align:top}
-        .tg .tg-dvpl{border-color:inherit;text-align:right;vertical-align:top}
-        </style>
-        <table class="tg" align="center">
-          <tr>
-            <th class="tg-w9in" colspan="6"></th>
-          </tr>
-          <tr>
-            <td class="tg-46xj" colspan="6"><H1 style="text-align:center"><img src="/img/logo-codelco.png" width="110px"  height="110PX" class="img-responsive"  ></a>  ENCUESTA ARSÉNICO </H1></td>
-          </tr>
-          <tr>
-            <td class="tg-w9in"></td>
-            <td class="tg-w9in"></td>
-            <td class="tg-w9in"></td>
-            <td class="tg-w9in"></td>
-            <td class="tg-w9in"></td>
-            <td class="tg-w9in"></td>
-          </tr>
-          <tr>
-            <td class="tg-hkp2" colspan="6"><span style="color:rgb(0, 0, 0)">ANTECEDENTES MÓRBIDOS </span><img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3e%3cpath fill='%23ffffff' d='M528 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-352 96c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zm112 236.8c0 10.6-10 19.2-22.4 19.2H86.4C74 384 64 375.4 64 364.8v-19.2c0-31.8 30.1-57.6 67.2-57.6h5c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h5c37.1 0 67.2 25.8 67.2 57.6v19.2zM512 312c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16zm0-64c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16zm0-64c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16z'/%3e%3c/svg%3e" alt="Image" width="40" height="40"></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">Hipertensión Arterial</td>
-            <td class="tg-0pky" colspan="5"> 
-              <input type="radio" name="r_ha" value="si" /> Sí<br />
-              <input type="radio" name="r_ha" value="no" /> No<br /></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">Diabetes Mellitus</td>
-            <td class="tg-0pky" colspan="5"> 
-                <input type="radio" name="r_dm" value="si" /> Sí<br />
-                <input type="radio" name="r_dm" value="no" /> No<br /></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">Enfermedad Renal</td>
-            <td class="tg-0pky" colspan="5"> 
-                <input type="radio" name="r_er" value="si" /> Sí<br />
-                <input type="radio" name="r_er" value="no" /> No<br /></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">Hipotirodismo</td>
-            <td class="tg-0pky" colspan="5"> 
-                <input type="radio" name="r_h" value="si" /> Sí<br />
-                <input type="radio" name="r_h" value="no" /> No<br /></td>
-          </tr>
-          <tr>
-            <td class="tg-hkp2" colspan="6">HISTORIAL LABORAL <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3e%3cpath fill='%23ffffff' d='M436 160c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-20V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h320c26.5 0 48-21.5 48-48v-48h20c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-20v-64h20c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-20v-64h20zm-228-32c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zm112 236.8c0 10.6-10 19.2-22.4 19.2H118.4C106 384 96 375.4 96 364.8v-19.2c0-31.8 30.1-57.6 67.2-57.6h5c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h5c37.1 0 67.2 25.8 67.2 57.6v19.2z'/%3e%3c/svg%3e" alt="Image" width="40" height="40"></td>
-          </tr>
-          <tr>
-            <td class="tg-0pky">Ha tenido puestos de trabajos anteriores con exposición a ARSÉNICO</td>
-            <td class="tg-0pky" colspan="5"> 
-                <input type="radio" name="r_preg1_as" value="si" /> Sí<br />
-                <input type="radio" name="r_preg1_as" value="no" /> No<br /></td>
-          </tr>
-          <tr>
-            <td class="tg-fymr" colspan="6">En caso de haber respondido "SI", Completar el siguiente cuadro de exposición ocupacional:</td>
-          </tr>
-          <tr>
-           
-            <td class="tg-yj5y">Empresa</td>
-            <td class="tg-yj5y">Puesto Trabajo</td>
-            <td class="tg-y698">Org Administrador</td>
-            <td class="tg-y698">Desde</td>
-            <td class="tg-y698">Hasta</td>
-            <td class="tg-y698">Medidas de control</td>
-          </tr>
-          <tr>
-            <td class="tg-0pky"><input type="text" name="result_empresa" value=""  width="20px" size="80"/></td>
-            <td class="tg-0pky"><input type="text" name="result_puestotrabajo" value="" width="20px"/> </td>
-            <td class="tg-0pky"><input type="text" name="result_org" value=""  width="20px"/> </td>
-            <td class="tg-0pky"><input id="FECHA1" name="fecha_ini1" width="100px"  width="20px"  /></td>
-            <td class="tg-0pky"><input id="FECHA2" name="fecha_ini2" width="100px"  width="20px" /></td>
-            <td class="tg-0pky"><input type="text" name="result_medida" value=""  width="20px" /></td>
-          </tr>
-          <tr>
-            <td class="tg-0pky"><input type="text" name="result_1" value=""  width="20px" size="80"/></td>
-            <td class="tg-0pky"><input type="text" name="result_2" value="" width="20px"/> </td>
-            <td class="tg-0pky"><input type="text" name="result_3" value=""  width="20px"/> </td>
-            <td class="tg-0pky"><input id="FECHA3" name="fecha_ini3" width="100px"  width="20px"  /></td>
-            <td class="tg-0pky"><input id="FECHA4" name="fecha_ini4" width="100px"  width="20px" /></td>
-            <td class="tg-0pky"><input type="text" name="result_4" value=""  width="20px" /></td>
-          </tr>
-          <tr>
-            <td class="tg-0pky"><input type="text" name="result_5" value=""  width="20px" size="80"/></td>
-            <td class="tg-0pky"><input type="text" name="result_6" value="" width="20px"/> </td>
-            <td class="tg-0pky"><input type="text" name="result_7" value=""  width="20px"/> </td>
-            <td class="tg-0pky"><input id="FECHA5" name="fecha_ini5" width="100px"  width="20px"  /></td>
-            <td class="tg-0pky"><input id="FECHA6" name="fecha_ini6" width="100px"  width="20px" /></td>
-            <td class="tg-0pky"><input type="text" name="result_8" value=""  width="20px" /></td>
-          </tr>
-          <tr>
-            <td class="tg-0pky"><input type="text" name="result_9" value=""  width="20px" size="80"/></td>
-            <td class="tg-0pky"><input type="text" name="result_10" value="" width="20px"/> </td>
-            <td class="tg-0pky"><input type="text" name="result_11" value=""  width="20px"/> </td>
-            <td class="tg-0pky"><input id="FECHA7" name="fecha_ini7" width="100px"  width="20px"  /></td>
-            <td class="tg-0pky"><input id="FECHA8" name="fecha_ini8" width="100px"  width="20px" /></td>
-            <td class="tg-0pky"><input type="text" name="result_12" value=""  width="20px" /></td>
-          </tr>
-          <tr>
-            <td class="tg-hkp2" colspan="6">EXPOSICION ACTUAL <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3e%3cpath fill='%23ffffff' d='M336 64h-80c0-35.3-28.7-64-64-64s-64 28.7-64 64H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM96 424c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24zm0-96c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24zm0-96c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24zm96-192c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24zm128 368c0 4.4-3.6 8-8 8H168c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16zm0-96c0 4.4-3.6 8-8 8H168c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16zm0-96c0 4.4-3.6 8-8 8H168c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16z'/%3e%3c/svg%3e" alt="Image" width="40" height="40"></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">Antiguedad en el puesto</td>
-            <td class="tg-0pky">
-              <input type="text" name="result_13" value="" width="20px" size="3px"/></td>
-            <td class="tg-0pky">Años</td>
-            <td class="tg-0pky">
-              <input type="text" name="result_14" value="" width="20px" size="3"/></td>
-            <td class="tg-0pky">Meses</td>
-            <td class="tg-0pky"> 
-                <select name="mes">
-                  <option value="1">1 MES</option>
-                  <option value="2">2 MESES</option>
-                  <option value="3">3 MESES</option>
-                  <option value="4">5 MESES</option>
-                  <option value="5">6 MESES</option>
-                  <option value="6">7 MESES</option>
-                  <option value="7">8 MESES</option>
-                  <option value="8">9 MESES</option>
-                  <option value="9">10 MESES</option>
-                  <option value="10">11 MESES</option>
-                  <option value="11">12 MESES</option>
-                </select></td>
-            <td class="tg-0pky"></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">Medidas de Control<br></td>
-            <td class="tg-0pky" colspan="5">
-              <input type="checkbox" name="c_mc_ing" value="Ingenieros" />Ingenieros<br />
-              <input type="checkbox" name="c_mc_adm" value="Administrativas" />Administrativas<br />
-              <input type="checkbox" name="c_mc_epp" value="elementos proteccion personal" />Elementos de proteccion personal<br /></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">¿Utilización elementos de protección personal?</td>
-            <td class="tg-0pky" colspan="5">
-              <input type="radio" name="r_preg2_proteccion" value="siempre" />Simpre<br />
-              <input type="radio" name="r_preg2_proteccion" value="a veces" />A veces<br />
-              <input type="radio" name="r_preg2_proteccion" value="nunca" /> Nunca<br /></td>
-          </tr>
-          <tr>
-            <td class="tg-hkp2" colspan="6">FAVOR INDIQUE EL TIPO DE ELEMENTOS DE PROTECCIÓN QUE UTILIZA  <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3e%3cpath fill='%23ffffff' d='M480 288c0-80.25-49.28-148.92-119.19-177.62L320 192V80a16 16 0 0 0-16-16h-96a16 16 0 0 0-16 16v112l-40.81-81.62C81.28 139.08 32 207.75 32 288v64h448zm16 96H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h480a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z'/%3e%3c/svg%3e" alt="Image" width="40" height="40"></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">EPP</td>
-            <td class="tg-y698">TIPO</td>
-            <td class="tg-y698">MARCA</td>
-            <td class="tg-y698">MODELO</td>
-            <td class="tg-y698" colspan="2">OBSERVACIONES</td>
-          </tr>
-          <tr>
-            <td class="tg-y698">PROTECTOR RESPIRATORIO</td>
-            <td class="tg-0pky">
-              <input type="radio" name="r_preg3_medio" value="Medio Rostro" />Medio Rostro<br />
-              <input type="radio" name="r_preg3_medio" value="Rostro" />Rostro<br />
-              <input type="radio" name="r_preg3_medio" value="Completo" /> Completo<br />
-              <input type="radio" name="r_preg3_medio" value="Aire Asistido" /> Aire Asistido<br /></td>
-            <td class="tg-0pky">
-              <input type="text" name="result_15" value="" width="20px"/></td>
-            <td class="tg-0pky">
-              <input type="text" name="result_16" value="" width="20px"/></td>
-            <td class="tg-0pky" colspan="2">
-              <input type="text" name="result_17" value="" width="20px"/></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">BUZO PILOTO</td>
-            <td class="tg-0pky"><input type="text" name="result_18" value="" width="20px"/></td>
-            <td class="tg-0pky"><input type="text" name="result_19" value="" width="20px"/></td>
-            <td class="tg-0pky"><input type="text" name="result_20" value="" width="20px"/></td>
-            <td class="tg-0pky" colspan="2">
-              <input type="text" name="result_21" value="" width="20px"/></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">ESCLAVINA</td>
-            <td class="tg-0pky"><input type="text" name="result_22" value="" width="20px"/></td>
-            <td class="tg-0pky"><input type="text" name="result_23" value="" width="20px"/></td>
-            <td class="tg-0pky"><input type="text" name="result_24" value="" width="20px"/></td>
-            <td class="tg-0pky" colspan="2">
-              <input type="text" name="result_25" value="" width="20px"/></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">GUANTES</td>
-            <td class="tg-0pky"><input type="text" name="result_26" value="" width="20px"/></td>
-            <td class="tg-0pky"><input type="text" name="result_27" value="" width="20px"/></td>
-            <td class="tg-0pky"><input type="text" name="result_28" value="" width="20px"/></td>
-            <td class="tg-0pky" colspan="2">
-              <input type="text" name="result_29" value="" width="20px"/></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">OTRO</td>
-            <td class="tg-0pky"><input type="text" name="result_30" value="" width="20px"/></td>
-            <td class="tg-0pky"><input type="text" name="result_31" value="" width="20px"/></td>
-            <td class="tg-0pky"><input type="text" name="result_32" value="" width="20px"/></td>
-            <td class="tg-0pky" colspan="2">
-              <input type="text" name="result_33" value="" width="20px"/></td>
-          </tr>
-          <tr>
-            <td class="tg-hkp2" colspan="6">PROTECCIÓN RESPIRATORIA  <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3e%3cpath fill='%23ffffff' d='M464 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h416c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zM128 120c-22.091 0-40 17.909-40 40s17.909 40 40 40 40-17.909 40-40-17.909-40-40-40zm0 96c-22.091 0-40 17.909-40 40s17.909 40 40 40 40-17.909 40-40-17.909-40-40-40zm0 96c-22.091 0-40 17.909-40 40s17.909 40 40 40 40-17.909 40-40-17.909-40-40-40zm288-136v-32c0-6.627-5.373-12-12-12H204c-6.627 0-12 5.373-12 12v32c0 6.627 5.373 12 12 12h200c6.627 0 12-5.373 12-12zm0 96v-32c0-6.627-5.373-12-12-12H204c-6.627 0-12 5.373-12 12v32c0 6.627 5.373 12 12 12h200c6.627 0 12-5.373 12-12zm0 96v-32c0-6.627-5.373-12-12-12H204c-6.627 0-12 5.373-12 12v32c0 6.627 5.373 12 12 12h200c6.627 0 12-5.373 12-12z'/%3e%3c/svg%3e" alt="Image" width="40" height="40"></td>
-          </tr>
-          <tr>
-            <td class="tg-0pky" colspan="3">Se realizó prueba de ajustes de respirador (Portacount)</td>
-            <td class="tg-0pky">
-                <input type="radio" name="r_respirador" value="si" /> Sí<br />
-                <input type="radio" name="r_respirador" value="no" /> No<br /></td>
-            <td class="tg-0pky">Fecha</td>
-            <td class="tg-0pky"><input id="FECHA9" name="fecha_ini9" width="100px"  width="20px"  /></td>
-          </tr>
-          <tr>
-            <td class="tg-0pky">Resultado Marca:</td>
-            <td class="tg-0pky">
-              <input type="text" name="t_resulMarca" value="" width="20px"/></td>
-            <td class="tg-0pky">Talla indicada</td>
-            <td class="tg-c1ow" colspan="0">
-              <input type="radio" name="r_talla" value="s" />S 
-              <input type="radio" name="r_talla" value="m" />M 
-              <input type="radio" name="r_talla" value="l" />L
-                
-            </td>
-          </tr>
-          <tr>
-            <td class="tg-0pky" colspan="1">¿Utiliza el protector indicado en resultado de prueba?</td>
-            <td class="tg-0pky" colspan="1">
-              <input type="radio" name="r_pi" value="si" />Si 
-              <input type="radio" name="r_pi" value="no" />no
-
-
-            </td>
-          </tr>
-          <tr>
-            <td class="tg-hkp2" colspan="6">CAPACITACIÓN <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512'%3e%3cpath fill='%23ffffff' d='M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4zm323-128.4l-27.8-28.1c-4.6-4.7-12.1-4.7-16.8-.1l-104.8 104-45.5-45.8c-4.6-4.7-12.1-4.7-16.8-.1l-28.1 27.9c-4.7 4.6-4.7 12.1-.1 16.8l81.7 82.3c4.6 4.7 12.1 4.7 16.8.1l141.3-140.2c4.6-4.7 4.7-12.2.1-16.8z'/%3e%3c/svg%3e" alt="Image" width="40" height="40"></td>
-          </tr>
-          <tr>
-            <td class="tg-y698" colspan="6">¿Recibió capacitación específíca para el control de exposición a ARSÉNICO y Protección respiratoria?</td>
-          </tr>
-          <tr>
-            <td class="tg-0pky">
-                <input type="radio" name="r_capa" value="si" /> Sí<br />
-                <input type="radio" name="r_capa" value="no" /> No<br /></td>
-            <td class="tg-0pky">Fecha</td>
-            <td class="tg-0pky"><input id="FECHA10" name="fecha_ini10" width="220px"  width="20px"  /></td>
-            <td class="tg-0pky" colspan="2">Organismo Capacitador</td>
-            
-            <td class="tg-0pky">
-              <input type="text" name="result_org1" value="" width="20px"/></td>
-            </td>
-          </tr>
-          <tr>
-            <td class="tg-0pky">Existe evidencia de asistencia</td>
-            <td class="tg-0pky">
-              <input type="radio" name="r_asis" value="si" /> Sí<br />
-              <input type="radio" name="r_asis" value="no" /> No<br /></td></td>
-            <td class="tg-dvpl" colspan="3">Registro</td>
-            <td class="tg-0pky"><input type="text" name="as_preg_extra4" value="" width="20px"/></td>
-          </tr>
-          <tr>
-            <td class="tg-hkp2" colspan="6">ANTECEDENTES EXPOSICIÓN RECIENTE  <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3e%3cpath fill='%23ffffff' d='M464%2c128H272L208%2c64H48A48%2c48%2c0%2c0%2c0%2c0%2c112V400a48%2c48%2c0%2c0%2c0%2c48%2c48H464a48%2c48%2c0%2c0%2c0%2c48-48V176A48%2c48%2c0%2c0%2c0%2c464%2c128ZM359.5%2c296a16%2c16%2c0%2c0%2c1-16%2c16h-64v64a16%2c16%2c0%2c0%2c1-16%2c16h-16a16%2c16%2c0%2c0%2c1-16-16V312h-64a16%2c16%2c0%2c0%2c1-16-16V280a16%2c16%2c0%2c0%2c1%2c16-16h64V200a16%2c16%2c0%2c0%2c1%2c16-16h16a16%2c16%2c0%2c0%2c1%2c16%2c16v64h64a16%2c16%2c0%2c0%2c1%2c16%2c16Z'/%3e%3c/svg%3e" alt="Image" width="40" height="40"></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">Detalle las tareas realizadas en su ultimo Turno</td>
-            <td class="tg-yj5y" colspan="0">
-            <input type="text" name="as_preg_extra1" value="" width="20px"/></td>
-            <td class="tg-yj5y" colspan="1">Área
-            <input type="text" name="as_preg_extra2" value="" width="20px"/></td>
-            <td class="tg-y698" >EPP Utilizados y/o comentarios</td>
-            <td class="tg-yj5y" colspan="2">
-            <input type="text" name="as_preg_extra3" value="" width="20px"/></td>
-          </td>
-        </td>
-        </td>
-          </tr>
-          <tr>
-            <td class="tg-0pky"></td>
-            <td class="tg-0pky" colspan="3"></td>
-            <td class="tg-0pky" colspan="2"></td>
-          </tr>
-          <tr>
-            <td class="tg-0pky"></td>
-            <td class="tg-0pky" colspan="3"></td>
-            <td class="tg-0pky" colspan="2"></td>
-          </tr>
-          <tr>
-            <td class="tg-0pky"></td>
-            <td class="tg-0pky" colspan="3"></td>
-            <td class="tg-0pky" colspan="2"></td>
-          </tr>
-          <tr>
-            <td class="tg-0pky"></td>
-            <td class="tg-0pky" colspan="3"></td>
-            <td class="tg-0pky" colspan="2"></td>
-          </tr>
-          <tr>
-            <td class="tg-hkp2" colspan="6">CONDUCTAS Y MEDIDAS HIGIÉNICAS <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3e%3cpath fill='%23ffffff' d='M519.442 288.651c-41.519 0-59.5 31.593-82.058 31.593C377.409 320.244 432 144 432 144s-196.288 80-196.288-3.297c0-35.827 36.288-46.25 36.288-85.985C272 19.216 243.885 0 210.539 0c-34.654 0-66.366 18.891-66.366 56.346 0 41.364 31.711 59.277 31.711 81.75C175.885 207.719 0 166.758 0 166.758v333.237s178.635 41.047 178.635-28.662c0-22.473-40-40.107-40-81.471 0-37.456 29.25-56.346 63.577-56.346 33.673 0 61.788 19.216 61.788 54.717 0 39.735-36.288 50.158-36.288 85.985 0 60.803 129.675 25.73 181.23 25.73 0 0-34.725-120.101 25.827-120.101 35.962 0 46.423 36.152 86.308 36.152C556.712 416 576 387.99 576 354.443c0-34.199-18.962-65.792-56.558-65.792z'/%3e%3c/svg%3e" alt="Image" width="40" height="40"></td>
-          </tr>
-          <tr>
-            <td class="tg-yj5y">CONDUCTAS E INSTALACIONES</td>
-            <td class="tg-yj5y">SELECCION</td>
-          
-            <td class="tg-yj5y" colspan="2">LUGAR</td>
-            <td class="tg-yj5y" colspan="2">OBSERVACIONES</td>
-          </tr>
-          <tr>
-            <td class="tg-y698">¿INGIERE ALIMENTOS EN TERRENO?</td>
-            <td class="tg-0pky"> 
-              <input type="radio" name="r_1" value="si" /> Sí<br />
-              <input type="radio" name="r_1" value="no" /> No<br /></td>
   
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_34" value="" width="20px"/></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_35" value="" width="20px"/></td>
+    
+    </script>  
+<form action="/api/getEncuestaResult" method="GET">
+ 
+           <div class="col-12">
+      
+            <H1 style="text-align:center"> <img src="\img\logo-codelco.png" width="80px"  height="80PX" class="img-responsive" >Encuesta Arsenico </H1>
+    
+  
+                    <hr>
+  
+ 
+ 
+ 
+           <div id="accordion">
+           <div class="card">
+          
+   
+            <div class="card-header" id="headingOne">
+      
+                 <svg class="bi bi-folder-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                 <path fill-rule="evenodd" d="M9.828 3h3.982a2 2 0 011.992 2.181l-.637 7A2 2 0 0113.174 14H2.826a2 2 0 01-1.991-1.819l-.637-7a1.99 1.99 0 01.342-1.31L.5 3a2 2 0 012-2h3.672a2 2 0 011.414.586l.828.828A2 2 0 009.828 3zm-8.322.12C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707A1 1 0 006.172 2H2.5a1 1 0 00-1 .981l.006.139z" clip-rule="evenodd"/>
+                  </svg>
+                  <button class="btn btn-link-badge badge-light"  data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                 ANTECEDENTES MORBIDOS
+                </button>
+            
+             </div>
+             
+
+             
+
+         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      
+          <table class="table table-primary" style="font-size: 0.7rem;">
+          <thead>
+            <br>
+            <tr>
+            
+            <td>HIPERTENSIÓN ARTERIAL</td>
+            <td>DIABETES MELLITUS</td>
+            <td>ENFERMEDAD RENAL</td>
+            <td>HIPOTIROIDISMO</td>
+
           </tr>
+        </div>
           <tr>
-            <td class="tg-y698">¿TOMA LIQUIDOS PARA HIDRATARSE EN TERRNO?</td>
-            <td class="tg-0pky"> 
-              <input type="radio" name="r_2" value="si" /> Sí<br />
-              <input type="radio" name="r_2" value="no" /> No<br /></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_36" value="" width="20px"/></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_37" value="" width="20px"/></td>
+          <td><input class="form-radio-input" name="r_ha" type="radio" id="inlineCheckbox1" value="SI">
+              <label class="form-check-label">SI</label>
+              <input class="form-radio-input" name="r_ha" type="radio" id="inlineCheckbox1" value="NO">
+              <label class="form-check-label">NO</label></td>
+
+              <td><input class="form-radio-input" name="r_dm" type="radio" id="inlineCheckbox1" value="SI">
+              <label class="form-check-label">SI</label>
+              <input class="form-radio-input" name="r_dm" type="radio" id="inlineCheckbox1" value="NO">
+              <label class="form-check-label">NO</label></td>
+
+              <td><input class="form-radio-input" name="r_er" type="radio" id="inlineCheckbox1" value="SI">
+              <label class="form-check-label">SI</label>
+              <input class="form-radio-input" name="r_er" type="radio" id="inlineCheckbox1" value="NO">
+              <label class="form-check-label">NO</label></td>
+
+              <td><input class="form-radio-input" name="r_h" type="radio" id="inlineCheckbox1" value="SI">
+              <label class="form-check-label">SI</label>
+              <input class="form-radio-input" name="r_h" type="radio" id="inlineCheckbox1" value="NO">
+              <label class="form-check-label">NO</label></td>
+          
           </tr>
+
+
+          </tbody>
+          </table>   
+        </div>
+          
+          <div class="card">
+          <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+          <svg class="bi bi-person-lines-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7 1.5a.5.5 0 01.5-.5h2a.5.5 0 010 1h-2a.5.5 0 01-.5-.5zm-2-3a.5.5 0 01.5-.5h4a.5.5 0 010 1h-4a.5.5 0 01-.5-.5zm0-3a.5.5 0 01.5-.5h4a.5.5 0 010 1h-4a.5.5 0 01-.5-.5zm2 9a.5.5 0 01.5-.5h2a.5.5 0 010 1h-2a.5.5 0 01-.5-.5z" clip-rule="evenodd"/>
+          </svg>
+          <button class="btn btn-link-badge badge-light" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          HISTORIAL LABORAL
+          </button>
+          
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+        <div class="card-body">
+        <table class="table table-primary" style="font-size: 0.7rem;">
+         <thead>
+        <h5>HA TENIDO PUESTOS DE TRABAJOS ANTERIORES CON EXPOSICIÓN A ARSÉNICO</h5>
+                    
+              
+                
+                 
+                   <TH><input  type="radio" name="r_preg1_as" id="inlineRadio1" value="SI">
+                   SI
+                                
+                    <input  type="radio" name="r_preg1_as" id="inlineRadio2" value="NO">
+                     NO </th>
+                 
+                
+                  
+                </form>
+              </tbody>
+            </table>
+            <table class="table table-primary" style="font-size: 0.7rem;">
+              <thead>
+               <TH>EMPRESA</TH>
+               <TH>PUESTO TRABAJO</TH>
+               <TH>ORG ADMINISTRADOR</TH>
+               <TH>DESDE</TH>
+               <TH>HASTA</TH>
+               <TH>MEDIDAS DE CONTROL</TH>
+              </thead>
+   
+              <tbody> 
+                <tr>
+
+                  
+                  
+                  <tr>
+                  {{-- <td>$encuesta->ENC_AS_R_HA}}</td>--}}
+                    <td><input class="form-control" type="text" name="result_empresa"  placeholder="Ejemplo Codelco"></td>
+                    <td><input class="form-control" type="text" name="result_puestotrabajo"  placeholder="Ejemplo Ing Gestión"></td>
+                    <td><input class="form-control" type="text" name="result_org"  placeholder="Ejemplo Codelco DCH"></td>            
+                    
+                    <td><input id="FECHA1" name="fecha_ini1" width="100px"  width="40px"  /></td>
+                    <td><input id="FECHA2" name="fecha_ini2" width="100px"  width="40px" /></td>
+                    <td><input class="form-control" type="text" name="result_medida"  placeholder="Ejemplo Controles Diarios"></td>
+                  
+                  
+                  </tr>
+
+                  <tr>
+                    {{-- <td>$encuesta->ENC_AS_R_HA}}</td>--}}
+                    <td><input class="form-control" type="text" name="result_1"  placeholder="Ejemplo Codelco"></td>
+                    <td><input class="form-control" type="text" name="result_2"  placeholder="Ejemplo Ing Gestión"></td>
+                    <td><input class="form-control" type="text" name="result_3"  placeholder="Ejemplo Codelco DCH"></td>            
+                    
+                    <td><input id="FECHA3" name="fecha_ini3" width="100px"  width="40px"  /></td>
+                    <td><input id="FECHA4" name="fecha_ini4" width="100px"  width="40px" /></td>
+                    <td><input class="form-control" type="text" name="result_4"  placeholder="Ejemplo Controles Diarios"></td>
+                    
+                    
+                    </tr>
+
+                    <tr>
+                      {{-- <td>$encuesta->ENC_AS_R_HA}}</td>--}}
+                      <td><input class="form-control" type="text" name="result_5"  placeholder="Ejemplo Codelco"></td>
+                      <td><input class="form-control" type="text" name="result_6"  placeholder="Ejemplo Ing Gestión"></td>
+                      <td><input class="form-control" type="text" name="result_7"  placeholder="Ejemplo Codelco DCH"></td>            
+                      
+                      <td><input id="FECHA5" name="fecha_ini5" width="100px"  width="40px"  /></td>
+                      <td><input id="FECHA6" name="fecha_ini6" width="100px"  width="40px" /></td>
+                      <td><input class="form-control" type="text" name="result_8"  placeholder="Ejemplo Controles Diarios"></td>
+                      
+                      
+                      </tr>
+
+                      <tr>
+                        {{-- <td>$encuesta->ENC_AS_R_HA}}</td>--}}
+                        <td><input class="form-control" type="text" name="result_9"  placeholder="Ejemplo Codelco"></td>
+                        <td><input class="form-control" type="text" name="result_10"  placeholder="Ejemplo Ing Gestión"></td>
+                        <td><input class="form-control" type="text" name="result_11"  placeholder="Ejemplo Codelco DCH"></td>            
+                        
+                        <td><input id="FECHA7" name="fecha_ini7" width="100px"  width="40px"  /></td>
+                        <td><input id="FECHA8" name="fecha_ini8" width="100px"  width="40px" /></td>
+                        <td><input class="form-control" type="text" name="result_12"  placeholder="Ejemplo Controles Diarios"></td>
+                        
+                        
+                        </tr>
+
+                        
+                        
+                            
+                  
+                 
+                  </tbody>
+                </table>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <svg class="bi bi-people-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 008 15a6.987 6.987 0 005.468-2.63z"/>
+  <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+  <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z" clip-rule="evenodd"/>
+</svg>
+        <button class="btn btn-link-badge badge-light" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          EXPOSICIÓN ACTUAL
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        <table class="table table-primary" style="font-size: 0.7rem;">
+          <thead>
+
+                
+          
+              <TH>CARGO QUE DESEMPEÑA</TH>
+              <TH>ANTIGUEDAD EN EL PUESTO (AÑOS)</TH>
+              <TH>MES</TH>
+              <TH>MEDIDAS DE CONTROL</TH>
+              <TH>UTILIZACION ELEMENTOS DE PROTECCION PERSONAL</TH>
+          <P></P>
+          <P></P>  
+
           <tr>
-            <td class="tg-y698">¿SE LAVA LAS MANOS Y CARA ANTES DE INGERIR ALIMENTOS O LIQUIDOS?</td>
-            <td class="tg-0pky"> 
-              <input type="radio" name="r_3" value="si" /> Sí<br />
-              <input type="radio" name="r_3" value="no" /> No<br /></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_38" value="" width="20px"/></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_39" value="" width="20px"/></td>
-          </tr>
-          <tr>
-            <td class="tg-fymr" colspan="6">TABAQUISMO</td>
-          </tr>
-          <tr>
-            <td class="tg-y698">¿FUMA EN TERRENO?</td>
-            <td class="tg-0pky"> 
-              <input type="radio" name="r_4" value="si" /> Sí<br />
-              <input type="radio" name="r_4" value="no" /> No<br /></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_40" value="" width="20px"/></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_41" value="" width="20px"/></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">¿BEBE CAFE?</td>
-            <td class="tg-0pky"> 
-              <input type="radio" name="r_5" value="si" /> Sí<br />
-              <input type="radio" name="r_5" value="no" /> No<br /></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_42" value="" width="20px"/></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_43" value="" width="20px"/></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">¿DISPONE DE SALA DE CAMBIO?</td>
-            <td class="tg-0pky"> 
-              <input type="radio" name="r_6" value="si" /> Sí<br />
-              <input type="radio" name="r_6" value="no" /> No<br /></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_44" value="" width="20px"/></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_45" value="" width="20px"/></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">¿SI LA RESPUESTA FUE SI, TIENE ÁREA LIMPIA Y SUCIA?</td>
-            <td class="tg-0pky"> 
-              <input type="radio" name="r_7" value="si" /> Sí<br />
-              <input type="radio" name="r_7" value="no" /> No<br /></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_46" value="" width="20px"/></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_47" value="" width="20px"/></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">¿CUENTA CON DOBLE DE CASILLERO?</td>
-            <td class="tg-0pky"> 
-              <input type="radio" name="r_8" value="si" /> Sí<br />
-              <input type="radio" name="r_8" value="no" /> No<br /></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_48" value="" width="20px"/></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_49" value="" width="20px"/></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">¿SI NO DISPONE DE CASA DE CAMBIO, DONDE SE CAMBIA?</td>
-            <td class="tg-0pky"> 
-              <input type="radio" name="r_9" value="si" /> Sí<br />
-              <input type="radio" name="r_9" value="no" /> No<br /></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_50" value="" width="20px"/></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_51" value="" width="20px"/></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">¿UBICACIÓN DE SU CASILLERO?</td>
-            <td class="tg-0pky"> 
-              <input type="radio" name="r_10" value="si" /> Sí<br />
-              <input type="radio" name="r_10" value="no" /> No<br /></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_52" value="" width="20px"/> </td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_53" value="" width="20px"/></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">¿DISPONE DE ROPA LIMPIA DE TRABAJO (TODOS LOS DIAS)?</td>
-            <td class="tg-0pky"> 
-              <input type="radio" name="r_11" value="si" /> Sí<br />
-              <input type="radio" name="r_11" value="no" /> No<br /></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_54" value="" width="20px"/></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_55" value="" width="20px"/></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">¿SE CAMBIA DE ROPA DE TRABAJO TODOS LOS DIAS?</td>
-            <td class="tg-0pky"> 
-              <input type="radio" name="r_12" value="si" /> Sí<br />
-              <input type="radio" name="r_12" value="no" /> No<br /></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_56" value="" width="20px"/></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_57" value="" width="20px"/></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">¿SE DUCHA TODOS LOS DIAS EN FAENA AL TERMINO JORNADA?</td>
-            <td class="tg-0pky"> 
-              <input type="radio" name="r_13" value="si" /> Sí<br />
-              <input type="radio" name="r_13" value="no" /> No<br /></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_58" value="" width="20px"/></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_59" value="" width="20px"/></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">¿POSTERIOR A LA DUCHA USA CREMAS DE CARA Y/O MANOS?</td>
-            <td class="tg-0pky"> 
-              <input type="radio" name="r_14" value="si" /> Sí<br />
-              <input type="radio" name="r_14" value="no" /> No<br /></td>
-       
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_60" value="" width="20px"/></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_61" value="" width="20px"/></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">¿ANTES DE IR ALMORZAR, SE CAMBIA DE ROPA?</td>
-            <td class="tg-0pky"> 
-              <input type="radio" name="r_15" value="si" /> Sí<br />
-              <input type="radio" name="r_15" value="no" /> No<br /></td>
+            {{-- <td>$encuesta->ENC_AS_R_HA}}</td>--}}
+            <td><input class="form-control" type="text" name="result_13"  placeholder="Operador"></td>
+            <td><input class="form-control" type="text" name="result_14"  placeholder="Ejemplo: 1 Año"></td>
+            <td><select class="custom-select" name="mes" multiple>
+              <option value="1">Uno</option>
+              <option value="2">Dos</option>
+              <option value="3">Tres</option>
+              <option value="4">Cuatro</option>
+              <option value="5">Cinco</option>
+              <option value="6">Seis</option>
+              <option value="7">Siete</option>
+              <option value="8">Ocho</option>
+              <option value="9">Nueve</option>
+              <option value="10">Diez</option>
+              <option value="11">Once</option>
+              <option value="12">Doce</option>
+            </select></td>            
+            <td>
+            <input class="form-check-input" type="checkbox" name="c_mc_ing">Ingenieros
+            <br>
+            <input class="form-check-input" type="checkbox" name="c_mc_adm">Administrativas
+            <br>
+            <input class="form-check-input" type="checkbox" name="c_mc_epp">Elementos de protección personal </td>
+            
            
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_62" value="" width="20px"/></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_63" value="" width="20px"/></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">¿ANTES DE IR ALMORZAR, SE REALIZA ASEO DE MANOS Y CARA?</td>
-            <td class="tg-0pky"> 
-              <input type="radio" name="r_16" value="si" /> Sí<br />
-              <input type="radio" name="r_16" value="no" /> No<br /></td>
+            <td><input class="form-check-input" type="radio" name="r_preg2_proteccion" value="Siempre"  >Siempre
+            <br><input class="form-check-input" type="radio" name="r_preg2_proteccion" value="A veces" >A veces
+            <br><input class="form-check-input" type="radio" name="r_preg2_proteccion" value="Nunca"  >Nunca</td>
+              
             
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_64" value="" width="20px"/></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_65" value="" width="20px"/></td>
+         
+
+            </tr>   
+
+            <h5>TIPO DE PROTECCIÓN QUE UTILIZA </h5>
+       <table class="table table-primary" style="font-size: 0.7rem;">
+        <thead>
+
+         <TH>EPP</TH>
+         <th>TIPO</th>
+         <TH>MARCA</TH>
+         <TH>MODELO</TH>
+         <TH>OBSERVACIONES</TH>
+         <tr>
+          {{-- <td>$encuesta->ENC_AS_R_HA}}</td>--}}
+          <td>Protector Respiratorio</td>
+            <td><input class="form-check-input" type="radio" name="r_preg3_medio" value="Medio Rostro"  >Medio Rostro
+            <br><input class="form-check-input" type="radio" name="r_preg3_medio" value="Rostro Completo" >Rostro Completo
+            <br><input class="form-check-input" type="radio" name="r_preg3_medio" value="Aire Asistido"  >Aire Asistido</td>
+              
+            <td><input class="form-control" type="text" name="result_15"  placeholder="3M"></td>
+            <td><input class="form-control" type="text" name="result_16"  placeholder="large 6900"></td>
+            <td><input class="form-control" type="text" name="result_17"  placeholder="Pieza facial es suave e hipoalergénico"></td>     
+         
+
+            <tr>   
+          <td>Buzo Piloto</td>
+          <td><input class="form-control" type="text" name="result_18"  placeholder="Overol Poplin Buzo Piloto"></td>
+          <td><input class="form-control" type="text" name="result_19"  placeholder="MI6700"></td>            
+          <td><input class="form-control" type="text" name="result_20"  placeholder="Modelo piloto"></td>
+          <td><input class="form-control" type="text" name="result_21"  placeholder="azul"></td>
+      
+            </tr>
+
+            <tr>
+          <td>Esclavina</td>
+          <td><input class="form-control" type="text" name="result_22"  placeholder="Polainas para Soldar"></td>
+          <td><input class="form-control" type="text" name="result_23"  placeholder="Redline"></td>            
+          <td><input class="form-control" type="text" name="result_24"  placeholder="Fixser"></td>
+          <td><input class="form-control" type="text" name="result_25"  placeholder="Cuero descarne"></td>
+  
+
           </tr>
+
           <tr>
-            <td class="tg-y698">¿SI SE ENCUENTRA MUY SUCIO, SE BAÑA?</td>
-            <td class="tg-0pky"> 
-              <input type="radio" name="r_17" value="si" /> Sí<br />
-              <input type="radio" name="r_17" value="no" /> No<br /></td>           
+          <td>Guantes</td>
+          <td><input class="form-control" type="text" name="result_26"  placeholder="Guante respirable fácil de lavar"></td>
+          <td><input class="form-control" type="text" name="result_27"  placeholder="Guantes cold extreme 9 negro"></td>            
+          <td><input class="form-control" type="text" name="result_28"  placeholder="Steelpro"></td>
+          <td><input class="form-control" type="text" name="result_29"  placeholder="Nylon"></td>
+          </tr>
+          
+          <tr>
+          <td>Otro</td>
+          <td><input class="form-control" type="text" name="result_30"></td>
+          <td><input class="form-control" type="text" name="result_31"></td>            
+          <td><input class="form-control" type="text" name="result_32"></td>
+          <td><input class="form-control" type="text" name="result_33"></td>
+          
+
+          
+          
+          
+          
+          </tr>
+
+         
+        </thead>
+
+        <tbody>
+          </thead>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingfour">
+      <h5 class="mb-0">
+        <svg class="bi bi-shield-shaded" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M5.443 1.991a60.17 60.17 0 00-2.725.802.454.454 0 00-.315.366C1.87 7.056 3.1 9.9 4.567 11.773c.736.94 1.533 1.636 2.197 2.093.333.228.626.394.857.5.116.053.21.089.282.11A.73.73 0 008 14.5c.007-.001.038-.005.097-.023.072-.022.166-.058.282-.111.23-.106.525-.272.857-.5a10.197 10.197 0 002.197-2.093C12.9 9.9 14.13 7.056 13.597 3.159a.454.454 0 00-.315-.366c-.626-.2-1.682-.526-2.725-.802C9.491 1.71 8.51 1.5 8 1.5c-.51 0-1.49.21-2.557.491zm-.256-.966C6.23.749 7.337.5 8 .5c.662 0 1.77.249 2.813.525a61.09 61.09 0 012.772.815c.528.168.926.623 1.003 1.184.573 4.197-.756 7.307-2.367 9.365a11.191 11.191 0 01-2.418 2.3 6.942 6.942 0 01-1.007.586c-.27.124-.558.225-.796.225s-.526-.101-.796-.225a6.908 6.908 0 01-1.007-.586 11.192 11.192 0 01-2.417-2.3C2.167 10.331.839 7.221 1.412 3.024A1.454 1.454 0 012.415 1.84a61.11 61.11 0 012.772-.815z" clip-rule="evenodd"/>
+  <path d="M8 2.25c.909 0 3.188.685 4.254 1.022a.94.94 0 01.656.773c.814 6.424-4.13 9.452-4.91 9.452V2.25z"/>
+</svg>
+        <button class="btn btn-link-badge badge-light" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+          PROTECCIÓN RESPIRATORIA
+        </button>
+      </h5>
+    </div>
+    <div id="collapsefour" class="collapse" aria-labelledby="headingTfour" data-parent="#accordion">
+      <div class="card-body">
+        <table class="table table-primary" style="font-size: 0.7rem;">
+          <thead>
+         
+          <TR>
+              <TH>SE REALIZO PRUEBA DE AJUSTE DE RESPIRADOR (PORTACOUNT)</TH>
+              <TH>FECHA</TH>
+              <TH>RESULTADO MARCA</TH>
+              <TH>TALLA</TH>
+              <TH>UTILIZA EL PROTECTOR INDICADO EN RESULTADO DE PRUEBA</TH>
+          
+          </tr>
+
+          <tr>
+            <td>
+              <input type="RADIO" name="r_respirador" value="SI">SI
+              <input type="RADIO" name="r_respirador" value="NO">NO</td>
+              <td><input id="FECHA9" name="fecha_ini9" width="100px"  width="40px"  /></td>
+              <td><input class="form-control" type="text" name="t_resulMarca"></td>
+              
+              <td><select class="custom-select" name="r_talla" multiple>
+              <option value="1">S</option>
+              <option value="2">M</option>
+              <option value="3">L</option>
+              
+            </select></td>         
             
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_67" value="" width="20px"/></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_68" value="" width="20px"/></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">¿SU PROTECTOR RESPIRATORIO, ES ASEADO DIARIAMENTE?</td>
-            <td class="tg-0pky"> 
-              <input type="radio" name="r_18" value="si" /> Sí<br />
-              <input type="radio" name="r_18" value="no" /> No<br /></td> 
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_69" value="" width="20px"/></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_70" value="" width="20px"/></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">¿DONDE ALMACENA SU PROTECTOR RESPIRATORIO DURANTE EL DESCANSO?</td>
-            <td class="tg-0pky"> 
-              <input type="radio" name="r_19" value="si" /> Sí<br />
-              <input type="radio" name="r_19" value="no" /> No<br /></td> 
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_71" value="" width="20px"/></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_72" value="" width="20px"/></td>
-          </tr>
-          <tr>
-            <td class="tg-y698">¿DONDE ALMACENA SU PROTECTOR RESPIRATORIO DURANTE LA COLACIÓN?</td>
-            <td class="tg-0pky"> 
-              <input type="radio" name="r_20" value="si" /> Sí<br />
-              <input type="radio" name="r_20" value="no" /> No<br /></td> 
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_73" value="" width="20px"/></td>
-            <td class="tg-0pky" colspan="2"><input type="text" name="result_74" value="" width="20px"/></td>
-          </tr>
-          <tr>
-            <td class="tg-hkp2" colspan="6">CONCLUSIÓN <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3e%3cpath fill='%23ffffff' d='M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z'/%3e%3c/svg%3e" alt="Image" width="40" height="40"></td>
-          </tr>
-          <tr>
-            <td class="tg-0pky" colspan="6"><input type="text" name="result_75" value="" size="200" x /></td>
-          </tr>
-        </table>
-            <hr>
+            <td>
+              <input type="RADIO" name="r_pi" value="SI">SI
+              <input type="RADIO" name="r_pi" value="NO">NO</td>
+  
+            
+            
+            
+            
+            </tr>
 
 
 
-            <input type="submit" class="btn btn-success" value="Enviar encuesta">
+
+
+
+              </thead>
+            </TABle>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingFIVE">
+      <h5 class="mb-0">
+        <svg class="bi bi-people-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 100-6 3 3 0 000 6zm-5.784 6A2.238 2.238 0 015 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 005 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" clip-rule="evenodd"/>
+</svg>
+        <button class="btn btn-link-badge badge-light" data-toggle="collapse" data-target="#collapseFIVE" aria-expanded="false" aria-controls="collapseFIVE">
+          CAPACITACIÓN
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFIVE" class="collapse" aria-labelledby="headingFIVE" data-parent="#accordion">
+      <div class="card-body">
+        <table class="table table-primary" style="font-size: 0.7rem;">
+          <thead>
+
+                
+          <TR>
+              <TH>RECIBIÓ CAPACITACIÓN ESPECIFÍCA PARA EL CONTROL DE EXPOSICIÓN A ARSENICO Y PROTECCIÓN</TH>
+              <TH>FECHA</TH>
+              <TH>ORGANISMO CAPACITADOR</TH>
+              <TH>EXISTE EVIDENCIA DE ASISTENCIA</TH>
+              <TH>REGISTRO</TH>
+            </tr>
+              <td>
+                <input type="RADIO" name="r_capa" value="SI">SI
+                <input type="RADIO" name="r_capa" value="NO">NO</td>
+          
+              
+               <td><input id="FECHA10" name="fecha_ini10" width="100px"  width="40px"  /></td>
+              
+               <td><input class="form-control" type="text" name="result_org1"></td>
+
+               <td>
+                <input type="RADIO" name="r_asis" value="SI">SI
+                <input type="RADIO" name="r_asis" value="NO">NO</td>
+                <td><input class="form-control" type="text" name="as_preg_extra4"></td>
+              
+              
+              </tr>
+        </thead>
+      </TABle>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingSIX">
+      <h5 class="mb-0">
+        <svg class="bi bi-file-text" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M4 1h8a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V3a2 2 0 012-2zm0 1a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V3a1 1 0 00-1-1H4z" clip-rule="evenodd"/>
+  <path fill-rule="evenodd" d="M4.5 10.5A.5.5 0 015 10h3a.5.5 0 010 1H5a.5.5 0 01-.5-.5zm0-2A.5.5 0 015 8h6a.5.5 0 010 1H5a.5.5 0 01-.5-.5zm0-2A.5.5 0 015 6h6a.5.5 0 010 1H5a.5.5 0 01-.5-.5zm0-2A.5.5 0 015 4h6a.5.5 0 010 1H5a.5.5 0 01-.5-.5z" clip-rule="evenodd"/>
+</svg>
+        <button class="btn btn-link-badge badge-light" data-toggle="collapse" data-target="#collapseSIX" aria-expanded="false" aria-controls="collapseSIX">
+          ANTECEDENTES DE EXPOSICIÓN RECIENTE
+        </button>
+      </h5>
+    </div>
+    <div id="collapseSIX" class="collapse" aria-labelledby="headingSIX" data-parent="#accordion">
+      <div class="card-body">
+        <table class="table table-primary" style="font-size: 0.7rem;">
+          <thead>
+   
+
+
+
+
+
+              <TH>DETALLE LAS TAREAS REALIZADAS EN SU ÚLTIMO TURNO</TH>
+              <TH>ÁREA</TH>
+              <TH>EPP UTILIZADO Y/O COMENTARIOS</TH>
+
+
+
+              <tr>
+                {{-- <td>$encuesta->ENC_AS_R_HA}}</td>--}}
+                  <td><input class="form-control" type="text" name="as_preg_extra1"></td>
+                  <td><input class="form-control" type="text" name="as_preg_extra2"></td>            
+                  <td><input class="form-control" type="text" name="as_preg_extra3"></td>
+                       
+                </tr>
+
+               
+
+            </thead>
+         
+            
+            
+          </tbody>
+  
+         </table>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="card">
+    <div class="card-header" id="headingSEVEN">
+      <h5 class="mb-0">
+        <svg class="bi bi-list-check" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M5 11.5a.5.5 0 01.5-.5h9a.5.5 0 010 1h-9a.5.5 0 01-.5-.5zm0-4a.5.5 0 01.5-.5h9a.5.5 0 010 1h-9a.5.5 0 01-.5-.5zm0-4a.5.5 0 01.5-.5h9a.5.5 0 010 1h-9a.5.5 0 01-.5-.5zM3.854 2.146a.5.5 0 010 .708l-1.5 1.5a.5.5 0 01-.708 0l-.5-.5a.5.5 0 11.708-.708L2 3.293l1.146-1.147a.5.5 0 01.708 0zm0 4a.5.5 0 010 .708l-1.5 1.5a.5.5 0 01-.708 0l-.5-.5a.5.5 0 11.708-.708L2 7.293l1.146-1.147a.5.5 0 01.708 0zm0 4a.5.5 0 010 .708l-1.5 1.5a.5.5 0 01-.708 0l-.5-.5a.5.5 0 01.708-.708l.146.147 1.146-1.147a.5.5 0 01.708 0z" clip-rule="evenodd"/>
+</svg>
+        <button class="btn btn-link-badge badge-light" data-toggle="collapse" data-target="#collapseSEVEN" aria-expanded="false" aria-controls="collapseSEVEN">
+          CONDUCTAS Y MEDIDAS HIGIÉNICAS
+        </button>
+      </h5>
+    </div>
+    <div id="collapseSEVEN" class="collapse" aria-labelledby="headingSEVEN" data-parent="#accordion">
+      <div class="card-body">
+        <table class="table table-primary" style="font-size: 0.7rem;">
+          <thead>
+
+              
+          
+              <TH>CONDUCTA E INSTALACIONES</TH>
+              <TH>SELECCIÓN</TH>
+              <TH>LUGAR</TH>
+              <TH>OBSERVACION</TH>
+                                 
+                                          
+              <tr>
+                  <td>INGIERE ALIMENTOS EN TERRENO</td>
+                  
+                    {{-- <td>$encuesta->ENC_AS_R_HA}}</td>--}}
+                    <td >
+                      <label class="radio-inline"><input type="radio" name="r_1" checked>SI </label>
+                      <label class="radio-inline"><input type="radio" name="r_1">NO </label>
+                 
+                        </td>
+                      <td><input class="form-control" type="text" name="result_34"></td>            
+                      <td><input class="form-control" type="text" name="result_35"></td>
+                           
+                    </tr>
+              
+              <tr>
+                  <td>TOMA LIQUIDOS PARA HIDRATARSE EN TERRENO</td>
+                  <td >
+                    <label class="radio-inline"><input type="radio" name="r_2" checked>SI </label>
+                    <label class="radio-inline"><input type="radio" name="r_2">NO </label>
+               
+                      </td>
+                    <td><input class="form-control" type="text" name="result_36"></td>            
+                    <td><input class="form-control" type="text" name="result_37"></td>
+                         
+                  </tr>
+              <tr>
+                  <td>SE LAVA LAS MANOS Y CARAS DE INGERIR ALIMENTOS O LIQUIDOS</td>
+                  <td >
+                    <label class="radio-inline"><input type="radio" name="r_3" checked>SI </label>
+                    <label class="radio-inline"><input type="radio" name="r_3">NO </label>
+               
+                      </td>
+                    <td><input class="form-control" type="text" name="result_38"></td>            
+                    <td><input class="form-control" type="text" name="result_39"></td>
+                         
+                  </tr>
+              <tr>
+                  <td>FUMA EN TERRENO</td>
+                  <td >
+                    <label class="radio-inline"><input type="radio" name="r_4" checked>SI </label>
+                    <label class="radio-inline"><input type="radio" name="r_4">NO </label>
+               
+                      </td>
+                    <td><input class="form-control" type="text" name="result_40"></td>            
+                    <td><input class="form-control" type="text" name="result_41"></td>
+                         
+                  </tr> 
+              <tr>
+                  <td>BEBE CAFE</td>
+                  <td >
+                    <label class="radio-inline"><input type="radio" name="r_5" checked>SI </label>
+                    <label class="radio-inline"><input type="radio" name="r_5">NO </label>
+               
+                      </td>
+                    <td><input class="form-control" type="text" name="result_42"></td>            
+                    <td><input class="form-control" type="text" name="result_43"></td>
+                         
+                  </tr>
+              <tr>
+                  <td>DISPONE DE SALA DE CAMBIOS</td>
+                  <td >
+                    <label class="radio-inline"><input type="radio" name="r_6" checked>SI </label>
+                    <label class="radio-inline"><input type="radio" name="r_6">NO </label>
+               
+                      </td>
+                    <td><input class="form-control" type="text" name="result_44"></td>            
+                    <td><input class="form-control" type="text" name="result_45"></td>
+                         
+                  </tr>   
+              <tr>
+                  <td>SI DISPONE, TIENE AREA LIMPIA Y SUCIA</td>
+                  <td >
+                    <label class="radio-inline"><input type="radio" name="r_7" checked>SI </label>
+                    <label class="radio-inline"><input type="radio" name="r_7">NO </label>
+               
+                      </td>
+                    <td><input class="form-control" type="text" name="result_46"></td>            
+                    <td><input class="form-control" type="text" name="result_47"></td>
+                         
+                  </tr>  
+              <tr>
+                  <td>CUENTA CON DOBLE CASILLERO</td>
+                  <td >
+                    <label class="radio-inline"><input type="radio" name="r_8" checked>SI </label>
+                    <label class="radio-inline"><input type="radio" name="r_8">NO </label>
+               
+                      </td>
+                    <td><input class="form-control" type="text" name="result_48"></td>            
+                    <td><input class="form-control" type="text" name="result_49"></td>
+                         
+                  </tr>   
+              <tr>
+                  <td>SI NO DISPONE DE CASA DE CAMBIO, DONDE SE CAMBIA</td>
+                  <td >
+                    <label class="radio-inline"><input type="radio" name="r_9" checked>SI </label>
+                    <label class="radio-inline"><input type="radio" name="r_9">NO </label>
+               
+                      </td>
+                    <td><input class="form-control" type="text" name="result_50"></td>            
+                    <td><input class="form-control" type="text" name="result_51"></td>
+                         
+                  </tr> 
+              <tr>
+                  <td>UBICACIÓN DE SU CASILLERO</td>
+                  <td >
+                    <label class="radio-inline"><input type="radio" name="r_10" checked>SI </label>
+                    <label class="radio-inline"><input type="radio" name="r_10">NO </label>
+               
+                      </td>
+                    <td><input class="form-control" type="text" name="result_52"></td>            
+                    <td><input class="form-control" type="text" name="result_53"></td>
+                         
+                  </tr>
+              <tr>
+                  <td>DISPONE DE ROPA LIMPIA DE TRABAJO (TODOS LOS DIAS)</td>
+                  <td >
+                    <label class="radio-inline"><input type="radio" name="r_11" checked>SI </label>
+                    <label class="radio-inline"><input type="radio" name="r_11">NO </label>
+               
+                      </td>
+                    <td><input class="form-control" type="text" name="result_54"></td>            
+                    <td><input class="form-control" type="text" name="result_55"></td>
+                         
+                  </tr>
+              <tr>
+                  <td>SE CAMBIA DE ROPA DE TRABAJO TODOS LOS DIAS</td>
+                  <td >
+                    <label class="radio-inline"><input type="radio" name="r_12" checked>SI </label>
+                    <label class="radio-inline"><input type="radio" name="r_12">NO </label>
+               
+                      </td>
+                    <td><input class="form-control" type="text" name="result_56"></td>            
+                    <td><input class="form-control" type="text" name="result_57"></td>
+                         
+                  </tr>
+              <tr>
+                  <td>SE DUCHA TODOS LOS DIAS EN FAENA AL TERMINO JORNADA</td>
+                  <td >
+                    <label class="radio-inline"><input type="radio" name="r_13" checked>SI </label>
+                    <label class="radio-inline"><input type="radio" name="r_13">NO </label>
+               
+                      </td>
+                    <td><input class="form-control" type="text" name="result_58"></td>            
+                    <td><input class="form-control" type="text" name="result_59"></td>
+                         
+                  </tr>
+              <tr>
+                  <td>POSTERIOR A LA DUCHA USA CREMAS DE CARA Y/O MANOS</td>
+                  <td >
+                    <label class="radio-inline"><input type="radio" name="r_14" checked>SI </label>
+                    <label class="radio-inline"><input type="radio" name="r_14">NO </label>
+               
+                      </td>
+                    <td><input class="form-control" type="text" name="result_60"></td>            
+                    <td><input class="form-control" type="text" name="result_61"></td>
+                         
+                  </tr>  
+              <tr>
+                  <td>ANTES DE IR ALMORZAR, SE CAMBIA DE ROPA</td>
+                  <td >
+                    <label class="radio-inline"><input type="radio" name="r_15" checked>SI </label>
+                    <label class="radio-inline"><input type="radio" name="r_15">NO </label>
+               
+                      </td>
+                    <td><input class="form-control" type="text" name="result_62"></td>            
+                    <td><input class="form-control" type="text" name="result_63"></td>
+                         
+                  </tr>  
+              <tr>
+                  <td>ANTES DE IR ALMORZAR, SE REALIZA ASEO DE MANOS Y CARA</td>
+                  <td >
+                    <label class="radio-inline"><input type="radio" name="r_16" checked>SI </label>
+                    <label class="radio-inline"><input type="radio" name="r_16">NO </label>
+               
+                      </td>
+                    <td><input class="form-control" type="text" name="result_64"></td>            
+                    <td><input class="form-control" type="text" name="result_65"></td>
+                         
+                  </tr>
+              <tr>
+                  <td>SI SE ENCUENTRA MUY SUCIO, SE BAÑA</td>
+                  <td >
+                    <label class="radio-inline"><input type="radio" name="r_17" checked>SI </label>
+                    <label class="radio-inline"><input type="radio" name="r_17">NO </label>
+               
+                      </td>
+                    <td><input class="form-control" type="text" name="result_67"></td>            
+                    <td><input class="form-control" type="text" name="result_68"></td>
+                         
+                  </tr>
+              <tr>
+                  <td>SU PROTECTOR RESPIRATORIO, ES ASEADO DIARIAMENTE</td>
+                  <td >
+                    <label class="radio-inline"><input type="radio" name="r_18" checked>SI </label>
+                    <label class="radio-inline"><input type="radio" name="r_18">NO </label>
+               
+                      </td>
+                    <td><input class="form-control" type="text" name="result_69"></td>            
+                    <td><input class="form-control" type="text" name="result_70"></td>
+                         
+                  </tr>       
+              <tr>
+                  <td>DONDE ALMACENA SU PROTECTOR RESPIRATORIO DURANTE EL DESCANSO</td>
+                  <td >
+                    <label class="radio-inline"><input type="radio" name="r_19" checked>SI </label>
+                    <label class="radio-inline"><input type="radio" name="r_19">NO </label>
+               
+                      </td>
+                    <td><input class="form-control" type="text" name="result_71"></td>            
+                    <td><input class="form-control" type="text" name="result_72"></td>
+                         
+                  </tr> 
+              <tr>
+                  <td>DONDE ALMACENA SU PROTECTOR RESPIRATORIO DURANTE LA COLACIÓN</td>
+                  <td >
+                    <label class="radio-inline"><input type="radio" name="r_20" checked>SI </label>
+                    <label class="radio-inline"><input type="radio" name="r_20">NO </label>
+               
+                      </td>
+                    <td><input class="form-control" type="text" name="result_73"></td>            
+                    <td><input class="form-control" type="text" name="result_74"></td>
+                         
+                  </tr>
+            </thead>
+
+
+
+          </tbody>
+          
+          </table>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingOCHO">
+      <h5 class="mb-0">
+        <svg class="bi bi-list-ul" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M5 11.5a.5.5 0 01.5-.5h9a.5.5 0 010 1h-9a.5.5 0 01-.5-.5zm0-4a.5.5 0 01.5-.5h9a.5.5 0 010 1h-9a.5.5 0 01-.5-.5zm0-4a.5.5 0 01.5-.5h9a.5.5 0 010 1h-9a.5.5 0 01-.5-.5zm-3 1a1 1 0 100-2 1 1 0 000 2zm0 4a1 1 0 100-2 1 1 0 000 2zm0 4a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+</svg>
+        <button class="btn btn-link-badge badge-light" data-toggle="collapse" data-target="#collapseOCHO" aria-expanded="false" aria-controls="collapseOCHO">
+         CONCLUSIÓN DE LA INVESTIGACIÓN
+        </button>
+      </h5>
+    </div>
+    <div id="collapseOCHO" class="collapse" aria-labelledby="headingOCHO" data-parent="#accordion">
+      <div class="card-body">
+        <table class="table table-primary" style="font-size: 0.7rem;">
+          <thead>
+
+        
+      <tr>
+       
+        <td>  <td><input class="form-control" type="text" name="result_75"></td></td>
+          
+          
+      </tr>       
+
+
+</thead>
+
+
+
+</tbody>
+
+</table>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+</div>
+</div>
+<input type="submit" class="btn btn-primary pull-right" value="Enviar encuesta">
 </form>
-</div>
-
-
-
-</div>
 @endsection
+      
+ 
