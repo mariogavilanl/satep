@@ -44,7 +44,7 @@ Route::get('/realiza-examen-co', 'PruebasController@realizaExamenesCO')->name('r
 
 //DR
 
-Route::get('/medico', 'DoctorController@index')->name('index');
+Route::get('/medico', 'DoctorController@index')->name('drlista'); //lista de examenes realizados
 Route::get('/medico-lista', 'DoctorController@getDrExamenes')->name('listaExamenes');
 Route::get('/medico-getData', 'DoctorController@getExamenesTerminados')->name('getExamenesTerminados');
 Route::get('/medico/resultados', 'DoctorController@verResultados')->name('verResultados');

@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ResultadoExamen;
+
 use Carbon\Carbon;
 
 use App\Agentes;
@@ -24,6 +28,10 @@ class PruebasController extends Controller
 
     public function pico()
     {
+
+//
+        Mail::to("decheverriavs@gmail.com")->queue(new ResultadoExamen);
+//
 
 
         $hora = time();

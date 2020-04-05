@@ -61,10 +61,6 @@ class DoctorController extends Controller
                             "idDoctor" => Auth::id()
                           ]);
                       return "ok";
-
-        
-
-
     }
 
     public function rechazaExamen(Request $r){

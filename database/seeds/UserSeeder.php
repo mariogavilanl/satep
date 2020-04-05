@@ -13,14 +13,16 @@ class UserSeeder extends Seeder
     {
         //
         DB::table('users')->insert([
-            'name' => 'user',
+            'name' => 'Paula',
+            "username" => "user1",
             'email' => 'mail@mail.com',
             'password' => '$2y$10$54zkhzP2Gg4ZioC/VqlNV..SJoeiN60K66Zw1/LK4piSJxdxHh61q',
             'roles_id' => '1'
         ]);
 
         DB::table('users')->insert([
-            'name' => 'user2',
+            'name' => 'José',
+            "username" => "user2",
             'email' => 'mail2@mail.com',
             'password' => '$2y$10$54zkhzP2Gg4ZioC/VqlNV..SJoeiN60K66Zw1/LK4piSJxdxHh61q',
             'roles_id' => '2'
@@ -28,7 +30,8 @@ class UserSeeder extends Seeder
 
 
         DB::table('users')->insert([
-            'name' => 'user3',
+            'name' => 'Roberto',
+            "username" => "user3",
             'email' => 'mail3@mail.com',
             'password' => '$2y$10$54zkhzP2Gg4ZioC/VqlNV..SJoeiN60K66Zw1/LK4piSJxdxHh61q',
             'roles_id' => '1'
@@ -36,7 +39,8 @@ class UserSeeder extends Seeder
 
 
         DB::table('users')->insert([
-            'name' => 'Doctor',
+            'name' => 'Dr. House MD',
+            "username" => "user4",
             'email' => 'mail4@mail.com',
             'password' => '$2y$10$54zkhzP2Gg4ZioC/VqlNV..SJoeiN60K66Zw1/LK4piSJxdxHh61q',
             'roles_id' => '4'
@@ -44,7 +48,8 @@ class UserSeeder extends Seeder
 
 
         DB::table('users')->insert([
-            'name' => 'Doctor',
+            'name' => 'Dr. Casa',
+            "username" => "user5",
             'email' => 'mail5@mail.com',
             'password' => '$2y$10$54zkhzP2Gg4ZioC/VqlNV..SJoeiN60K66Zw1/LK4piSJxdxHh61q',
             'roles_id' => '4'

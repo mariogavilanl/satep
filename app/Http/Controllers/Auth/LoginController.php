@@ -42,6 +42,8 @@ class LoginController extends Controller
 
     }
 
+    
+
     public function redirectTo(){
         
         $id = Auth::id();
