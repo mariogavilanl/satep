@@ -8,19 +8,36 @@
 </head>
 <body>
     
+    
+    
+    <table> 
+        <tr>
+            <td>Doctor</td>
+            <td> {{ Auth::user()->name }}</td>
+           
+        </tr>
+
+        <tr>
+            <td>
+                Observacion
+            </td>
+            <td>
+                {{$observacion}}
+            </td>
+        </tr>
+
+    </table>
+
     <table>
-        <thead>
-            <th>Agente o no si?</th>
-            <th>Fecha de entrega de resultado</th>
-            <th>conchetumare</th>
-        </thead>
-        <tbody> 
-            <tr>
-                <td>$agente</td>
-                <td>$fecha</td>
-                <td>$pico</td>
+
+        @foreach ($resultados as $item)
+            <tr> 
+            <td>{{ (key($item)) }}</td>
+            <td>{{ $item[(key($item))] }}</td>    
             </tr>
-        </tbody>
+        @endforeach
+
+
     </table>
 
 </body>

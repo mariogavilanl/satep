@@ -61,22 +61,23 @@ class DoctorController extends Controller
     public function apruebaExamen(Request $r){
         
 
-        // $affected = DB::table('examens')
-        //               ->where('id', session()->get('idExamen'))
-        //               ->update([
-        //                     'observacionDoctor' => $r["comentario"],
-        //                     "idDoctor" => Auth::id()
-        //                   ]);
+        $affected = DB::table('examens')
+                      ->where('id', session()->get('idExamen'))
+                      ->update([
+                            'observacionDoctor' => $r["comentario"],
+                            "idDoctor" => Auth::id(),
+                            "estadoExamen" => 1
+                          ]);
                           
              $examen = DB::table("examens")->where("cargas_id", "=", session()->get('idExamen'))->first();   
              $carga = DB::table("cargas")->where("id", "=", $examen->cargas_id)->first(); 
 
-        //     $cargaUpdate = DB::table('cargas')
-        //     ->where('id', $carga->id)
-        //     ->update([
-        //           'informadopaciente' => 1
+            $cargaUpdate = DB::table('cargas')
+            ->where('id', $carga->id)
+            ->update([
+                  'informadopaciente' => 1
                   
-        //         ]);   
+                ]);   
         
 
             
@@ -92,13 +93,11 @@ class DoctorController extends Controller
         ->where('id', session()->get('idExamen'))
         ->update([
               'observacionDoctor' => $r["comentario"],
-              "idDoctor" => Auth::id()
-            ]);
-            
-
+              "idDoctor" => Auth::id(),
+              "estadoExamen" => 2
+            ]);     
 
             $examen = DB::table("examens")->where("id", "=", session()->get('idExamen'))->first();
-
             $carga = DB::table("cargas")->where("id", "=", $examen->cargas_id)->first(); 
 
             $cargaUpdate = DB::table('carga')

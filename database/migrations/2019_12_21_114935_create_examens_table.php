@@ -36,6 +36,7 @@ class CreateExamensTable extends Migration
             //doctor
             $table->text('observacionDoctor')->nullable();
             $table->integer('idDoctor')->nullable();
+            $table->integer("estadoExamen")->default('0');
 
             // observacion
             $table->text('observacionExamen')->nullable();

@@ -29,9 +29,6 @@ class PruebasController extends Controller
     public function pico()
     {
 
-//
-        Mail::to("mariogavilan.l@gmail.com")->queue(new ResultadoExamen);
-//
 
 
         $hora = time();
