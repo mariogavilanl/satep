@@ -43,6 +43,8 @@ class ResultadoExamen extends Mailable
         }
         
         $this->objeto = (object) $this->data;
+
+        
     }
 
     /**

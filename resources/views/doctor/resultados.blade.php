@@ -20,12 +20,12 @@
                 console.log("--"+r);
                if (r == "ok") {
                    alert("se ha aprobado el examen");
-                   window.location.replace("/medico");
+                   //window.location.replace("/medico");
                }
             },
             complete : function(){
                 alert("se ha aprobado el examen");
-                window.location.replace("/medico");
+                //window.location.replace("/medico");
             } 
         });
     }
@@ -43,12 +43,12 @@
                 console.log("--"+r);
                if (r == "ok") {
                    alert("se ha rechazado el examen");
-                   window.location.replace("/medico");
+                   //window.location.replace("/medico");
                }
             },
             complete : function(){
                 alert("se ha rechazado el examen");
-                window.location.replace("/medico");
+                //window.location.replace("/medico");
             } 
         });
     }    

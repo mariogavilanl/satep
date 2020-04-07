@@ -62,14 +62,14 @@ class DoctorController extends Controller
         
 
         $affected = DB::table('examens')
-                      ->where('id', session()->get('idExamen'))
+                      ->where('id', session()->get('idRealExaman'))
                       ->update([
                             'observacionDoctor' => $r["comentario"],
                             "idDoctor" => Auth::id(),
                             "estadoExamen" => 1
                           ]);
                           
-             $examen = DB::table("examens")->where("cargas_id", "=", session()->get('idExamen'))->first();   
+             $examen = DB::table("examens")->where("id", "=", session()->get('idRealExaman'))->first();   
              $carga = DB::table("cargas")->where("id", "=", $examen->cargas_id)->first(); 
 
             $cargaUpdate = DB::table('cargas')
@@ -80,8 +80,8 @@ class DoctorController extends Controller
                 ]);   
         
 
-            
-        Mail::to($carga->email)->queue(new ResultadoExamen(session()->get('idRealExaman')));
+  //dd(session()->get('idExamen'), session()->get('idRealExaman'), $examen, $carga);
+        Mail::to($carga->email)->queue(new ResultadoExamen($examen->id));
 
         return "ok";
 
@@ -90,14 +90,14 @@ class DoctorController extends Controller
     public function rechazaExamen(Request $r){
 
         $affected = DB::table('examens')
-        ->where('id', session()->get('idExamen'))
+        ->where('id', session()->get('idRealExaman'))
         ->update([
               'observacionDoctor' => $r["comentario"],
               "idDoctor" => Auth::id(),
               "estadoExamen" => 2
             ]);     
 
-            $examen = DB::table("examens")->where("id", "=", session()->get('idExamen'))->first();
+            $examen = DB::table("examens")->where("id", "=", session()->get('idRealExaman'))->first();
             $carga = DB::table("cargas")->where("id", "=", $examen->cargas_id)->first(); 
 
             $cargaUpdate = DB::table('carga')
@@ -106,7 +106,7 @@ class DoctorController extends Controller
                   'informadopaciente' => 1                  
             ]);          
                 
-        Mail::to($carga->email)->queue(new ResultadoExamen(session()->get('idRealExaman')));
+        Mail::to($carga->email)->queue(new ResultadoExamen($examen->id));
                 
         return "ok";
 
