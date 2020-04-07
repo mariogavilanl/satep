@@ -58,12 +58,13 @@ class InformesController extends Controller
         $semestres = $funciones->getSemestres();
         
         //TODO : filtro de año, agregar
-        $data = DB::table("cargas")->where("semestre", "=", $semestres)->get();
+        $data = DB::table("cargas")->whereIn("semestre",  $semestres)->get();
         
         $ge = $data->groupBy("gerencia")->map(function($item){ 
             return ["realizado" => $item->where("realizado", "=", 1)->count(), "total" => $item->count()]; 
         });
 
+        
         return $ge;
 
     }
@@ -76,7 +77,7 @@ class InformesController extends Controller
         $semestres = $funciones->getSemestres();
 
         $examens = Examen::
-        where("examens.agentes_id", "=", 18)    
+        where([["examens.agentes_id", "=", 18],["examens.as_estado", "<>", null]])    
         ->join("cargas", "cargas.id", "=", "examens.cargas_id") 
         ->whereIn("cargas.semestre", $semestres)
         ->with(["carga", "paciente"])
@@ -89,7 +90,7 @@ class InformesController extends Controller
                 "alterado" => $item->where("as_estado", "=", "Alterado")->count(),
                // "normal" => $item->where("as_estado", "=", "normal")->count(),
                // "alterado" => $item->where("as_estado1", "=", "Alterado")->count(),
-                "total" => $item->count(),
+                "total" => $item->where("as_estado", "=", "Normal")->count(),
                
                 
             ]; 
@@ -122,25 +123,22 @@ class InformesController extends Controller
 
             //TRIMESTRES
 
-        //primer trimestre [enero 1 - marzo 3]
-        if ($ma >= 1 && $ma < 4) {
+        //primer trimestre 
+        if ($ma >= 1 && $ma <= 4) {
             array_push($semestres, 3);
         }
 
-        //segundo trimestre [abril 4 - junio 6]
-        if ($ma >= 4 && $ma <= 6) {
+        //segundo trimestre 
+        if ($ma >= 5 && $ma <= 8) {
             array_push($semestres, 4);
         }
 
-        //tercer trimestre [julio 7 - septiembre 9]
-        if ($ma >= 7 && $ma <= 9) {
+        //tercer trimestre 
+        if ($ma >= 9 && $ma <= 12) {
             array_push($semestres, 5);
         }
 
-        //cuerto trimestre [octubre 10 - diciembre 12]
-        if ($ma >= 10 && $ma <= 12) {
-            array_push($semestres, 6);
-        }
+       
 
         return $semestres;
     }

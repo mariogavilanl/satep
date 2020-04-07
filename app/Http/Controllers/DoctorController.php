@@ -100,7 +100,7 @@ class DoctorController extends Controller
             $examen = DB::table("examens")->where("id", "=", session()->get('idRealExaman'))->first();
             $carga = DB::table("cargas")->where("id", "=", $examen->cargas_id)->first(); 
 
-            $cargaUpdate = DB::table('carga')
+            $cargaUpdate = DB::table('cargas')
             ->where('id', $carga->id)
             ->update([
                   'informadopaciente' => 1                  

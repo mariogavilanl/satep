@@ -36,7 +36,7 @@
         
         $.ajax(
         {
-            url : "/medico/rechazarExamen?comentario="+$("#doctorObservacion").val(),
+            url : "/medico/rechazaExamen?comentario="+$("#doctorObservacion").val(),
             dataType: 'json',           
             type : "get",
             success : function(r){
