@@ -55,6 +55,7 @@ public function getEncuesta(Request $r){
        // dd( $id = Auth::id());
 
 
+
       
     //    $dt = Carbon::now(explode('/', $fecha)[0], explode('/', $fecha)[1], explode('/', $fecha)[2]);   
        $now = new DateTime(explode('-', $fecha)[2]."-".explode('-', $fecha)[1]."-".explode('-', $fecha)[0], new DateTimeZone('America/Santiago'));
