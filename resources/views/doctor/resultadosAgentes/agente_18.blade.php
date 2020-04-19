@@ -12,11 +12,17 @@
       <div class="card-body">
        <table class="table table-primary" style="font-size: 0.7rem;">
            <tr>
+            <td class="tdBold">FECHA ENVIO LABORATORIO</td>
+            <td>{{ 
+            Carbon\Carbon::parse($data->as_FECHALAB1)->day . "/".
+            Carbon\Carbon::parse($data->as_FECHALAB1)->month . "/".
+            Carbon\Carbon::parse($data->as_FECHALAB1)->year
+             }}</td>
             <td class="tdBold">FECHA MUESTRA</td>
             <td>{{ 
-            Carbon\Carbon::parse($data->FECHA_MUESTRA)->day . "/".
-            Carbon\Carbon::parse($data->FECHA_MUESTRA)->month . "/".
-            Carbon\Carbon::parse($data->FECHA_MUESTRA)->year
+            Carbon\Carbon::parse($data->as_FECHAMUESTRA)->day . "/".
+            Carbon\Carbon::parse($data->as_FECHAMUESTRA)->month . "/".
+            Carbon\Carbon::parse($data->as_FECHAMUESTRA)->year
              }}</td>
             
               <td class="tdBold">ESTADO</td>
@@ -25,12 +31,17 @@
               <td class="tdBold">UG/G</td>
               <td>{{ $data->as_UG_G }}</td>
 
-
+              <td class="tdBold">FECHA ENVIO CONTRA MUESTRA LABORATORIO</td>
+              <td>{{ 
+              Carbon\Carbon::parse($data->as_FECHALAB2)->day . "/".
+              Carbon\Carbon::parse($data->as_FECHALAB2)->month . "/".
+              Carbon\Carbon::parse($data->as_FECHALAB2)->year
+               }}</td>
               <td class="tdBold">FECHA CONTRA MUESTRA</td>
               <td>{{ 
-              Carbon\Carbon::parse($data->FECHA_CONTRAMUESTRA)->day . "/".
-              Carbon\Carbon::parse($data->FECHA_CONTRAMUESTRA)->month . "/".
-              Carbon\Carbon::parse($data->FECHA_CONTRAMUESTRA)->year
+              Carbon\Carbon::parse($data->as_FECHA_CONTRAMUESTRA)->day . "/".
+              Carbon\Carbon::parse($data->as_FECHA_CONTRAMUESTRA)->month . "/".
+              Carbon\Carbon::parse($data->as_FECHA_CONTRAMUESTRA)->year
                }}</td>
               
                 <td class="tdBold">ESTADO CONTRAMUESTRA</td>

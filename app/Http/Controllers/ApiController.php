@@ -601,12 +601,16 @@ public function getEncuesta(Request $r){
         // dd(session()->get('nroSap'));
         // dd( $id = Auth::id());
  
-        $fecha = $r["FECHA_MUESTRA"];
+        $fecha1 = $r["FECHAMUESTRA"];
         $fecha2 = $r["FECHA_CONTRAMUESTRA"];
+        $fecha3 = $r["FECHALAB1"];
+        $fecha4 = $r["FECHALAB2"];
      //    $dt = Carbon::now(explode('/', $fecha)[0], explode('/', $fecha)[1], explode('/', $fecha)[2]);   
-        $now = new DateTime(explode('-', $fecha)[2]."-".explode('-', $fecha)[1]."-".explode('-', $fecha)[0], new DateTimeZone('America/Santiago'));
+        $now1 =  new DateTime(explode('-',$fecha1)[2]."-".explode('-', $fecha1)[1]."-".explode('-', $fecha1)[0], new DateTimeZone('America/Santiago'));
         $now2 = new DateTime(explode('-', $fecha2)[2]."-".explode('-', $fecha2)[1]."-".explode('-', $fecha2)[0], new DateTimeZone('America/Santiago'));
-        
+        $now3 = new DateTime(explode('-', $fecha3)[2]."-".explode('-', $fecha3)[1]."-".explode('-', $fecha3)[0], new DateTimeZone('America/Santiago'));
+        $now4 = new DateTime(explode('-', $fecha4)[2]."-".explode('-', $fecha4)[1]."-".explode('-', $fecha4)[0], new DateTimeZone('America/Santiago'));
+
         $existePaciente =  DB::table('pacientes')->where([
              'nroSap' => session()->get('nroSap')
          ])->get();
@@ -644,10 +648,11 @@ public function getEncuesta(Request $r){
                      $examen->agentes_id = $carga->agentes_id;
                      $examen->cargas_id = $carga->id;
 
-                   
-                     $examen->as_FECHA_MUESTRA = $now;
+                     $examen->as_FECHALAB1 = $now3;
+                     $examen->as_FECHAMUESTRA = $now1;
                      $examen->as_UG_G = $r["as_UG_G"];
                      $examen->as_ESTADO = $r["as_estado"];
+                     $examen->as_FECHALAB2 = $now4;
                      $examen->as_FECHA_CONTRAMUESTRA = $now2;
                      $examen->as_UG_G_CONTRAMUESTRA = $r["as_UG_G_CONTRAMUESTRA"];
                      $examen->as_ESTADO1 = $r["as_estado1"];
@@ -675,10 +680,11 @@ public function getEncuesta(Request $r){
                     $examen->cargas_id = $carga->id;
                      
 
-                   
-                     $examen->AS_FECHA_MUESTRA = $now;
+                     $examen->AS_FECHALAB1 = $now3;
+                     $examen->AS_FECHAMUESTRA = $now1;
                      $examen->AS_UG_G = $r["as_UG_G"];
                      $examen->AS_ESTADO = $r["as_estado"];
+                     $examen->AS_FECHALAB2 = $now4;
                      $examen->AS_FECHA_CONTRAMUESTRA = $now2;
                      $examen->AS_UG_G_CONTRAMUESTRA = $r["as_UG_G_CONTRAMUESTRA"];
                      $examen->AS_ESTADO1 = $r["as_estado1"];
