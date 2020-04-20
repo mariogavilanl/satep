@@ -18,16 +18,18 @@
                         
                         <th>Paciente</th>
                         <th>Agente</th>
+                        <th>Fecha Evaluación</th>
 
                     </tr>
                 </thead>
 
                 <tbody>
-                    
+
                     @foreach ($data as $item)
                         <tr onclick="reevaluar({{$item->id}})" style="cursor : pointer">
                             <td> {{$item->paciente->primerNombre}} {{$item->paciente->segundoNombre}} {{$item->paciente->primerApellido}} {{$item->paciente->segundoApellido}} </td>
                             <td> {{$item->agente->glosaAgente}} </td>
+                            <td> {{$item->created_at}} </td>
                         </tr>    
                     @endforeach
                     

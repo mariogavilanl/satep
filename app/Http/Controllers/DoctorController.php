@@ -86,9 +86,10 @@ class DoctorController extends Controller
         
 
         $examen = Examen::with(["usuario", "paciente", "agente", "carga"])
-        ->where("cargas_id", $r["idExamen"])
+        ->where([["cargas_id","=", $r["idExamen"]], ["as_reevaluacion", "=", 1]])
         ->whereNull("realizadoEncuenta")
-        ->first();
+        ->get();
+
 
         $encuesta = Examen::with(["usuario", "paciente", "agente", "carga"])
         ->where([
@@ -101,6 +102,8 @@ class DoctorController extends Controller
        $data["data"] = $examen;
        $data["encuesta"] = $encuesta;
 
+       dd($examen, $encuesta);
+       
         return view("doctor.resultados", $data);
 
     }
