@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('content')
+    @section('content')
 
     <script>
 
@@ -16,7 +16,6 @@
         
             });
         });
-        
 
         $(document).ready(function(){
             $('#HASTA').datepicker({
@@ -33,21 +32,33 @@
 
     </script>
 
-<form action="/medico/ver-resultados-fecha" method="get">
-    <table class="table table-primary" style="font-size: 0.7rem;">
-        <thead>
-            <TH>DESDE</TH>
-            <TH>HASTA</TH>
-        </thead>
+            <table class="table table-primary" style="font-size: 0.7rem;">
+                        <thead>
+                            <TH>DESDE</TH>
+                            <TH>HASTA</TH>
+                            <TH>AGENTE</TH>
+                            <TH>NOMBRE TRABAJADOR</TH>
+                            <TH>GERENCIA</TH>
+                            <TH>CARGO</TH>
+                            <TH>SEXO</TH>
+                            <TH>EDAD</TH>
+                            
+  
 
-            <tr>  
-                <td><input id="DESDE" name="fechaInicio" width="200px"  width="80px"  /></td>
-                <td><input id="HASTA" name="fechaFin" width="200px"  width="80px" /></td>
-            </tr>
-    </table>
+                        </thead>
 
-    <button type="submit" class="btn btn-primary" >Buscar</button>
+                            <tr>  
+                                <td><input id="DESDE" name="DESDE" width="100px"  width="80px"  /></td>
+                                <td><input id="HASTA" name="HASTA" width="100px"  width="80px" /></td>
+                            </tr>
+                            
+                        
+                        
 
+                
+         
+            
+            </table>
 
 </form>
 @endsection

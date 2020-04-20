@@ -35,10 +35,13 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" > 
+            
             <div class="container-fluid">
+                
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="/logo-codelco.png" alt=""> {{ config('app.name', 'Laravel') }}
+                    
+                   <img src="https://d1hbpr09pwz0sk.cloudfront.net/logo_url/codelco-ed1ca9ae" width="30" height="30" alt=""> {{ config('app.name','Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -52,7 +55,8 @@
                         {{-- menu roles_id --}}
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="{{ route('prueba') }}">Carga Lista <span class="sr-only">(current)</span></a>
+                                    <li> <a class="nav-link" href="{{ route('prueba') }}">Carga Lista <span class="sr-only">(current)</span></a></li>
+                                        <li>  <a class="nav-link" href="{{ route('prueba') }}">Realizado el día de Hoy <span class="sr-only">(current)</span></a></li>
                                 </li>
                             </ul>                        
                         @endif
@@ -61,7 +65,8 @@
                         {{-- menu roles_id --}}
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="{{ route('drlista') }}">Lista Exámenes <span class="sr-only">(current)</span></a>
+                                    <li><a class="nav-link" href="{{ route('drlista') }}">Lista Exámenes <span class="sr-only">(current)</span></a></li>
+                                    <li><a class="nav-link" href="{{ route('drlista') }}">Visualizar Resultados<span class="sr-only">(current)</span></a></li>
                                 </li>
                             </ul>                        
                         @endif     
