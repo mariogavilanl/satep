@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('content')
+    @section('content')
 
     <script>
 
@@ -15,7 +15,7 @@
                 format: 'dd-mm-yyyy'
         
             });
-        
+        });
 
         $(document).ready(function(){
             $('#HASTA').datepicker({
@@ -36,12 +36,28 @@
                         <thead>
                             <TH>DESDE</TH>
                             <TH>HASTA</TH>
+                            <TH>AGENTE</TH>
+                            <TH>NOMBRE TRABAJADOR</TH>
+                            <TH>GERENCIA</TH>
+                            <TH>CARGO</TH>
+                            <TH>SEXO</TH>
+                            <TH>EDAD</TH>
+                            
+  
+
                         </thead>
 
                             <tr>  
                                 <td><input id="DESDE" name="DESDE" width="100px"  width="80px"  /></td>
                                 <td><input id="HASTA" name="HASTA" width="100px"  width="80px" /></td>
                             </tr>
+                            
+                        
+                        
+
+                
+         
+            
             </table>
 
 @endsection
