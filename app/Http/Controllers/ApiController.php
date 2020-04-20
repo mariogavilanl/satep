@@ -35,17 +35,18 @@ class ApiController extends Controller
       $fechalab1 = new DateTime(explode('-', $r["FECHALAB1"])[2]."-".explode('-', $r["FECHALAB1"])[1]."-".explode('-', $r["FECHALAB1"])[0], new DateTimeZone('America/Santiago'));
       $fechalab2 = new DateTime(explode('-', $r["FECHAMUESTRA"])[2]."-".explode('-', $r["FECHAMUESTRA"])[1]."-".explode('-', $r["FECHAMUESTRA"])[0], new DateTimeZone('America/Santiago'));
       
-      dd($fechalab1, $fechalab2);
 
-      $examen = DB::table("examens")
+      $ex = DB::table("examens")
       ->where("id", session()->get('idReevaluacion'))
-      -get();
+      ->first();
+
 
       $examen = new Examen();
                     
-                    $examen->users_id = $idUsuario;
-                    $examen->pacientes_id = $idPaciente;
-                    $examen->agentes_id = $carga->agentes_id;
+                    $examen->users_id = $ex->users_id;
+                    $examen->pacientes_id = $ex->pacientes_id;
+                    $examen->agentes_id = $ex->agentes_id;
+                    $examen->cargas_id = $ex->cargas_id;
                     $examen->as_reevaluacion = 1;
                     $examen->as_FECHALAB1 = $fechalab1;
                     $examen->as_FECHAMUESTRA = $fechalab2;
@@ -57,6 +58,8 @@ class ApiController extends Controller
       $affected = DB::table('examens')
       ->where('id', session()->get('idReevaluacion'))
       ->update(['as_reevaluacion' => 0]);
+
+      return redirect()->route('reevaluaciones');
 
     }
 
@@ -681,6 +684,7 @@ public function getEncuesta(Request $r){
                      $examen->agentes_id = $carga->agentes_id;
                      $examen->cargas_id = $carga->id;
 
+                     $examen->as_reevaluacion = 1;
                      $examen->as_FECHALAB1 = $now3;
                      $examen->as_FECHAMUESTRA = $now1;
                      $examen->as_UG_G = $r["as_UG_G"];
