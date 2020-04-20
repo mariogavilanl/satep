@@ -54,10 +54,20 @@
                         @if (Auth::user()->roles_id == 1)
                         {{-- menu roles_id --}}
                             <ul class="navbar-nav mr-auto">
-                                <li class="nav-item active">
-                                    <li> <a class="nav-link" href="{{ route('prueba') }}">Carga Lista <span class="sr-only">(current)</span></a></li>
-                                        <li>  <a class="nav-link" href="{{ route('prueba') }}">Realizado el día de Hoy <span class="sr-only">(current)</span></a></li>
+      
+                                <li> 
+                                    <a class="nav-link" href="{{ route('prueba') }}">Carga Lista <span class="sr-only">(current)</span></a>
                                 </li>
+                                
+                                <li>
+                                    <a class="nav-link" href="{{ route('prueba') }}">Realizado el día de Hoy <span class="sr-only">(current)</span></a>
+                                </li>
+
+                                <li>
+                                    <a class="nav-link" href="{{ route('prueba') }}">Realizado el día de Hoy <span class="sr-only">(current)</span></a>
+                                </li>                                
+
+                                
                             </ul>                        
                         @endif
 
@@ -66,7 +76,7 @@
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item active">
                                     <li><a class="nav-link" href="{{ route('drlista') }}">Lista Exámenes <span class="sr-only">(current)</span></a></li>
-                                    <li><a class="nav-link" href="{{ route('drlista') }}">Visualizar Resultados<span class="sr-only">(current)</span></a></li>
+                                    <li><a class="nav-link" href="{{ route('buscarResultados') }}">Visualizar Resultados<span class="sr-only">(current)</span></a></li>
                                 </li>
                             </ul>                        
                         @endif     

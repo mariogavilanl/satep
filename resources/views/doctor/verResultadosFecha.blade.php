@@ -2,7 +2,15 @@
 
 @section('content')
 
-<table> 
+<script>
+    function verResultado(id){
+
+        window.location.href = "/medico/ver-resultado-examen?id="+id;
+
+    }
+</script>
+
+<table class="table table table-striped" style="cursor:pointer"> 
 
     <thead>
       <tr>
@@ -14,22 +22,22 @@
     </thead>
 <tbody>
     
-
-        @foreach ($lista as $asd)
-        <tr>
+    @foreach ($lista as $item)
+        <tr onclick="verResultado({{$item->id}})">
             <td>
-                {{$asd->primerNombre $asd->primerApellido $asd->segundoApellido }}
+                {{$item->paciente->primerNombre}} {{$item->paciente->primerApellido}} {{$item->paciente->segundoApellido }}
             </td>
 
             <td>
-                {{$asd->glosaAgente}}
+                {{$item->agente->glosaAgente}}
             </td>
 
             <td>
-                {{$asd->created_at}}
+                {{$item->created_at}}
             </td>
         </tr>
-            @endforeach
+    @endforeach
+       
 
 </tbody>
 

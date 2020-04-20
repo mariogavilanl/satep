@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/lista', 'PruebasController@pico')->name('prueba');
+Route::get('/reevaluacion', 'PruebasController@Reevaluacion')->name('reevaluacion');
 
 Route::get('/pruebas/examen_vigilante_privado', 'PruebasController@examen_vigilante_privado')->name('examen_vigilante_privado');
 Route::get('/pruebas/examen_aa', 'PruebasController@examen_aa')->name('examen_aa');
@@ -52,6 +53,7 @@ Route::get('/medico/apruebaExamen', 'DoctorController@apruebaExamen')->name('apr
 Route::get('/medico/rechazaExamen', 'DoctorController@rechazaExamen')->name('rechazaExamen');
 Route::get('/medico/buscar-resultados', 'DoctorController@buscarResultados')->name('buscarResultados');
 Route::get('/medico/ver-resultados-fecha', 'DoctorController@verResultadosFechas')->name('verresultadosfecha');
+Route::get('/medico/ver-resultado-examen', 'DoctorController@verResultadosExamen')->name('verresultadosexamen');
 
 
 

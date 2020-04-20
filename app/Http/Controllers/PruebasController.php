@@ -60,8 +60,7 @@ class PruebasController extends Controller
         $lista = $carga
         ->whereIn('agentes_id', $pico)
         ->join('agentes', 'cargas.agentes_id', '=', 'agentes.id')
-        //->where('cargas.realizado', 0)
-        // ->orWhere('cargas.realizadoco', 0)
+
         ->get(['agentes.*', 'cargas.*']);
    
         return view('prueba/lista')->with(['pico' => $lista,
@@ -70,6 +69,10 @@ class PruebasController extends Controller
          'fechaactual' => $fechaactual]);
     }
 
+    public  function Reevaluacion(Request $r){
+
+        
+    }
 
     public function realizaExamenes(Request $r)
     {
