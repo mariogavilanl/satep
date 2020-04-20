@@ -69,9 +69,23 @@ class PruebasController extends Controller
          'fechaactual' => $fechaactual]);
     }
 
-    public  function Reevaluacion(Request $r){
+    
 
-        
+    public function Reevaluar(Request $r){
+        $r->session()->put('idReevaluacion', $r["id"]);
+        return view("prueba.ex_as_reevaluacion");
+    }
+
+    public function Reevaluaciones(Request $r){
+
+        $data = Examen::where("as_estado", "=", "Alterado")
+        ->with(['paciente', 'agente'])
+        ->get();
+
+        return view("prueba.reevaluaciones", ["data" => $data]);
+
+
+
     }
 
     public function realizaExamenes(Request $r)

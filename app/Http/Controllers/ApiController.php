@@ -28,6 +28,38 @@ class ApiController extends Controller
 
     }
 
+    public function ReevaluacionExamen(Request $r){
+      //as_reevaluacion
+    
+      
+      $fechalab1 = new DateTime(explode('-', $r["FECHALAB1"])[2]."-".explode('-', $r["FECHALAB1"])[1]."-".explode('-', $r["FECHALAB1"])[0], new DateTimeZone('America/Santiago'));
+      $fechalab2 = new DateTime(explode('-', $r["FECHAMUESTRA"])[2]."-".explode('-', $r["FECHAMUESTRA"])[1]."-".explode('-', $r["FECHAMUESTRA"])[0], new DateTimeZone('America/Santiago'));
+      
+      dd($fechalab1, $fechalab2);
+
+      $examen = DB::table("examens")
+      ->where("id", session()->get('idReevaluacion'))
+      -get();
+
+      $examen = new Examen();
+                    
+                    $examen->users_id = $idUsuario;
+                    $examen->pacientes_id = $idPaciente;
+                    $examen->agentes_id = $carga->agentes_id;
+                    $examen->as_reevaluacion = 1;
+                    $examen->as_FECHALAB1 = $fechalab1;
+                    $examen->as_FECHAMUESTRA = $fechalab2;
+                    $examen->as_UG_G = $r["as_UG_G"];
+                    $examen->as_estado = $r["as_estado"] ;
+      
+                    $examen->save();
+
+      $affected = DB::table('examens')
+      ->where('id', session()->get('idReevaluacion'))
+      ->update(['as_reevaluacion' => 0]);
+
+    }
+
 public function getEncuesta(Request $r){
   
   

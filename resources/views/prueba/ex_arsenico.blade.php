@@ -116,12 +116,12 @@
                                 <td><input class="form-control" type="text" name="as_UG_G_CONTRAMUESTRA"  ></td>                  
                                 <td><input class="form-check-input" type="radio" name="as_estado1" value="Alterado"  >Alterado <br>
                                 <input class="form-check-input" type="radio" name="as_estado1" value="Normal"  >Normal</td>
-                        
+                          </tr>
+                      
                               </thead>
                               </table>
                         
-                          </tr>
-                      
+                          
                             
 
                       </div>

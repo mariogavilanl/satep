@@ -19,7 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/lista', 'PruebasController@pico')->name('prueba');
-Route::get('/reevaluacion', 'PruebasController@Reevaluacion')->name('reevaluacion');
+Route::get('/reevaluaciones', 'PruebasController@Reevaluaciones')->name('reevaluaciones');
+Route::get('/reevaluar', 'PruebasController@Reevaluar')->name('reevaluar');
 
 Route::get('/pruebas/examen_vigilante_privado', 'PruebasController@examen_vigilante_privado')->name('examen_vigilante_privado');
 Route::get('/pruebas/examen_aa', 'PruebasController@examen_aa')->name('examen_aa');
@@ -80,7 +81,7 @@ Route::get('api/getExamenso2', 'ApiController@getExamenso2')->name('getExamenso2
 
 Route::get('api/getEncuesta', 'ApiController@getEncuesta')->name('getEncuesta');
 Route::get('api/getEncuestaResult', 'ApiController@getEncuestaResult')->name('getEncuestaResult');
-
+Route::get('api/reevaluacion-examen', 'ApiController@ReevaluacionExamen')->name('ReevaluacionExamen');
 
 
 Route::get('encuesta', 'EncuestaController@index')->name('encuesta');

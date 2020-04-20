@@ -128,6 +128,7 @@ class CreateExamensTable extends Migration
            $table->text('ag_OBSERVACION')->nullable();   
            
            // AS - Aresenico
+           $table->boolean('as_reevaluacion')->nullable();
            $table->dateTime('as_FECHALAB1')->nullable();
            $table->dateTime('as_FECHAMUESTRA')->nullable();
            $table->text('as_UG_G')->nullable();
