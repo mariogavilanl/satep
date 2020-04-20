@@ -30,6 +30,36 @@ class DoctorController extends Controller
         return $examen;
 
     }
+    
+    public function buscarResultados(Request $r){
+
+        return view("doctor.resultadosexamen");
+    }
+
+    public function verResultadosFechas(Request $r){ 
+
+
+        $fechaInicio = explode("-",$r["fechaInicio"])[2]."-".explode("-",$r["fechaInicio"])[1]."-".explode("-",$r["fechaInicio"])[0]; 
+        $fechaFin = explode("-",$r["fechaFin"])[2]."-".explode("-",$r["fechaFin"])[1]."-".explode("-",$r["fechaFin"])[0];
+                
+        $examen = Examen::with(["usuario", "paciente", "agente", "carga"])
+        ->whereBetween("created_at", [$fechaInicio, $fechaFin])
+        ->get(); 
+
+        $ex = new Examen();
+        $datos = $ex
+        ->whereBetween("examens.created_at", [$fechaInicio, $fechaFin])
+        ->join('agentes', 'examens.agentes_id', '=', 'agentes.id')
+        ->join('users', 'users.id', '=', 'examens.users_id')
+        ->join('pacientes', 'pacientes.id', '=', 'examens.pacientes_id')
+        
+        ->get(['agentes.*', 'examens.*','users.*', 'pacientes.*']);
+
+
+        return view("doctor.verResultadosFecha", ["lista" => $examen, "caca" => "señal"]);
+        // , ['lista' => $examen]);
+
+    }
 
     public function verResultados(Request $r){
 

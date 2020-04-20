@@ -50,6 +50,9 @@ Route::get('/medico-getData', 'DoctorController@getExamenesTerminados')->name('g
 Route::get('/medico/resultados', 'DoctorController@verResultados')->name('verResultados');
 Route::get('/medico/apruebaExamen', 'DoctorController@apruebaExamen')->name('apruebaExamen');
 Route::get('/medico/rechazaExamen', 'DoctorController@rechazaExamen')->name('rechazaExamen');
+Route::get('/medico/buscar-resultados', 'DoctorController@buscarResultados')->name('buscarResultados');
+Route::get('/medico/ver-resultados-fecha', 'DoctorController@verResultadosFechas')->name('verresultadosfecha');
+
 
 
 
