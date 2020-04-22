@@ -9,6 +9,8 @@
         });
     });
 
+    
+
     function cargaExamen(id, nombre, apellido){
       window.location.href = 'realiza-examen?idCarga='+id;
     }

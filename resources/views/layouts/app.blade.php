@@ -77,6 +77,7 @@
                                 <li class="nav-item active">
                                     <li><a class="nav-link" href="{{ route('drlista') }}">Lista Exámenes <span class="sr-only">(current)</span></a></li>
                                     <li><a class="nav-link" href="{{ route('buscarResultados') }}">Visualizar Resultados<span class="sr-only">(current)</span></a></li>
+                                   
                                 </li>
                             </ul>                        
                         @endif     
@@ -88,7 +89,19 @@
                                 </li>
                             </ul>
                         @endif
+
+                          @if (Auth::user()->roles_id == 6)
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ route('verresultadosexamen1') }}">Resultados <span class="sr-only">(current)</span></a>
+                            </li>
+                        </ul>
+                    @endif    
                     @endauth
+
+                    
+
+
                    
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

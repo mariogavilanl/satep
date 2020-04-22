@@ -3,13 +3,6 @@
 
 @section('content')
 
-<script>
-    function back(){
-
-        window.history.back();
-
-    }
-</script>
 
 <div class="container-fluid">
     <div class="row">
@@ -33,13 +26,13 @@
                 
                 <tbody>
                     
-                    <tr>
+                    {{--  <tr>
                         <td>{{$examen->as_FECHALAB1}}</td>
                         <td>{{$examen->as_FECHAMUESTRA}}</td>
                         <td>{{$examen->as_UG_G}}</td>
                         <td>{{$examen->as_estado}}</td>
                       
-                    </tr>
+                    </tr>  --}}
                 </tbody>
             </table>
 

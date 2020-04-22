@@ -31,6 +31,11 @@ class RolesSeeder extends Seeder
         DB::table('roles')->insert([
             'id' => 5,
             'nombreRol' => 'Supervisor'
-        ]);                        
+        ]);     
+        
+        DB::table('roles')->insert([
+            'id' => 6,
+            'nombreRol' => 'DANIEL BERRIOS'
+        ]);                  
     }
 }

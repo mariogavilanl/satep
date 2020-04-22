@@ -58,7 +58,10 @@ class LoginController extends Controller
                 case 5:
                     return "/dashboard";
                    break;                
-
+                
+                   case 6:
+                    return "/expuestos/ver-resultados-examen";
+                   break;    
             
             default:
                  return "/lista";

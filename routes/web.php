@@ -56,7 +56,9 @@ Route::get('/medico/buscar-resultados', 'DoctorController@buscarResultados')->na
 Route::get('/medico/ver-resultados-fecha', 'DoctorController@verResultadosFechas')->name('verresultadosfecha');
 Route::get('/medico/ver-resultado-examen', 'DoctorController@verResultadosExamen')->name('verresultadosexamen');
 
-
+//expuestos
+Route::get('/expuestos/ver-resultados-examen', 'ExpuestosController@verResultadosExamen')->name('verresultadosexamen1');
+//Route::get('/expuestos/ver-resultados-Fechas', 'ExpuestosController@verResultadosFechas')->name('verresultadosfecha1');
 
 
 // examenes 
@@ -94,8 +96,6 @@ Route::get("dashboard/getDataCarga", "InformesController@dataCarga")->name("data
 Route::get("dashboard/dataProgramadoRealizados", "InformesController@dataProgramadoRealizados")->name("dataProgramadoRealizados");
 Route::get("dashboard/dataPorGerencia", "InformesController@dataPorGerencia")->name("dataPorGerencia");
 Route::get("dashboard/getArsenicoAlterados", "InformesController@getArsenicoAlterados")->name("getArsenicoAlterados");
-
-
 
 
 

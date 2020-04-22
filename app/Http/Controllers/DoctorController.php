@@ -77,6 +77,7 @@ class DoctorController extends Controller
         // , ['lista' => $examen]);
 
     }
+  
 
     public function verResultados(Request $r){
 
