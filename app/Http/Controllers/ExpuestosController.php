@@ -36,6 +36,38 @@ class ExpuestosController extends Controller
         return view("expuestos.resultadosexamen");
     }
 
+    public function verResultadosExamenLogin(Request $r){
+
+        //PICOOOOOOOOOOOOOOOOO
+        return view("expuestos.login");
+    }
+
+    public function verResultadosExamenExpuesto(Request $r){
+
+        $ex = new Examen();
+        $datos = $ex
+        ->where([
+            ["pacientes.nroSap", "=", $r["nroSap"]],
+            ["cargas.rut", "=", $r["rut"] ], 
+            ["examens.realizadoEncuenta", "=", null]
+        ])
+        ->join('agentes', 'examens.agentes_id', '=', 'agentes.id')
+        ->join('users', 'users.id', '=', 'examens.users_id')
+        ->join('pacientes', 'pacientes.id', '=', 'examens.pacientes_id')
+        ->join("cargas", "cargas.id", "=", "examens.cargas_id")        
+        ->get(['agentes.*', 'examens.*','users.*', 'pacientes.*', "cargas.*", 'examens.created_at as fechaExamen']);
+   
+        $paciente = $datos->first();
+        $hayExamen = false;
+        
+        if ($datos->count() > 0) {
+            $hayExamen = true;
+        }
+
+        return view("expuestos.verResultadosExamen", ["hayExamen" => $hayExamen,"examen" => $datos, "paciente" => $paciente ]);
+
+    }
+
     public function verResultadosExamen(Request $r){
 
         $ex = new Examen();

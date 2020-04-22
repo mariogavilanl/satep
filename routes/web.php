@@ -57,7 +57,8 @@ Route::get('/medico/ver-resultados-fecha', 'DoctorController@verResultadosFechas
 Route::get('/medico/ver-resultado-examen', 'DoctorController@verResultadosExamen')->name('verresultadosexamen');
 
 //expuestos
-Route::get('/expuestos/ver-resultados-examen', 'ExpuestosController@verResultadosExamen')->name('verresultadosexamen1');
+Route::get('/expuestos/login', 'ExpuestosController@verResultadosExamenLogin')->name('verResultadosExamenLogin');
+Route::get('/expuestos/ver-resultados-examen-expuestos', 'ExpuestosController@verResultadosExamenExpuesto')->name('verResultadosExamenExpuesto');
 //Route::get('/expuestos/ver-resultados-Fechas', 'ExpuestosController@verResultadosFechas')->name('verresultadosfecha1');
 
 

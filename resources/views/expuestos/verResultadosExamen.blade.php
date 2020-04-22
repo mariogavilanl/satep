@@ -2,37 +2,67 @@
 
 
 @section('content')
+<script>
+
+function back(){
+
+window.history.back();
+
+}
+
+    $(document).ready(function(){
+      
+           
+               
+         
+        
+        $("#tabla").DataTable({
+          "pageLength": 100
+
+       
+        });
+        
+    });
+
+    
+
+    function verResultado(id){
+
+        window.location.href = "/medico/ver-resultado-examen?id="+id;
+
+    }
+</script>
+
+
+
+
+@if ($hayExamen)
+<div class="card">
+Paciente : {{ $paciente->primerNombre }} {{ $paciente->segundoNombre }} {{ $paciente->primerApellido }} {{ $paciente->segundoApellido }}
 
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12">
-           
             <table class="table">
              
                 <thead>
                     <tr>
-                        <th>Fecha Laboratorio</th>
-                        <th>Fecha Muestra</th>
-                
-                        <th>UG/G</th>
-                        <th>Estado</th>
-                
-                       
+                        <th>Fecha Examen</th>
+                        <th>Agente</th>
                     </tr>
-                    
-
                 </thead>
                 
                 <tbody>
-                    
-                    {{--  <tr>
-                        <td>{{$examen->as_FECHALAB1}}</td>
-                        <td>{{$examen->as_FECHAMUESTRA}}</td>
-                        <td>{{$examen->as_UG_G}}</td>
-                        <td>{{$examen->as_estado}}</td>
+                    @foreach ($examen as $item)
+                    <tr  onclick="verResultado({{$item->id}})" style="cursor:pointer" >
+                        <td>{{$item->fechaExamen}}</td>
+                        <td>{{$item->glosaAgente}}</td>
+                        
                       
-                    </tr>  --}}
+                    </tr> 
+                    @endforeach
+                    
                 </tbody>
             </table>
 
@@ -43,6 +73,10 @@
         </div>
     </div>
 </div>
+</div>
+@else
+     <h1>No se encontraron registros  <span class="fa fa-spin fa-times-circle" ></span></h1>
+@endif
 
 
 @endsection
