@@ -16,7 +16,7 @@ $(document).ready(function(){
         success : function(r){
            
             $.each(r, function(k,v){
-                if (v.realizadoEncuenta != null && v.carga.informadopaciente == 0) {
+                if (v.realizadoEncuenta == null && v.carga.informadopaciente == 0) {
                     $("#getData").append(
                         "<tr>"+
                             "<td>"+v.paciente.primerNombre+" "+v.paciente.primerApellido+"</td>"+
@@ -26,6 +26,8 @@ $(document).ready(function(){
                             "<td> <a href='/medico/resultados?idExamen="+v.carga.id+"&idRealExaman="+v.id+"'> <button class= 'btn btn-primary'> Revisión </button> </a></td>"+
                         "</tr>");
                 }
+
+            
             });
         }
     });

@@ -54,6 +54,14 @@ class UserSeeder extends Seeder
             'password' => '$2y$10$54zkhzP2Gg4ZioC/VqlNV..SJoeiN60K66Zw1/LK4piSJxdxHh61q',
             'roles_id' => '5'
         ]);    
+
+        DB::table('users')->insert([
+            'name' => 'Daniel Berrios',
+
+            'email' => 'dberr001@contratistas.codelco.cl',
+            'password' => '$2y$10$54zkhzP2Gg4ZioC/VqlNV..SJoeiN60K66Zw1/LK4piSJxdxHh61q',
+            'roles_id' => '6'
+        ]);
         
         
     }
