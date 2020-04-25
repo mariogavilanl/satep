@@ -46,7 +46,6 @@ class DoctorController extends Controller
         ->join('pacientes', 'pacientes.id', '=', 'examens.pacientes_id')
         
         ->first(['agentes.*', 'examens.*','users.*', 'pacientes.*']);
-   
         return view("doctor.verResultadosExamen", ["examen" => $datos]);
 
 

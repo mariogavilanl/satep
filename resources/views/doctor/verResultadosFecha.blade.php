@@ -73,8 +73,8 @@ $(document).ready(function() {
     </div>
   </div>
 
-
-  <table id="tabla" class="table table table-striped" style="cursor:pointer">
+  
+  <table id="tabla" class="table table-hover" style="cursor:pointer">
 
  
 

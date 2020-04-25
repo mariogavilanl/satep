@@ -32,11 +32,16 @@
 
         @foreach ($resultados as $item)
             <tr> 
+            url : "/medico/rechazaExamen?comentario="+$("#doctorObservacion").val(),
             <td>{{ (key($item)) }}</td>
             <td>{{ $item[(key($item))] }}</td>    
+            <td>{{ $item[(key($nroSap))] }}</td>
+            <td>{{ $item[(key($rut))] }}</td>
             </tr>
         @endforeach
 
+
+      
 
     </table>
 
