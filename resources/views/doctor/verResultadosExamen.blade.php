@@ -2,7 +2,7 @@
 
 
 @section('content')
-
+<?php ob_start(); ?>
 <script>
     function back(){
 
@@ -11,11 +11,10 @@
     }
 </script>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-12">
+
            
-            <table class="table">
+           
+            <table class="table table-hover">
              
                 <thead>
                     <tr>
@@ -34,19 +33,30 @@
                 <tbody>
                     
                     <tr>
-                        <td>{{$examen->as_FECHALAB1}}</td>
-                        <td>{{$examen->as_FECHAMUESTRA}}</td>
-                        <td>{{$examen->as_UG_G}}</td>
-                        <td>{{$examen->as_estado}}</td>
-                      
+                        <tr>
+                            <td>{{$examen->as_FECHALAB1}}</td>
+                            <td>{{$examen->as_FECHAMUESTRA}}</td>
+                            <td>{{$examen->as_UG_G}}</td>
+                            <td>{{$examen->as_estado}}</td>
+                          
+                        </tr>
                     </tr>
                 </tbody>
             </table>
+            <br>
+            <a class="btn btn-primary-rigth" href="pdf.php"><i class="fa fa-download"></i> Descargar archivo PDF</a>
+            
+           
+            <p>
 
+            </p>
            </div>
 
-            <div class="col-sm-12">
+           
             <button class="btn btn-primary" onclick="back()" > <span class="fa fa-arrow-left" ></span>  volver  </button>
+           
+            
+       
         </div>
     </div>
 </div>
