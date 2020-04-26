@@ -34,38 +34,12 @@ class DoctorController extends Controller
         
         ->first(['agentes.*', 'examens.*','users.*', 'pacientes.*']);
 
-        //$pdf = \PDF::loadView('doctor.verResultadosExamen', ["examen" => $examen]);
-        //$pdf = \PDF::loadView('doctor.resultadosPdf.asPdf', ["examen" => $examen]);
+
         set_time_limit(300);
-        // $pdf = App::make('dompdf.wrapper');
 
-        // $view =  \View::make('doctor.resultadosPdf.asPdf', $examen )->render();
-    
-        // $pdf = \App::make('dompdf.wrapper');
-    
-        $pdf = PDF::loadView('doctor.resultadosPdf.asPdf', ["examen" => $examen]);
+        $pdf = PDF::loadView('doctor.resultadosPdf.resultados', ["examen" => $examen]);
+        
         return $pdf->download("archivo.pdf");
-
-
-        // $pdf = \PDF::loadView('doctor/resultadosPdf/asPdf', $examen);
- 
-        // return $pdf->download('archivo.pdf');
-
-
-
-        // $pdf = \PDF::loadView('doctor/resultadosPdf/asPdf', $examen);
- 
-        // return $pdf->download('archivo.pdf');
-        
-        // $pdf->save(storage_path().'_filename.pdf');
-
-        // return $pdf->download('resultado.pdf');
-
-
-        //return view("doctor.verResultadosExamen", ["examen" => $datos]);
-
-        
-        
 
     }
 
