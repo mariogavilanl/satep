@@ -40,8 +40,8 @@
                     
                     <tr>
                         <tr>
-                            <td>{{$examen->as_FECHALAB1}}</td>
-                            <td>{{$examen->as_FECHAMUESTRA}}</td>
+                            <td>{{ Carbon\Carbon::parse($examen->as_FECHALAB1)->format('d/m/Y') }}</td>
+                            <td>{{ Carbon\Carbon::parse($examen->as_FECHAMUESTRA)->format('d/m/Y') }}</td>
                             <td>{{$examen->as_UG_G}}</td>
                             <td>{{$examen->as_estado}}</td>
                           
@@ -52,7 +52,7 @@
             <br>
             
       
-            <button type="" class="btn btn-success" onclick="generarPdf({{$examen->id}})" > <span> fa fa-download </span>Descargar archivo PDF </button>
+            <button type="" class="btn btn-success" onclick="generarPdf({{$examen->id}})" > <span class="fa fa-download" > </span>Descargar archivo PDF </button>
             
             <p>
 

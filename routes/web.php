@@ -60,6 +60,7 @@ Route::get('/medico/generar-pdf-resultado-examen', 'DoctorController@generarPdfE
 //expuestos
 Route::get('/expuestos/login', 'ExpuestosController@verResultadosExamenLogin')->name('verResultadosExamenLogin');
 Route::get('/expuestos/ver-resultados-examen-expuestos', 'ExpuestosController@verResultadosExamenExpuesto')->name('verResultadosExamenExpuesto');
+Route::get('/expuestos/ver-resultados-examen-expuestos', 'ExpuestosController@verResultadosExamenExpuesto')->name('verResultadosExamenExpuesto');
 //Route::get('/expuestos/ver-resultados-Fechas', 'ExpuestosController@verResultadosFechas')->name('verresultadosfecha1');
 
 
