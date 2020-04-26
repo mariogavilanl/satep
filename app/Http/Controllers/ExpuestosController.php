@@ -84,6 +84,31 @@ class ExpuestosController extends Controller
 
     }
 
+    public function generarExamenPdf(Request $r){
+
+        $ex = new Examen();
+        $datos = $ex
+        ->where([
+           
+            ["id", "=", $r["idExamen"]]
+        ])
+        ->join('agentes', 'examens.agentes_id', '=', 'agentes.id')
+        ->join('users', 'users.id', '=', 'examens.users_id')
+        ->join('pacientes', 'pacientes.id', '=', 'examens.pacientes_id')
+        ->join("cargas", "cargas.id", "=", "examens.cargas_id")        
+        ->get(
+            
+            ['agentes.*', 'examens.*','users.*', 'pacientes.*', "cargas.*", 'examens.created_at as fechaExamen']
+        );
+   
+        $paciente = $datos->first();
+
+
+
+
+        return "me gusta el pico";
+    }
+
 
 
     

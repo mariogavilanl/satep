@@ -4,15 +4,21 @@
 @section('content')
 <?php ob_start(); ?>
 <script>
+    function generarPdf(idExamen){
+
+        //conchetumare
+        
+        //generar-pdf-resultado-examen
+        window.location.href = "generar-pdf-resultado-examen?idExamen="+idExamen;
+
+    }
+
     function back(){
 
         window.history.back();
 
     }
 </script>
-
-
-           
            
             <table class="table table-hover">
              
@@ -44,9 +50,10 @@
                 </tbody>
             </table>
             <br>
-            <a class="btn btn-primary-rigth" href="pdf.php"><i class="fa fa-download"></i> Descargar archivo PDF</a>
             
-           
+      
+            <button type="" class="btn btn-success" onclick="generarPdf({{$examen->id}})" > <span> fa fa-download </span>Descargar archivo PDF </button>
+            
             <p>
 
             </p>

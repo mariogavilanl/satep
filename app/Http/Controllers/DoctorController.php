@@ -12,15 +12,63 @@ use App\Mail\ResultadoExamen;
 
 use Carbon\Carbon;
 use App\Examen;
+use PDF;
 
 class DoctorController extends Controller
 {
     
     public function index(){    
 
+        
         return view("doctor.index");
 
     }
+
+    public function generarPdfExamen(Request $r){
+        $ex = new Examen();
+        $examen = $ex
+        ->where("examens.id", "=", $r["idExamen"])
+        ->join('agentes', 'examens.agentes_id', '=', 'agentes.id')
+        ->join('users', 'users.id', '=', 'examens.users_id')
+        ->join('pacientes', 'pacientes.id', '=', 'examens.pacientes_id')
+        
+        ->first(['agentes.*', 'examens.*','users.*', 'pacientes.*']);
+
+        //$pdf = \PDF::loadView('doctor.verResultadosExamen', ["examen" => $examen]);
+        //$pdf = \PDF::loadView('doctor.resultadosPdf.asPdf', ["examen" => $examen]);
+        set_time_limit(300);
+        // $pdf = App::make('dompdf.wrapper');
+
+        // $view =  \View::make('doctor.resultadosPdf.asPdf', $examen )->render();
+    
+        // $pdf = \App::make('dompdf.wrapper');
+    
+        $pdf = PDF::loadView('doctor.resultadosPdf.asPdf', ["examen" => $examen]);
+        return $pdf->download("archivo.pdf");
+
+
+        // $pdf = \PDF::loadView('doctor/resultadosPdf/asPdf', $examen);
+ 
+        // return $pdf->download('archivo.pdf');
+
+
+
+        // $pdf = \PDF::loadView('doctor/resultadosPdf/asPdf', $examen);
+ 
+        // return $pdf->download('archivo.pdf');
+        
+        // $pdf->save(storage_path().'_filename.pdf');
+
+        // return $pdf->download('resultado.pdf');
+
+
+        //return view("doctor.verResultadosExamen", ["examen" => $datos]);
+
+        
+        
+
+    }
+
 
     public function getExamenesTerminados(){        
     
@@ -46,6 +94,8 @@ class DoctorController extends Controller
         ->join('pacientes', 'pacientes.id', '=', 'examens.pacientes_id')
         
         ->first(['agentes.*', 'examens.*','users.*', 'pacientes.*']);
+
+        
         return view("doctor.verResultadosExamen", ["examen" => $datos]);
 
 
@@ -79,6 +129,7 @@ class DoctorController extends Controller
   
 
     public function verResultados(Request $r){
+  
 
         $r->session()->put('idExamen', $r["idExamen"]);
         $r->session()->put('idRealExaman', $r["idRealExaman"]);

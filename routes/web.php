@@ -55,6 +55,7 @@ Route::get('/medico/rechazaExamen', 'DoctorController@rechazaExamen')->name('rec
 Route::get('/medico/buscar-resultados', 'DoctorController@buscarResultados')->name('buscarResultados');
 Route::get('/medico/ver-resultados-fecha', 'DoctorController@verResultadosFechas')->name('verresultadosfecha');
 Route::get('/medico/ver-resultado-examen', 'DoctorController@verResultadosExamen')->name('verresultadosexamen');
+Route::get('/medico/generar-pdf-resultado-examen', 'DoctorController@generarPdfExamen')->name('generarPdfExamen');
 
 //expuestos
 Route::get('/expuestos/login', 'ExpuestosController@verResultadosExamenLogin')->name('verResultadosExamenLogin');
