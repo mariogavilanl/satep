@@ -44,18 +44,19 @@ class ExpuestosController extends Controller
 
     public function verResultadosExamenExpuesto(Request $r){
 
+        
         $ex = new Examen();
         $datos = $ex
         ->where([
             ["pacientes.nroSap", "=", $r["nroSap"]],
-            ["cargas.rut", "=", $r["rut"] ], 
+            ["pacientes.rut", "=", $r["rut"] ], 
             ["examens.realizadoEncuenta", "=", null]
         ])
         ->join('agentes', 'examens.agentes_id', '=', 'agentes.id')
         ->join('users', 'users.id', '=', 'examens.users_id')
         ->join('pacientes', 'pacientes.id', '=', 'examens.pacientes_id')
         ->join("cargas", "cargas.id", "=", "examens.cargas_id")        
-        ->get(['agentes.*', 'examens.*','users.*', 'pacientes.*', "cargas.*", 'examens.created_at as fechaExamen']);
+        ->get(['agentes.*', 'examens.*','users.*', 'pacientes.*', "cargas.*", 'examens.created_at as fechaExamen', 'examens.id as idExamen']);
    
         $paciente = $datos->first();
         $hayExamen = false;
@@ -64,6 +65,7 @@ class ExpuestosController extends Controller
             $hayExamen = true;
         }
 
+        
         return view("expuestos.verResultadosExamen", ["hayExamen" => $hayExamen,"examen" => $datos, "paciente" => $paciente ]);
 
     }

@@ -119,7 +119,7 @@ window.history.back();
                 
                 <tbody>
                     @foreach ($examen as $item)
-                    <tr  onclick="verResultado({{$item->id}})" style="cursor:pointer" >
+                    <tr  onclick="verResultado({{$item->idExamen}})" style="cursor:pointer" >
                         <td>{{$item->fechaExamen}}</td>
                         <td>{{$item->glosaAgente}}</td>
                         
