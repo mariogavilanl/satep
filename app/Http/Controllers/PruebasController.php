@@ -79,7 +79,7 @@ class PruebasController extends Controller
     public function Reevaluaciones(Request $r){
 
         $data = Examen::where([["as_estado", "=", "Alterado"], ["as_reevaluacion", "=", 1]])
-        ->with(['paciente', 'agente'])
+        ->with(['paciente', 'agente']) 
         ->get();
 
         return view("prueba.reevaluaciones", ["data" => $data]);

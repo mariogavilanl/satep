@@ -79,20 +79,6 @@
                               </tr>
                               </thead>
                               </table>
-                        
-                         
-                      
-                            
-
-                 
-
-                  
-                      
-                    
-                      
-
-
-                             
                                     
               <input class="btn btn-primary" type="submit" value="enviar">
             
