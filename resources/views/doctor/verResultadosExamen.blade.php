@@ -52,7 +52,7 @@
             <br>
             
       
-            <button type="" class="btn btn-success" onclick="generarPdf({{$examen->id}})" > <span class="fa fa-download" > </span>Descargar archivo PDF </button>
+            <button type="" class="btn btn-success" onclick="generarPdf({{$examen->idExamen}})" > <span class="fa fa-download" > </span>Descargar archivo PDF </button>
             
             <p>
 

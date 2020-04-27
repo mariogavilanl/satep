@@ -60,7 +60,7 @@
                                 </li>
                                 
                                 <li>
-                                    <a class="nav-link" href="{{ route('prueba') }}">Realizado el día de Hoy <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="{{ route('realizado-hoy') }}">Realizado el día de Hoy <span class="sr-only">(current)</span></a>
                                 </li>
 
                                 <li>

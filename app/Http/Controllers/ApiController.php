@@ -633,6 +633,7 @@ public function getEncuesta(Request $r){
 ////////////////////////////ARSENICO
      public function getExamenarsenico(Request $r){
 
+        
 
         // dd(session()->get('nroSap'));
         // dd( $id = Auth::id());
@@ -677,7 +678,6 @@ public function getEncuesta(Request $r){
                      
                      
                      $examen = new Examen();
-                     
                 
                      $examen->users_id = $idUsuario;
                      $examen->pacientes_id = $idPaciente;
@@ -689,6 +689,7 @@ public function getEncuesta(Request $r){
                      $examen->as_FECHAMUESTRA = $now1;
                      $examen->as_UG_G = $r["as_UG_G"];
                      $examen->as_ESTADO = $r["as_estado"];
+                     $examen->as_reevaluacion = ($r["as_estado"] == "Alterado") ? 1 : 0 ;
                     // $examen->as_FECHALAB2 = $now4;
                     // $examen->as_FECHA_CONTRAMUESTRA = $now2;
                     // $examen->as_UG_G_CONTRAMUESTRA = $r["as_UG_G_CONTRAMUESTRA"];
@@ -716,11 +717,12 @@ public function getEncuesta(Request $r){
                      $examen->agentes_id = $carga->agentes_id;
                     $examen->cargas_id = $carga->id;
                      
-                      
+
                      $examen->AS_FECHALAB1 = $now3;
                      $examen->AS_FECHAMUESTRA = $now1;
                      $examen->AS_UG_G = $r["as_UG_G"];
                      $examen->AS_ESTADO = $r["as_estado"];
+                     $examen->as_reevaluacion = ($r["as_estado"] == "Alterado") ? 1 : 0 ;
                     // $examen->AS_FECHALAB2 = $now4;
                     // $examen->AS_FECHA_CONTRAMUESTRA = $now2;
                     // $examen->AS_UG_G_CONTRAMUESTRA = $r["as_UG_G_CONTRAMUESTRA"];

@@ -10,10 +10,13 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\ResultadoExamen;
 
 use Carbon\Carbon;
+use DateTime;
+use DateTimeZone;
 
 use App\Agentes;
 use App\Cargas;
 use App\Examen;
+use App\User;
  
 
 class PruebasController extends Controller
@@ -25,6 +28,23 @@ class PruebasController extends Controller
 
         return 'home';
     }
+
+public function realizadoHoy(){
+
+    $fechaHoy = date_format(new DateTime(null, new DateTimeZone('America/Santiago')), 'Y-m-d'); 
+    $examens = Examen::
+    
+    where("users_id", "=", Auth::id())
+    ->whereDate("examens.created_at", "=", new DateTime(null, new DateTimeZone('America/Santiago')))
+    ->join("pacientes", "pacientes.id", "=", "examens.pacientes_id")
+    ->join("agentes", "examens.agentes_id", "=", "agentes.id")
+    ->join("users", "examens.users_id", "=", "users.id")
+    ->get(["users.*","pacientes.*", "examens.*", "agentes.*", "examens.created_at as fechaExamen", "examens.id as idExamen"]);
+
+    $usuario = User::where("id", Auth::id())->first();
+
+    return view("prueba.listaExamenesRealizados", ["realizados" => $examens, "usuario" => $usuario]);
+}
 
     public function pico()
     {

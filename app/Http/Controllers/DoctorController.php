@@ -60,6 +60,8 @@ class DoctorController extends Controller
 
     public function verResultadosExamen(Request $r){
 
+
+        
         $ex = new Examen();
         $datos = $ex
         ->where("examens.id", "=", $r["id"])
@@ -67,7 +69,7 @@ class DoctorController extends Controller
         ->join('users', 'users.id', '=', 'examens.users_id')
         ->join('pacientes', 'pacientes.id', '=', 'examens.pacientes_id')
         
-        ->first(['agentes.*', 'examens.*','users.*', 'pacientes.*']);
+        ->first(['agentes.*', 'examens.*','users.*', 'pacientes.*', "examens.id as idExamen"]);
 
         
         return view("doctor.verResultadosExamen", ["examen" => $datos]);

@@ -39,6 +39,7 @@ Route::get('/pruebas/examen_rad2y3', 'PruebasController@examen_rad2y3')->name('e
 Route::get('/pruebas/examen_ruido', 'PruebasController@examen_ruido')->name('examen_ruido');
 Route::get('/pruebas/examen_silice', 'PruebasController@examen_silice')->name('examen_silice');
 Route::get('/pruebas/examen_so2', 'PruebasController@examen_so2')->name('examen_so2');
+Route::get('/pruebas/realizado-hoy', 'PruebasController@realizadoHoy')->name('realizado-hoy');
 
 Route::get('/api/getStatusCarga', 'ApiController@getStatusCarga')->name('api1');
 Route::get('/realiza-examen', 'PruebasController@realizaExamenes')->name('realizaExamenes');

@@ -41,7 +41,7 @@ class CargaSeeder extends Seeder
         $correos = ["mariogavilan.l@gmail.com", "decheverriavs@gmail.com"];
 
 
-        for ($i=0; $i <= 10 ; $i++) { 
+        for ($i=0; $i <= 25 ; $i++) { 
             
             DB::table('cargas')->insert([
                 'nroSap' => rand(1,5000),
