@@ -114,17 +114,28 @@ window.history.back();
                     <tr>
                         <th>Fecha Examen</th>
                         <th>Agente</th>
+          
                     </tr>
                 </thead>
                 
                 <tbody>
                     @foreach ($examen as $item)
+                    @if ($item->as_reevaluacion == 1)
                     <tr  onclick="verResultado({{$item->idExamen}})" style="cursor:pointer" >
                         <td>{{$item->fechaExamen}}</td>
-                        <td>{{$item->glosaAgente}}</td>
+                        <td>{{$item->glosaAgente}} <strong style="font-size: 100px" > (Último)  💩 </strong> </td>
+    
                         
                       
                     </tr> 
+                    @else
+                    <tr  onclick="verResultado({{$item->idExamen}})" style="cursor:pointer" >
+                        <td>{{$item->fechaExamen}}</td>
+                        <td>{{$item->glosaAgente}}</td>
+ 
+                    </tr> 
+                    @endif
+                    
                     @endforeach
                     
                 </tbody>

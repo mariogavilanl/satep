@@ -50,12 +50,6 @@
                 <td class="tdBold">UG/G CONTRAMUESTRA</td>
                 <td>{{ $data->as_UG_G_CONTRAMUESTRA }}</td>
 
-              
-
-             
-               
-        
-
        </tr>
        </table>
       </div>

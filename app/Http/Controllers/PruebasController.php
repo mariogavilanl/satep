@@ -111,7 +111,28 @@ public function realizadoHoy(){
     public function realizaExamenes(Request $r)
     {
         
+        // Si ese id carga tiene FK en tabla de examen ?????
 
+        $pico = DB::table('examens')
+        ->where('cargas_id', '=', $r["idCarga"])
+        ->first();
+
+        // dd($pico);
+        
+        if ($pico != null) {
+
+            $pichula = substr($pico->as_FECHALAB1, 0, -9 );
+            
+            $ano = explode("-", $pichula)[0];
+            $mes = explode("-", $pichula)[1];
+            $dia = explode("-", $pichula)[2]; 
+            
+            $r->session()->put('examenIncompleto', $dia."-".$mes."-".$ano);
+
+        }
+        else{
+            $r->session()->put('examenIncompleto', '');
+        }
 
         $carga = new Cargas();   
         $cargaresult = $carga

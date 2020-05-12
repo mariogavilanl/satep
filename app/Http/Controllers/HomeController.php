@@ -35,4 +35,8 @@ class HomeController extends Controller
         $persona = new Persona();
         return view('prueba/pico');
     }
+
+    public function welcome(){
+        return view('');
+    }
 }

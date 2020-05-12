@@ -71,7 +71,7 @@
                           <TH><img src="https://img.icons8.com/windows/25/000000/test-partial-passed.png"/> ESTADO </TH>    
                           
                           <tr>
-                                <td ><input id="FECHALAB1" name="FECHALAB1" width="200px"/></td>
+                          <td ><input id="FECHALAB1" name="FECHALAB1" width="200px" value="{{session()->get('examenIncompleto')}}"/></td>
                                 <td><input id="FECHAMUESTRA" name="FECHAMUESTRA" width="200px"   /></td>        
                                 <td><input class="form-control" type="text" name="as_UG_G"  ></td>                  
                                 <td><input class="form-check-input" type="radio" name="as_estado" value="Alterado"  >Alterado <br>

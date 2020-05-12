@@ -633,69 +633,283 @@ public function getEncuesta(Request $r){
 ////////////////////////////ARSENICO
      public function getExamenarsenico(Request $r){
 
-        
 
-        // dd(session()->get('nroSap'));
-        // dd( $id = Auth::id());
- 
-        $fecha1 = $r["FECHAMUESTRA"];
+
+        $fecha3 = $r["FECHALAB1"]; //mea
+        $fecha1 = $r["FECHAMUESTRA"]; // resultado de pichi
+
+
         $fecha2 = $r["FECHA_CONTRAMUESTRA"];
-        $fecha3 = $r["FECHALAB1"];
         $fecha4 = $r["FECHALAB2"];
-     //    $dt = Carbon::now(explode('/', $fecha)[0], explode('/', $fecha)[1], explode('/', $fecha)[2]);   
-        $now1 =  new DateTime(explode('-',$fecha1)[2]."-".explode('-', $fecha1)[1]."-".explode('-', $fecha1)[0], new DateTimeZone('America/Santiago'));
-       // $now2 = new DateTime(explode('-', $fecha2)[2]."-".explode('-', $fecha2)[1]."-".explode('-', $fecha2)[0], new DateTimeZone('America/Santiago'));
-        $now3 = new DateTime(explode('-', $fecha3)[2]."-".explode('-', $fecha3)[1]."-".explode('-', $fecha3)[0], new DateTimeZone('America/Santiago'));
-       // $now4 = new DateTime(explode('-', $fecha4)[2]."-".explode('-', $fecha4)[1]."-".explode('-', $fecha4)[0], new DateTimeZone('America/Santiago'));
+        $now1 = null; // fecha muestra
+        $now3 = null; // fecha laboratorio
 
-        $existePaciente =  DB::table('pacientes')->where([
-             'nroSap' => session()->get('nroSap')
-         ])->get();
- 
-         $carga = new Cargas();      
-         $paciente = new Paciente();   
-         $idPaciente = 0; 
-         $idUsuario = $id = Auth::id();
-         $carga = DB::table('cargas')
-         ->where('id', session()->get('idCargas'))
-         ->get()[0];
-                 //paciente no existe en tabla local "pacientes"
-                 if( $existePaciente->count() == 0){
- 
-                     $paciente->nroSap = session()->get('nroSap');
-                     $paciente->rut = $carga->rut;
-                     $paciente->primerNombre = $carga->primerNombre;
-                     $paciente->segundoNombre = $carga->segundoNombre;            
-                     $paciente->primerApellido = $carga->primerApellido;
-                     $paciente->segundoApellido = $carga->segundoApellido;
-                     $paciente->cargo = $carga->cargo;
-                     $paciente->gerencia = $carga->gerencia;
-                     $paciente->fechaNacimiento = $carga->fechaNacimiento;
-                     $paciente->sexo = $carga->sexo;
-                     $paciente->save();
-         
-                     $idPaciente = $paciente->select('id')->where('nroSap', session()->get('nroSap'))->get()[0]->id;                    
+        if ($fecha1 != null) {
+          # code...
+          $now1 =  new DateTime(explode('-',$fecha1)[2]."-".explode('-', $fecha1)[1]."-".explode('-', $fecha1)[0], new DateTimeZone('America/Santiago'));    
+        }
+
+        if ($fecha3 != null) {
+          # code...
+          $now3 = new DateTime(explode('-', $fecha3)[2]."-".explode('-', $fecha3)[1]."-".explode('-', $fecha3)[0], new DateTimeZone('America/Santiago'));
+        }
+        
+        
+       
+
+        if ($now1 == null) {
+          // si examen no viene con fecha de Muestra
+          $existePaciente =  DB::table('pacientes')->where([
+            'nroSap' => session()->get('nroSap')
+        ])->get();
+
+        $carga = new Cargas();      
+        $paciente = new Paciente();   
+        $idPaciente = 0; 
+        $idUsuario = $id = Auth::id();
+        $carga = DB::table('cargas')
+        ->where('id', session()->get('idCargas'))
+        ->get()[0];
+                //paciente no existe en tabla local "pacientes"
+                if( $existePaciente->count() == 0){
+
+                    $paciente->nroSap = session()->get('nroSap');
+                    $paciente->rut = $carga->rut;
+                    $paciente->primerNombre = $carga->primerNombre;
+                    $paciente->segundoNombre = $carga->segundoNombre;            
+                    $paciente->primerApellido = $carga->primerApellido;
+                    $paciente->segundoApellido = $carga->segundoApellido;
+                    $paciente->cargo = $carga->cargo;
+                    $paciente->gerencia = $carga->gerencia;
+                    $paciente->fechaNacimiento = $carga->fechaNacimiento;
+                    $paciente->sexo = $carga->sexo;
+                    $paciente->save();
+        
+                    $idPaciente = $paciente->select('id')->where('nroSap', session()->get('nroSap'))->get()[0]->id;                    
+                    
+                    
+                    $examen = DB::table('examens')
+                    ->where('cargas_id', session()->get('idCargas'))
+                    ->first();
+
+                    if ($examen != null) {
+                      
+                      $update = DB::table('examens')
+                      ->where('id', $examen->id)
+                      ->update([
+                        'as_fechalab1' => $now3,
+                        'as_fechamuestra' => $now1,
+                        'as_ug_g' => $r["as_UG_G"],
+                        'as_estado' => ($r["as_estado"] == "Alterado") ? 1 : 0 
+                      ]);
+                      
+                      return redirect()->action('PruebasController@pico');
+
+                    } else {
+                      $examen = new Examen();
+               
+                      $examen->users_id = $idUsuario;
+                      $examen->pacientes_id = $idPaciente;
+                      $examen->agentes_id = $carga->agentes_id;
+                      $examen->cargas_id = $carga->id;
+  
+                      $examen->as_reevaluacion = 1;
+                      $examen->as_FECHALAB1 = $now3;
+                      $examen->as_FECHAMUESTRA = $now1;
+                      $examen->as_UG_G = $r["as_UG_G"];
+                      $examen->as_ESTADO = $r["as_estado"];
+                      $examen->as_reevaluacion = ($r["as_estado"] == "Alterado") ? 1 : 0 ;
+          
+                      $examen->save();
+          
+                      // $affected = DB::table('cargas')
+                      //   ->where('id', session()->get('idCargas'))
+                      //   ->update(['realizado' => 1]);
+                         return redirect()->action('PruebasController@pico');
+
+                    }
+                }
+
+                else{
+                  
+
+                    $idPaciente = DB::table('pacientes')
+                    ->where('nroSap' , session()->get('nroSap'))
+                    ->first()->id;
+                    
+                    $examen = DB::table('examens')
+                    ->where('cargas_id', session()->get('idCargas'))
+                    ->first();
+
+                    if ($examen != null) {
+                      
+                      $update = DB::table('examens')
+                      ->where('id', $examen->id)
+                      ->update([
+                        'as_fechalab1' => $now3,
+                        'as_fechamuestra' => $now1,
+                        'as_ug_g' => $r["as_UG_G"],
+                        'as_estado' => ($r["as_estado"] == "Alterado") ? 1 : 0 
+                      ]);
+                      
+                      return redirect()->action('PruebasController@pico');
+
+                    } else {
+                      $examen = new Examen();
+               
+                      $examen->users_id = $idUsuario;
+                      $examen->pacientes_id = $idPaciente;
+                      $examen->agentes_id = $carga->agentes_id;
+                      $examen->cargas_id = $carga->id;
+  
+                      $examen->as_reevaluacion = 1;
+                      $examen->as_FECHALAB1 = $now3;
+                      $examen->as_FECHAMUESTRA = $now1;
+                      $examen->as_UG_G = $r["as_UG_G"];
+                      $examen->as_ESTADO = $r["as_estado"];
+                      $examen->as_reevaluacion = ($r["as_estado"] == "Alterado") ? 1 : 0 ;
+          
+                      $examen->save();
+          
+                      // $affected = DB::table('cargas')
+                      //   ->where('id', session()->get('idCargas'))
+                      //   ->update(['realizado' => 1]);
+                         return redirect()->action('PruebasController@pico');
+
+                    }
+                   
+                }
+
+
+        } 
+        
+        
+        
+        else {
+         // cuando si viene la fecha de muestra
+          
+          $existePaciente =  DB::table('pacientes')->where([
+            'nroSap' => session()->get('nroSap')
+        ])->get();
+
+        $carga = new Cargas();      
+        $paciente = new Paciente();   
+        $idPaciente = 0; 
+        $idUsuario = $id = Auth::id();
+        $carga = DB::table('cargas')
+        ->where('id', session()->get('idCargas'))
+        ->get()[0];
+                //paciente no existe en tabla local "pacientes"
+                if( $existePaciente->count() == 0){
+
+                    $paciente->nroSap = session()->get('nroSap');
+                    $paciente->rut = $carga->rut;
+                    $paciente->primerNombre = $carga->primerNombre;
+                    $paciente->segundoNombre = $carga->segundoNombre;            
+                    $paciente->primerApellido = $carga->primerApellido;
+                    $paciente->segundoApellido = $carga->segundoApellido;
+                    $paciente->cargo = $carga->cargo;
+                    $paciente->gerencia = $carga->gerencia;
+                    $paciente->fechaNacimiento = $carga->fechaNacimiento;
+                    $paciente->sexo = $carga->sexo;
+                    $paciente->save();
+        
+                    $idPaciente = $paciente->select('id')->where('nroSap', session()->get('nroSap'))->get()[0]->id;                    
+                    
+                    
+
+                    $examen = DB::table('examens')
+                    ->where('cargas_id', session()->get('idCargas'))
+                    ->first();
+
+                    if ($examen != null) {
+                      
+                      $update = DB::table('examens')
+                      ->where('id', $examen->id)
+                      ->update([
+                        'as_fechalab1' => $now3,
+                        'as_fechamuestra' => $now1,
+                        'as_ug_g' => $r["as_UG_G"],
+                        'as_estado' => ($r["as_estado"] == "Alterado") ? 1 : 0 
+                      ]);
+
+                      return redirect()->action('PruebasController@pico');
+
+                    } else {
+                      $examen = new Examen();
+               
+                      $examen->users_id = $idUsuario;
+                      $examen->pacientes_id = $idPaciente;
+                      $examen->agentes_id = $carga->agentes_id;
+                      $examen->cargas_id = $carga->id;
+  
+                      $examen->as_reevaluacion = 1;
+                      $examen->as_FECHALAB1 = $now3;
+                      $examen->as_FECHAMUESTRA = $now1;
+                      $examen->as_UG_G = $r["as_UG_G"];
+                      $examen->as_ESTADO = $r["as_estado"];
+                      $examen->as_reevaluacion = ($r["as_estado"] == "Alterado") ? 1 : 0 ;
+          
+                      $examen->save();
+          
+                      $affected = DB::table('cargas')
+                        ->where('id', session()->get('idCargas'))
+                        ->update(['realizado' => 1]);
+                        return redirect()->action('PruebasController@pico');
+                    }
+                    
+
+
+                }
+                else{
+
+                    $idPaciente = DB::table('pacientes')
+                    ->where('nroSap' , session()->get('nroSap'))
+                    ->first()->id;
+                    
+                    $examen = new Examen();
+                    
+                    $examen->users_id = $idUsuario;
+                    $examen->pacientes_id = $idPaciente;
+                    $examen->agentes_id = $carga->agentes_id;
+                   $examen->cargas_id = $carga->id;
+                    
+                   $examen = DB::table('examens')
+                   ->where('cargas_id', session()->get('idCargas'))
+                   ->first();
+
+                   if ($examen != null) {
                      
+                     $update = DB::table('examens')
+                     ->where('id', $examen->id)
+                     ->update([
+                       'as_fechalab1' => $now3,
+                       'as_fechamuestra' => $now1,
+                       'as_ug_g' => $r["as_UG_G"],
+                       'as_estado' => ($r["as_estado"] == "Alterado") ? 1 : 0 
+                     ]);
                      
+                     $affected = DB::table('cargas')
+                     ->where('id', session()->get('idCargas'))
+                     ->update(['realizado' => 1]);
+                     return redirect()->action('PruebasController@pico');
+
+                     
+
+                   } else {
                      $examen = new Examen();
-                
+              
                      $examen->users_id = $idUsuario;
                      $examen->pacientes_id = $idPaciente;
                      $examen->agentes_id = $carga->agentes_id;
                      $examen->cargas_id = $carga->id;
-
+ 
                      $examen->as_reevaluacion = 1;
                      $examen->as_FECHALAB1 = $now3;
                      $examen->as_FECHAMUESTRA = $now1;
                      $examen->as_UG_G = $r["as_UG_G"];
                      $examen->as_ESTADO = $r["as_estado"];
                      $examen->as_reevaluacion = ($r["as_estado"] == "Alterado") ? 1 : 0 ;
-                    // $examen->as_FECHALAB2 = $now4;
-                    // $examen->as_FECHA_CONTRAMUESTRA = $now2;
-                    // $examen->as_UG_G_CONTRAMUESTRA = $r["as_UG_G_CONTRAMUESTRA"];
-                    // $examen->as_ESTADO1 = $r["as_estado1"];
-                     
-                     
          
                      $examen->save();
          
@@ -703,45 +917,10 @@ public function getEncuesta(Request $r){
                        ->where('id', session()->get('idCargas'))
                        ->update(['realizado' => 1]);
                        return redirect()->action('PruebasController@pico');
-                 }
-                 else{
- 
-                     $idPaciente = DB::table('pacientes')
-                     ->where('nroSap' , session()->get('nroSap'))
-                     ->first()->id;
-                     
-                     $examen = new Examen();
-                     
-                     $examen->users_id = $idUsuario;
-                     $examen->pacientes_id = $idPaciente;
-                     $examen->agentes_id = $carga->agentes_id;
-                    $examen->cargas_id = $carga->id;
-                     
-
-                     $examen->AS_FECHALAB1 = $now3;
-                     $examen->AS_FECHAMUESTRA = $now1;
-                     $examen->AS_UG_G = $r["as_UG_G"];
-                     $examen->AS_ESTADO = $r["as_estado"];
-                     $examen->as_reevaluacion = ($r["as_estado"] == "Alterado") ? 1 : 0 ;
-                    // $examen->AS_FECHALAB2 = $now4;
-                    // $examen->AS_FECHA_CONTRAMUESTRA = $now2;
-                    // $examen->AS_UG_G_CONTRAMUESTRA = $r["as_UG_G_CONTRAMUESTRA"];
-                    // $examen->AS_ESTADO1 = $r["as_estado1"];
- 
-                    
-                                 
-                                                               
-                    
-                        $examen->save();
-         
-                        $affected = DB::table('cargas')
-                        ->where('id', session()->get('idCargas'))
-                        ->update(['realizado' => 1]);
-                     
-                        return redirect()->action('PruebasController@pico');
-                    
-                 }
-                }
+                   }
+        }
+      }
+    }
 
 
 ///////////////////////////////////////////// citoestaticos

@@ -46,8 +46,23 @@ class DoctorController extends Controller
 
     public function getExamenesTerminados(){        
     
-        $examen = Examen::with(["usuario", "paciente", "agente", "carga"])
+        // $ex = new Examen();
+        // $examen = $ex
+        // ->where("realizadoEncuenta", "=", null)
+        // ->join('agentes', 'examens.agentes_id', '=', 'agentes.id')
+        // ->join('users', 'users.id', '=', 'examens.users_id')
+        // ->join('pacientes', 'pacientes.id', '=', 'examens.pacientes_id')        
+        // ->get(['agentes.*', 'examens.*','users.*', 'pacientes.*']);
+
+
+        // $examen = Examen::with(["usuario", "paciente", "agente", "carga"])
+        // ->get(); 
+
+        $examen = Examen::where("examens.realizadoEncuenta", "=", null)
+        ->with(["usuario", "paciente", "agente", "carga"])
         ->get(); 
+
+
 
         return $examen;
 
@@ -109,12 +124,10 @@ class DoctorController extends Controller
 
         $r->session()->put('idExamen', $r["idExamen"]);
         $r->session()->put('idRealExaman', $r["idRealExaman"]);
-        
-        
 
         $examen = Examen::with(["usuario", "paciente", "agente", "carga"])
         ->where([["cargas_id","=", $r["idExamen"]], ["as_reevaluacion", "=", 1]])
-        ->whereNull("realizadoEncuenta")
+        //->whereNull("realizadoEncuenta")
         ->get();
 
 
@@ -129,7 +142,7 @@ class DoctorController extends Controller
        $data["data"] = $examen;
        $data["encuesta"] = $encuesta;
 
-       dd($examen, $encuesta);
+       
        
         return view("doctor.resultados", $data);
 
