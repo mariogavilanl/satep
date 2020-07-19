@@ -76,12 +76,15 @@ class InformesController extends Controller
         $funciones = new InformesController();
         $semestres = $funciones->getSemestres();
 
+        
         $examens = Examen::
         where([["examens.agentes_id", "=", 18],["examens.as_estado", "<>", null]])    
         ->join("cargas", "cargas.id", "=", "examens.cargas_id") 
         ->whereIn("cargas.semestre", $semestres)
         ->with(["carga", "paciente"])
         ->get();
+
+        
 
         $data = $examens->groupBy("carga.gerencia")->map(function($item){
            

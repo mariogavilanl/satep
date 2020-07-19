@@ -74,15 +74,15 @@ public function realizadoHoy(){
         foreach ($rol_agentes as $key) {
             array_push($pico, $key->agentes_id);
         }
-               
-       
 
         $lista = $carga
-        ->whereIn('agentes_id', $pico)
+        ->whereIn('agentes.id', $pico)
         ->join('agentes', 'cargas.agentes_id', '=', 'agentes.id')
+        ->leftjoin('cargaarsenico', 'cargaarsenico.idCarga', '=', 'cargas.id')
+        ->orderBy('cargas.id', 'ASC')
+        ->get(['agentes.*', 'cargas.*', 'cargaarsenico.idCarga','cargaarsenico.fechaExamen', 'cargaarsenico.sem' ]);
 
-        ->get(['agentes.*', 'cargas.*']);
-   
+
         return view('prueba/lista')->with(['pico' => $lista,
          'semestre' => $semestre,
          'mes' => $mes,

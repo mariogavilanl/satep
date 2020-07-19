@@ -67,7 +67,7 @@
     <tbody>
 
     @foreach ($pico as $d)
-    @if ($d->realizado == 0 ||  $d->realizadoco == 0)
+    
     <tr class="">
         <td> {{ $d->id }}</td>
         <td> {{ $d->nroSap }}</td>
@@ -79,155 +79,196 @@
         <td> {{ $d->glosaAgente}}</td>       
         <td>
 
-          
-          @if ($d->semestre == 1 && Carbon\Carbon::parse($d->fechaCarga)->year == $fechaactual->year && Carbon\Carbon::parse($d->fechaCarga)->month <= 7 )
-                       
-                        @if ($d->realizado == 0)
-                          <button class="btn btn-primary"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Examen</button>                    
-                        @endif
+              @if  ($d->agentes_id == 18)
 
-                        @if ($d->realizadoco == 0)
-                          <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
-                        @endif
+                @if (($fechaactual->month < 7 ? 1 : 2) == $d->sem && $fechaactual->year == Carbon\Carbon::parse($d->fechaExamen)->year)
+                
+                    @if ($d->realizadoco == 0)
+                      <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
+                    @endif
 
-                        @if ($d->agentes_id == 2 || $d->agentes_id == 3 || $d->agentes_id == 6 || $d->agentes_id == 7 || $d->agentes_id == 5 || $d->agentes_id == 4 || $d->agentes_id == 18 )
-                          
+                    @if ($d->agentes_id == 2 || $d->agentes_id == 3 || $d->agentes_id == 6 || $d->agentes_id == 7 || $d->agentes_id == 5 || $d->agentes_id == 4 || $d->agentes_id == 18 )
+                      
                         @if ($d->encuesta == 0)
                           <a href="/encuesta/?idencuesta={{$d->agentes_id}}&idcarga={{$d->id}}&idsap={{$d->nroSap}}">
                             <button class="btn btn-success">Encuesta</button>
                           </a>
-                        @endif
-                         
-                                            
+                        @endif           
+                    @endif
+
+                @else
+
+
+                <button class="btn btn-primary"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Exámen</button>                    
+                
+                @if ($d->realizadoco == 0)
+                  <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
+                @endif
+
+                @if ($d->agentes_id == 2 || $d->agentes_id == 3 || $d->agentes_id == 6 || $d->agentes_id == 7 || $d->agentes_id == 5 || $d->agentes_id == 4 || $d->agentes_id == 18 )
+                  
+                    @if ($d->encuesta == 0)
+                      <a href="/encuesta/?idencuesta={{$d->agentes_id}}&idcarga={{$d->id}}&idsap={{$d->nroSap}}">
+                        <button class="btn btn-success">Encuesta</button>
+                      </a>
+                    @endif           
+                @endif
+
+
+
+
+                
+                    
+                @endif
+
+
+              @else  
+
+              @if ($d->semestre == 1 && Carbon\Carbon::parse($d->fechaCarga)->year == $fechaactual->year && Carbon\Carbon::parse($d->fechaCarga)->month <= 6 )
+                                    
+                @if ($d->realizado == 0)
+                  <button class="btn btn-primary"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Examen</button>                    
+                @endif
+
+                @if ($d->realizadoco == 0)
+                  <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
+                @endif
+
+                @if ($d->agentes_id == 2 || $d->agentes_id == 3 || $d->agentes_id == 6 || $d->agentes_id == 7 || $d->agentes_id == 5 || $d->agentes_id == 4 || $d->agentes_id == 18 )
+                  
+                    @if ($d->encuesta == 0)
+                      <a href="/encuesta/?idencuesta={{$d->agentes_id}}&idcarga={{$d->id}}&idsap={{$d->nroSap}}">
+                        <button class="btn btn-success">Encuesta</button>
+                      </a>
+                    @endif
+                    
+                                        
+                @endif
+
+              @endif
+
+              @if ($d->semestre == 2 && Carbon\Carbon::parse($d->fechaCarga)->year == $fechaactual->year && $fechaactual->month > 6)
+                  @if ($d->realizado == 0)
+                    <button class="btn btn-primary"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Examen</button>                    
+                  @endif
+
+                  @if ($d->realizadoco == 0)
+                    <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
+                  @endif
+
+                  @if ($d->agentes_id == 2 || $d->agentes_id == 3 || $d->agentes_id == 6 || $d->agentes_id == 7 || $d->agentes_id == 5 || $d->agentes_id == 4 || $d->agentes_id == 18 )
+
+                    @if ($d->encuesta == 0)
+                      <a href="/encuesta/?idencuesta={{$d->agentes_id}}&idcarga={{$d->id}}&idsap={{$d->nroSap}}">
+                      <button class="btn btn-success">Encuesta</button>
+                      </a>
+                    @endif            
+
+                  @endif
+              @endif
+
+              @if ($d->semestre == 3 && Carbon\Carbon::parse($d->fechaCarga)->year == $fechaactual->year && $fechaactual->month <= 4)
+                    @if ($d->realizado == 0)
+                      <button class="btn btn-primary"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Examen</button>                    
+                    @endif
+                    @if ($d->realizadoco == 0)
+                      <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
+                    @endif
+
+                    @if ($d->agentes_id == 2 || $d->agentes_id == 3 || $d->agentes_id == 6 || $d->agentes_id == 7 || $d->agentes_id == 5 || $d->agentes_id == 4 || $d->agentes_id == 18 )
+
+                      @if ($d->encuesta == 0)
+                      <a href="/encuesta/?idencuesta={{$d->agentes_id}}&idcarga={{$d->id}}&idsap={{$d->nroSap}}">
+                      <button class="btn btn-success">Encuesta</button>
+                      </a>
+                      @endif    
+                            
+                    @endif
+              @endif
+
+              @if ($d->semestre == 4 && Carbon\Carbon::parse($d->fechaCarga)->year == $fechaactual->year && $fechaactual->month > 4 && $fechaactual->month <= 8)
+                      @if ($d->realizado == 0)
+                          <button class="btn btn-primary"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Exam</button>                    
                       @endif
 
-          @endif
+                      @if ($d->realizadoco == 0)
+                          <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
+                      @endif
 
-          @if ($d->semestre == 2 && Carbon\Carbon::parse($d->fechaCarga)->year == $fechaactual->year && $fechaactual->month > 7)
-              @if ($d->realizado == 0)
-              <button class="btn btn-primary"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Examen</button>                    
-            @endif
-            @if ($d->realizadoco == 0)
-              <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
-            @endif
-            @if ($d->agentes_id == 2 || $d->agentes_id == 3 || $d->agentes_id == 6 || $d->agentes_id == 7 || $d->agentes_id == 5 || $d->agentes_id == 4 || $d->agentes_id == 18 )
-             
+                      @if ($d->agentes_id == 2 || $d->agentes_id == 3 || $d->agentes_id == 6 || $d->agentes_id == 7 || $d->agentes_id == 5 || $d->agentes_id == 4 || $d->agentes_id == 18 )
 
+                          @if ($d->encuesta == 0)
+                              <a href="/encuesta/?idencuesta={{$d->agentes_id}}&idcarga={{$d->id}}&idsap={{$d->nroSap}}">
+                              <button class="btn btn-success">Encuesta</button>
+                              </a>
+                          @endif                                             
+                                  
+                      @endif
+              @endif
+
+                      @if ($d->semestre == 5 && Carbon\Carbon::parse($d->fechaCarga)->year == $fechaactual->year && Carbon\Carbon::parse($d->fechaCarga)->month > 8 && $fechaactual->month <= 12)
                           
-              @if ($d->encuesta == 0)
-              <a href="/encuesta/?idencuesta={{$d->agentes_id}}&idcarga={{$d->id}}&idsap={{$d->nroSap}}">
-                <button class="btn btn-success">Encuesta</button>
-              </a>
-            @endif            
-                
-          @endif
-          @endif
+                          @if ($d->realizado == 0)
+                              <button class="btn btn-primary"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Exam</button>                    
+                          @endif
 
-          @if ($d->semestre == 3 && Carbon\Carbon::parse($d->fechaCarga)->year == $fechaactual->year && $fechaactual->month <= 4)
-              @if ($d->realizado == 0)
-              <button class="btn btn-primary"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Examen</button>                    
-            @endif
-            @if ($d->realizadoco == 0)
-              <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
-            @endif
-            
-            @if ($d->agentes_id == 2 || $d->agentes_id == 3 || $d->agentes_id == 6 || $d->agentes_id == 7 || $d->agentes_id == 5 || $d->agentes_id == 4 || $d->agentes_id == 18 )
-             
-            @if ($d->encuesta == 0)
-              <a href="/encuesta/?idencuesta={{$d->agentes_id}}&idcarga={{$d->id}}&idsap={{$d->nroSap}}">
-                <button class="btn btn-success">Encuesta</button>
-              </a>
+                          @if ($d->realizadoco == 0)
+                              <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
+                          @endif
+
+                          @if ($d->agentes_id == 2 || $d->agentes_id == 3 || $d->agentes_id == 6 || $d->agentes_id == 7 || $d->agentes_id == 5 || $d->agentes_id == 4 || $d->agentes_id == 18 )
+
+                              @if ($d->encuesta == 0)
+                                  <a href="/encuesta/?idencuesta={{$d->agentes_id}}&idcarga={{$d->id}}&idsap={{$d->nroSap}}">
+                                  <button class="btn btn-success">Encuesta</button>
+                                  </a>
+                              @endif                              
+                          @endif
+                      @endif          
+
+              @if ($d->semestre == 6)
+                  @if ($d->realizado == 0)
+                      <button class="btn btn-primary"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Exam</button>                    
+                  @endif
+
+                  @if ($d->realizadoco == 0)
+                      <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
+                  @endif
+
+                  @if ($d->agentes_id == 2 || $d->agentes_id == 3 || $d->agentes_id == 6 || $d->agentes_id == 7 || $d->agentes_id == 5 || $d->agentes_id == 4 || $d->agentes_id == 18 )
+
+                      @if ($d->encuesta == 0)
+                        <a href="/encuesta/?idencuesta={{$d->agentes_id}}&idcarga={{$d->id}}&idsap={{$d->nroSap}}">
+                        <button class="btn btn-success">Encuesta</button>
+                        </a>
+                      @endif                    
+                  @endif
+              @endif
+
+              @if ($d->semestre == 6)
+                  @if ($d->realizado == 0)
+                      <button class="bbtn btn-primary"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Exam</button>                    
+                  @endif
+
+                  @if ($d->realizadoco == 0)
+                      <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
+                  @endif
+
+                  @if ($d->agentes_id == 2 || $d->agentes_id == 3 || $d->agentes_id == 6 || $d->agentes_id == 7 || $d->agentes_id == 5 || $d->agentes_id == 4 || $d->agentes_id == 18 )
+
+                    @if ($d->encuesta == 0)
+                        <a href="/encuesta/?idencuesta={{$d->agentes_id}}&idcarga={{$d->id}}&idsap={{$d->nroSap}}">
+                        <button class="btn btn-success">Encuesta</button>
+                        </a>
+                    @endif                              
+                  @endif
             @endif    
-                                 
-          @endif
-          @endif
-
-          @if ($d->semestre == 4 && Carbon\Carbon::parse($d->fechaCarga)->year == $fechaactual->year && $fechaactual->month > 4 && $fechaactual->month <= 8)
-              @if ($d->realizado == 0)
-              <button class="btn btn-primary"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Exam</button>                    
-            @endif
-            @if ($d->realizadoco == 0)
-              <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
-            @endif
-
-            @if ($d->agentes_id == 2 || $d->agentes_id == 3 || $d->agentes_id == 6 || $d->agentes_id == 7 || $d->agentes_id == 5 || $d->agentes_id == 4 || $d->agentes_id == 18 )
-             
-            @if ($d->encuesta == 0)
-              <a href="/encuesta/?idencuesta={{$d->agentes_id}}&idcarga={{$d->id}}&idsap={{$d->nroSap}}">
-                <button class="btn btn-success">Encuesta</button>
-              </a>
-            @endif    
-                                 
-          @endif
-          @endif
-
-          @if ($d->semestre == 5 && Carbon\Carbon::parse($d->fechaCarga)->year == $fechaactual->year && Carbon\Carbon::parse($d->fechaCarga)->month > 8 && $fechaactual->month <= 12)
-            @if ($d->realizado == 0)
-              <button class="btn btn-primary"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Exam</button>                    
-            @endif
-            @if ($d->realizadoco == 0)
-              <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
-            @endif
-            @if ($d->agentes_id == 2 || $d->agentes_id == 3 || $d->agentes_id == 6 || $d->agentes_id == 7 || $d->agentes_id == 5 || $d->agentes_id == 4 || $d->agentes_id == 18 )
-             
-            @if ($d->encuesta == 0)
-            <a href="/encuesta/?idencuesta={{$d->agentes_id}}&idcarga={{$d->id}}&idsap={{$d->nroSap}}">
-              <button class="btn btn-success">Encuesta</button>
-            </a>
-          @endif    
-                                 
-          @endif
-          @endif          
-
-          @if ($d->semestre == 6)
-              @if ($d->realizado == 0)
-              <button class="btn btn-primary"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Exam</button>                    
-            @endif
-            @if ($d->realizadoco == 0)
-              <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
-            @endif
-            @if ($d->agentes_id == 2 || $d->agentes_id == 3 || $d->agentes_id == 6 || $d->agentes_id == 7 || $d->agentes_id == 5 || $d->agentes_id == 4 || $d->agentes_id == 18 )
-             
-            @if ($d->encuesta == 0)
-              <a href="/encuesta/?idencuesta={{$d->agentes_id}}&idcarga={{$d->id}}&idsap={{$d->nroSap}}">
-                <button class="btn btn-success">Encuesta</button>
-              </a>
-            @endif                    
-          @endif
-          @endif
-
-          @if ($d->semestre == 6)
-              @if ($d->realizado == 0)
-              <button class="bbtn btn-primary"  onclick="cargaExamen({{ $d->id }}, '{{ $d->primerNombre }}','{{ $d->primerApellido }}'  )">Exam</button>                    
-            @endif
-            @if ($d->realizadoco == 0)
-              <button class="btn btn-dark" onclick="cargaCO({{ $d->id }})">Examen Base</button>                    
-            @endif
-            @if ($d->agentes_id == 2 || $d->agentes_id == 3 || $d->agentes_id == 6 || $d->agentes_id == 7 || $d->agentes_id == 5 || $d->agentes_id == 4 || $d->agentes_id == 18 )
-             
-            @if ($d->encuesta == 0)
-            <a href="/encuesta/?idencuesta={{$d->agentes_id}}&idcarga={{$d->id}}&idsap={{$d->nroSap}}">
-              <button class="btn btn-success">Encuesta</button>
-            </a>
-          @endif    
-                                 
-          @endif
-          
-          
-                               
-        @endif
-
-          
-      
-          
-       </td>
-        
+@endif
+              
+       </td>        
      </tr>
-     @endif
+
     @endforeach
-
-      
-
     </tbody>
 </table>
 

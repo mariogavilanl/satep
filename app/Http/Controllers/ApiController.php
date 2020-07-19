@@ -12,6 +12,7 @@ use DateTimeZone;
 use App\Cargas;
 use App\Paciente;
 use App\Examen;
+use App\Cargaarsenico;
 use Carbon\Carbon;
 
 
@@ -721,7 +722,19 @@ public function getEncuesta(Request $r){
                       $examen->as_reevaluacion = ($r["as_estado"] == "Alterado") ? 1 : 0 ;
           
                       $examen->save();
-          
+                      
+                      $fechaActual = new DateTime("now", new DateTimeZone('America/Santiago') );
+                      $sem = ( intval($fechaActual->format("m")) < 7 ? 1 : 2 );
+                    
+                      DB::table('cargaarsenico')->insert(
+                        [
+                          'idCarga' => $carga->id, 
+                          'fechaExamen' => new DateTime("now", new DateTimeZone('America/Santiago') ),
+                          'sem' => $sem                        
+                          
+                          ]
+                      );
+
                       // $affected = DB::table('cargas')
                       //   ->where('id', session()->get('idCargas'))
                       //   ->update(['realizado' => 1]);
@@ -770,6 +783,19 @@ public function getEncuesta(Request $r){
                       $examen->as_reevaluacion = ($r["as_estado"] == "Alterado") ? 1 : 0 ;
           
                       $examen->save();
+
+                      $fechaActual = new DateTime("now", new DateTimeZone('America/Santiago') );
+                      $sem = ( intval($fechaActual->format("m")) < 7 ? 1 : 2 );
+
+
+                      DB::table('cargaarsenico')->insert(
+                        [
+                          'idCarga' => $carga->id, 
+                          'fechaExamen' => new DateTime("now", new DateTimeZone('America/Santiago') ),
+                          'sem' => $sem                        
+                          
+                          ]
+                      );
           
                       // $affected = DB::table('cargas')
                       //   ->where('id', session()->get('idCargas'))
@@ -851,6 +877,18 @@ public function getEncuesta(Request $r){
                       $examen->as_reevaluacion = ($r["as_estado"] == "Alterado") ? 1 : 0 ;
           
                       $examen->save();
+
+                      $fechaActual = new DateTime("now", new DateTimeZone('America/Santiago') );
+                      $sem = ( intval($fechaActual->format("m")) < 7 ? 1 : 2 );
+
+                      DB::table('cargaarsenico')->insert(
+                        [
+                          'idCarga' => $carga->id, 
+                          'fechaExamen' => new DateTime("now", new DateTimeZone('America/Santiago') ),
+                          'sem' => $sem                        
+                          
+                          ]
+                      );
           
                       $affected = DB::table('cargas')
                         ->where('id', session()->get('idCargas'))
@@ -912,6 +950,19 @@ public function getEncuesta(Request $r){
                      $examen->as_reevaluacion = ($r["as_estado"] == "Alterado") ? 1 : 0 ;
          
                      $examen->save();
+
+                     
+                     $fechaActual = new DateTime("now", new DateTimeZone('America/Santiago') );
+                      $sem = ( intval($fechaActual->format("m")) < 7 ? 1 : 2 );
+
+                     DB::table('cargaarsenico')->insert(
+                      [
+                        'idCarga' => $carga->id, 
+                        'fechaExamen' => new DateTime("now", new DateTimeZone('America/Santiago') ),
+                        'sem' => $sem                        
+                        
+                        ]
+                    );
          
                      $affected = DB::table('cargas')
                        ->where('id', session()->get('idCargas'))
