@@ -6,6 +6,24 @@
 <script type="text/javascript">
 $(document).ready(function(){
 
+    $.ajax({
+        url : "dashboard/graficosProgramadosRealizados",
+        success : function(r){
+            var json = JSON.parse(r);
+            for (const key in json) {
+                $("#graficos").append("<tr>"+
+                    "<td>"+json[key].gerencia+"</td>"+
+                    "<td>"+json[key].programado+"</td>"+
+                    "<td>"+json[key].realizado+"</td>"+
+                    
+                    "</tr>");
+            } 
+
+            $("#graficos").fadeIn();
+        }
+
+    });
+
 // var v_Agente = [];
 // var k_Agentes = [];
 
@@ -125,7 +143,7 @@ $(document).ready(function(){
                     "<tr>"+
                         "<td>"+propiedad+"</td>"+
                         "<td>"+r[propiedad].total+"</td>"+
-                        "<td>"+Math.round( r[propiedad].total * 0.9) +"</td>"+
+                        // "<td>"+Math.round( r[propiedad].total * 0.9) +"</td>"+
                         "<td>"+r[propiedad].realizado+"</td>"+
                         "<td><span class='"+(apruebaRendimientoGerencia(r[propiedad].total, r[propiedad].realizado) ? "fa fa-2x fa-check text-success" : "fa fa-2x fa-times text-danger")+"'></span></td>"+
                     "</tr>"
@@ -214,11 +232,27 @@ $(document).ready(function(){
         <div class="col-sm-6">
             <h3 class="text-center">Cumplimiento por Gerencia</h3>
 
-            <table id="g_cumplimientoPorGerencia" style="display:none;" class="table table-striped">
+            <table id="graficos" style="display:none;" class="table table-striped">
+
+                <thead>
+                    <th>Gerencia</th>
+                    <th>Programados</th>
+                    <th>Realizados</th>
+                    
+                    
+                </thead>
+
+                <tbody> 
+
+                </tbody>
+
+            </table>
+
+            {{-- <table id="g_cumplimientoPorGerencia" style="display:none;" class="table table-striped">
                 <thead> 
                     <th>Gerencia</th>
                     <th>Programado</th>
-                    <th>Mìnimo a Realizar (90%)</th>
+                     <th>Mìnimo a Realizar (90%)</th> 
                     <th>Realizado</th>
                     <th>Cumplimiento</th>
                 </thead>
@@ -226,7 +260,7 @@ $(document).ready(function(){
                 <tbody> 
                     
                 </tbody>
-            </table>
+            </table> --}}
             <div id="c_cumplimientoPorGerencia">
                 <span class="fa fa-gear fa-spin fa-5x"></span>
                 <span>cargando...</span>
@@ -247,7 +281,7 @@ $(document).ready(function(){
 
     <div class="row">
         <div class="col-sm-6">
-
+            
         </div>
         <div class="col-sm-6">
             <h3 class="text-center">Arsenico, Alterados vs Normales</h3>

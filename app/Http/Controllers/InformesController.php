@@ -29,6 +29,18 @@ class InformesController extends Controller
         
     }
 
+    public function graficosProgramadosRealizados(){
+        $fa = new DateTime(null, new DateTimeZone('America/Santiago'));
+        $m = intval($fa->format("m"));
+
+        $semestre = ($m < 7 ? 1 : 2);
+
+        $pichula = db::select("call sp_getasprogramados(".intval($fa->format("Y")).",".$semestre.")");        
+        
+        return json_encode($pichula,JSON_UNESCAPED_UNICODE);
+
+    }
+
     public function dataProgramadoRealizados(){
 
         // obtener programados

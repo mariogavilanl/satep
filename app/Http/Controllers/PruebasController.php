@@ -49,8 +49,6 @@ public function realizadoHoy(){
     public function pico()
     {
 
-
-
         $hora = time();
         $semestre = (date("m", $hora) >= 7 ? 2 : 1);
         $fechaactual = Carbon::now();
