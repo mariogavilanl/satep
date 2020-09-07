@@ -123,7 +123,7 @@ window.history.back();
                     @if ($item->as_reevaluacion == 1)
                     <tr  onclick="verResultado({{$item->idExamen}})" style="cursor:pointer" >
                         <td>{{$item->fechaExamen}}</td>
-                        <td>{{$item->glosaAgente}} <strong style="font-size: 100px" > (Último)  💩 </strong> </td>
+                        <td>{{$item->glosaAgente}}</td>
     
                         
                       
